@@ -1,0 +1,39 @@
+﻿@model IEnumerable<HEAPIFY_540_Software.Models.AllergiesName>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.AllergyType.AllergyTypeName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AllergyName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.AllergyType.AllergyTypeName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AllergyName)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.AllergiesID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.AllergiesID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.AllergiesID })
+        </td>
+    </tr>
+}
+
+</table>

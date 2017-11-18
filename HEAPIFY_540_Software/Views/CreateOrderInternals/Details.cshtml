@@ -1,0 +1,82 @@
+﻿@model HEAPIFY_540_Software.Models.CreateOrderInternal
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>CreateOrderInternal</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Patient.FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Patient.FirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OrderingProvider)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OrderingProvider)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Notes)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Notes)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Diagnoses)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Diagnoses)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Lab)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Lab)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Type)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Type)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ResponsibleOrder)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ResponsibleOrder)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Stat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Stat)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.OrderID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

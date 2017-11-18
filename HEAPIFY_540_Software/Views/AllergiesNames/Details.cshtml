@@ -1,0 +1,34 @@
+﻿@model HEAPIFY_540_Software.Models.AllergiesName
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>AllergiesName</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.AllergyType.AllergyTypeName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AllergyType.AllergyTypeName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AllergyName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AllergyName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.AllergiesID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

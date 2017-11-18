@@ -1,0 +1,3414 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="HEAP_540Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'HEAP_540.dbo.__MigrationHistory' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="__MigrationHistory">
+          <Key>
+            <PropertyRef Name="MigrationId" />
+            <PropertyRef Name="ContextKey" />
+            <PropertyRef Name="Model" />
+            <PropertyRef Name="ProductVersion" />
+          </Key>
+          <Property Name="MigrationId" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="ContextKey" Type="nvarchar" MaxLength="300" Nullable="false" />
+          <Property Name="Model" Type="varbinary(max)" Nullable="false" />
+          <Property Name="ProductVersion" Type="nvarchar" MaxLength="32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AccountsAdmin">
+          <Key>
+            <PropertyRef Name="AdminAccountID" />
+          </Key>
+          <Property Name="AdminAccountID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EmployeeID" Type="int" Nullable="false" />
+          <Property Name="Date" Type="date" Nullable="false" />
+          <Property Name="AccountTypeID" Type="int" Nullable="false" />
+          <Property Name="ModifyID" Type="int" Nullable="false" />
+          <Property Name="History" Type="varchar(max)" />
+        </EntityType>
+        <EntityType Name="AccountType">
+          <Key>
+            <PropertyRef Name="AccountTypeID" />
+          </Key>
+          <Property Name="AccountTypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AccountTypeName" Type="varchar" MaxLength="15" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ActiveSStanding">
+          <Key>
+            <PropertyRef Name="ActiveSStatusID" />
+          </Key>
+          <Property Name="ActiveSStatusID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ActiveSSType" Type="varchar" MaxLength="15" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AddLabReport">
+          <Key>
+            <PropertyRef Name="AddLabReportID" />
+          </Key>
+          <Property Name="AddLabReportID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PatientID" Type="int" Nullable="false" />
+          <Property Name="WhereOrder" Type="varchar" MaxLength="35" />
+          <Property Name="ResultDate" Type="date" Nullable="false" />
+          <Property Name="Type" Type="char" MaxLength="20" Nullable="false" />
+          <Property Name="Diagnoses" Type="varchar" MaxLength="40" Nullable="false" />
+          <Property Name="Lab" Type="varchar" MaxLength="30" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Address">
+          <Key>
+            <PropertyRef Name="AddressID" />
+          </Key>
+          <Property Name="AddressID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="StreetName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="City" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="County" Type="varchar" MaxLength="50" />
+          <Property Name="ZipCode" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AdjustmentCode">
+          <Key>
+            <PropertyRef Name="AdjustmentCodeID" />
+          </Key>
+          <Property Name="AdjustmentCodeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AdjustmentDescription" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AlchoholStanding">
+          <Key>
+            <PropertyRef Name="AlcoholStatusID" />
+          </Key>
+          <Property Name="AlcoholStatusID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AlcoholStatusType" Type="varchar" MaxLength="15" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AllergiesName">
+          <Key>
+            <PropertyRef Name="AllergiesID" />
+          </Key>
+          <Property Name="AllergiesID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AllergyTypeID" Type="int" Nullable="false" />
+          <Property Name="AllergyName" Type="varchar" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AllergyType">
+          <Key>
+            <PropertyRef Name="AllergyTypeID" />
+          </Key>
+          <Property Name="AllergyTypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AllergyTypeName" Type="varchar" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AspNetRoles">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="256" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AspNetUserClaims">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="ClaimType" Type="nvarchar(max)" />
+          <Property Name="ClaimValue" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="AspNetUserLogins">
+          <Key>
+            <PropertyRef Name="LoginProvider" />
+            <PropertyRef Name="ProviderKey" />
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="LoginProvider" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="ProviderKey" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AspNetUserRoles">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="RoleId" Type="nvarchar" MaxLength="128" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AspNetUsers">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="Email" Type="nvarchar" MaxLength="256" />
+          <Property Name="EmailConfirmed" Type="bit" Nullable="false" />
+          <Property Name="PasswordHash" Type="nvarchar(max)" />
+          <Property Name="SecurityStamp" Type="nvarchar(max)" />
+          <Property Name="PhoneNumber" Type="nvarchar(max)" />
+          <Property Name="PhoneNumberConfirmed" Type="bit" Nullable="false" />
+          <Property Name="TwoFactorEnabled" Type="bit" Nullable="false" />
+          <Property Name="LockoutEndDateUtc" Type="datetime" />
+          <Property Name="LockoutEnabled" Type="bit" Nullable="false" />
+          <Property Name="AccessFailedCount" Type="int" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="256" Nullable="false" />
+          <Property Name="EmployeeID" Type="int" />
+        </EntityType>
+        <EntityType Name="Billing">
+          <Key>
+            <PropertyRef Name="BillingID" />
+          </Key>
+          <Property Name="BillingID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CurrentProceduralTerminologyID" Type="int" />
+          <Property Name="Quantity" Type="int" />
+          <Property Name="Payment" Type="float" Nullable="false" />
+          <Property Name="AdjustmentCodeID" Type="int" />
+          <Property Name="PaymentModeID" Type="int" Nullable="false" />
+          <Property Name="DatePaid" Type="datetime" Nullable="false" />
+          <Property Name="PaidBy" Type="char" MaxLength="20" Nullable="false" />
+          <Property Name="Notes" Type="varchar(max)" />
+          <Property Name="PatientID" Type="int" Nullable="false" />
+          <Property Name="InsuranceID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CreateOrderInternal">
+          <Key>
+            <PropertyRef Name="OrderID" />
+          </Key>
+          <Property Name="OrderID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PatientID" Type="int" Nullable="false" />
+          <Property Name="OrderingProvider" Type="int" Nullable="false" />
+          <Property Name="Notes" Type="varchar(max)" />
+          <Property Name="Diagnoses" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Lab" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Type" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="ResponsibleOrder" Type="int" Nullable="false" />
+          <Property Name="Stat" Type="char" MaxLength="1" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CurrentProceduralTerminology">
+          <Key>
+            <PropertyRef Name="CurrentProceduralTerminologyID" />
+          </Key>
+          <Property Name="CurrentProceduralTerminologyID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CPTActualNumber" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="Description" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Demographics">
+          <Key>
+            <PropertyRef Name="DemographicID" />
+          </Key>
+          <Property Name="DemographicID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PatientID" Type="int" Nullable="false" />
+          <Property Name="OccupationID" Type="int" />
+          <Property Name="EthnicityID" Type="int" Nullable="false" />
+          <Property Name="RaceID" Type="int" Nullable="false" />
+          <Property Name="EmergencyContactID" Type="int" />
+          <Property Name="SmokingStatusID" Type="int" Nullable="false" />
+          <Property Name="AlcoholStatusID" Type="int" Nullable="false" />
+          <Property Name="ActiveSStatusID" Type="int" Nullable="false" />
+          <Property Name="DrugAbuseID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Drug">
+          <Key>
+            <PropertyRef Name="DrugID" />
+          </Key>
+          <Property Name="DrugID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DrugName" Type="varchar" MaxLength="50" />
+          <Property Name="Dose" Type="varchar" MaxLength="15" />
+          <Property Name="HowLong" Type="int" />
+        </EntityType>
+        <EntityType Name="DrugAbuse">
+          <Key>
+            <PropertyRef Name="DrugAbuseID" />
+          </Key>
+          <Property Name="DrugAbuseID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DrugAbuseType" Type="varchar" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <EntityType Name="EmergencyContact">
+          <Key>
+            <PropertyRef Name="EmergencyContactID" />
+          </Key>
+          <Property Name="EmergencyContactID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FirstName" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="MiddleName" Type="varchar" MaxLength="20" />
+          <Property Name="LastName" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="PhoneNumberID" Type="int" />
+          <Property Name="Email" Type="varchar" MaxLength="50" />
+          <Property Name="RelationshipID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Employee">
+          <Key>
+            <PropertyRef Name="EmployeeID" />
+          </Key>
+          <Property Name="EmployeeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FirstName" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="MiddleName" Type="varchar" MaxLength="20" />
+          <Property Name="LastName" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="AddressID" Type="int" Nullable="false" />
+          <Property Name="PhoneNumberID" Type="int" Nullable="false" />
+          <Property Name="Position" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Department" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="EmployeeSSN" Type="char" MaxLength="9" Nullable="false" />
+          <Property Name="PersonalEmail" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="EmployeeDateOfBirth" Type="date" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Ethnicity">
+          <Key>
+            <PropertyRef Name="EthnicityID" />
+          </Key>
+          <Property Name="EthnicityID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EthnicityName" Type="varchar" MaxLength="15" Nullable="false" />
+        </EntityType>
+        <EntityType Name="FamilyHistoryMedical">
+          <Key>
+            <PropertyRef Name="PatientFamilyProblemID" />
+          </Key>
+          <Property Name="PatientFamilyProblemID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ProblemID" Type="int" Nullable="false" />
+          <Property Name="RelationshipID" Type="int" Nullable="false" />
+          <Property Name="PatientID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Immunizations">
+          <Key>
+            <PropertyRef Name="ImmunizationID" />
+          </Key>
+          <Property Name="ImmunizationID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Vaccine" Type="varchar" MaxLength="15" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Insurance">
+          <Key>
+            <PropertyRef Name="InsuranceID" />
+          </Key>
+          <Property Name="InsuranceID" Type="int" Nullable="false" />
+          <Property Name="InsuranceName" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="InsurancePlan" Type="varchar" MaxLength="10" />
+          <Property Name="CoPay" Type="float" />
+          <Property Name="Deductibles" Type="float" />
+          <Property Name="PrimarySubscriber" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MaritalStanding">
+          <Key>
+            <PropertyRef Name="MaritalStatusID" />
+          </Key>
+          <Property Name="MaritalStatusID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MaritalStatusType" Type="varchar" MaxLength="15" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Modify">
+          <Key>
+            <PropertyRef Name="ModifyID" />
+          </Key>
+          <Property Name="ModifyID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ModifyType" Type="varchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityType Name="NotesMedicalStaff">
+          <Key>
+            <PropertyRef Name="NotesID" />
+          </Key>
+          <Property Name="NotesID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Date_Time_Recorded" Type="datetime" Nullable="false" />
+          <Property Name="Notes" Type="varchar(max)" />
+          <Property Name="PatientID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Occupation">
+          <Key>
+            <PropertyRef Name="OccupationID" />
+          </Key>
+          <Property Name="OccupationID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PositionTitle" Type="varchar" MaxLength="20" />
+          <Property Name="EmployerName" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="Patient">
+          <Key>
+            <PropertyRef Name="PatientID" />
+          </Key>
+          <Property Name="PatientID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FirstName" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="MiddleName" Type="varchar" MaxLength="20" />
+          <Property Name="LastName" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="AddressID" Type="int" Nullable="false" />
+          <Property Name="PhoneNumberID" Type="int" />
+          <Property Name="MaritalStatusID" Type="int" />
+          <Property Name="InsuranceID" Type="int" />
+          <Property Name="PatientSSN" Type="char" MaxLength="9" Nullable="false" />
+          <Property Name="Email" Type="varchar" MaxLength="20" />
+          <Property Name="DateOfBirth" Type="date" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PatientAllergies">
+          <Key>
+            <PropertyRef Name="PatientAllergyID" />
+          </Key>
+          <Property Name="PatientAllergyID" Type="int" Nullable="false" />
+          <Property Name="PatientID" Type="int" Nullable="false" />
+          <Property Name="AllergiesID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PatientDrug">
+          <Key>
+            <PropertyRef Name="PatientDrugID" />
+          </Key>
+          <Property Name="PatientDrugID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PatientID" Type="int" Nullable="false" />
+          <Property Name="DrugID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PatientEmergencyContact">
+          <Key>
+            <PropertyRef Name="PatientEmergencyContactID" />
+          </Key>
+          <Property Name="PatientEmergencyContactID" Type="int" Nullable="false" />
+          <Property Name="PatientID" Type="int" />
+          <Property Name="EmergencyContactID" Type="int" />
+        </EntityType>
+        <EntityType Name="PatientImmunization">
+          <Key>
+            <PropertyRef Name="PatientImmunizationID" />
+          </Key>
+          <Property Name="PatientImmunizationID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PatientID" Type="int" Nullable="false" />
+          <Property Name="ImmunizationID" Type="int" Nullable="false" />
+          <Property Name="DateGiven" Type="date" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PatientInsurance">
+          <Key>
+            <PropertyRef Name="PatientInsuranceID" />
+          </Key>
+          <Property Name="PatientInsuranceID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PatientID" Type="int" Nullable="false" />
+          <Property Name="InsuranceID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PatientProblems">
+          <Key>
+            <PropertyRef Name="PatientProblemID" />
+          </Key>
+          <Property Name="PatientProblemID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PatientID" Type="int" Nullable="false" />
+          <Property Name="ProblemID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PaymentMode">
+          <Key>
+            <PropertyRef Name="PaymentModeID" />
+          </Key>
+          <Property Name="PaymentModeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PaymentModeType" Type="varchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PhoneNumber">
+          <Key>
+            <PropertyRef Name="PhoneNumberID" />
+          </Key>
+          <Property Name="PhoneNumberID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PhoneNumber" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="PhoneTypeID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PhoneType">
+          <Key>
+            <PropertyRef Name="PhoneTypeID" />
+          </Key>
+          <Property Name="PhoneTypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PhoneTypeName" Type="varchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Problems">
+          <Key>
+            <PropertyRef Name="ProblemID" />
+          </Key>
+          <Property Name="ProblemID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ProblemsName" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Race">
+          <Key>
+            <PropertyRef Name="RaceID" />
+          </Key>
+          <Property Name="RaceID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RaceName" Type="varchar" MaxLength="15" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Relationship">
+          <Key>
+            <PropertyRef Name="RelationshipID" />
+          </Key>
+          <Property Name="RelationshipID" Type="int" Nullable="false" />
+          <Property Name="RelationshipType" Type="varchar" MaxLength="15" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SmokingStanding">
+          <Key>
+            <PropertyRef Name="SmokingStatusID" />
+          </Key>
+          <Property Name="SmokingStatusID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SmokingStatusType" Type="varchar" MaxLength="15" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Vitals">
+          <Key>
+            <PropertyRef Name="VitalID" />
+          </Key>
+          <Property Name="VitalID" Type="int" Nullable="false" />
+          <Property Name="DateAndTime" Type="datetime" Nullable="false" />
+          <Property Name="BloodPressure" Type="int" Nullable="false" />
+          <Property Name="Heart_Rate" Type="int" Nullable="false" />
+          <Property Name="Respiratory_Rate" Type="int" Nullable="false" />
+          <Property Name="Height_Length" Type="int" Nullable="false" />
+          <Property Name="Weight" Type="float" Nullable="false" />
+          <Property Name="Temperature" Type="int" Nullable="false" />
+          <Property Name="Comments" Type="varchar(max)" />
+          <Property Name="PatientID" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="AccountTypeID_FK_in_Accounts_Admin">
+          <End Role="AccountType" Type="Self.AccountType" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AccountsAdmin" Type="Self.AccountsAdmin" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AccountType">
+              <PropertyRef Name="AccountTypeID" />
+            </Principal>
+            <Dependent Role="AccountsAdmin">
+              <PropertyRef Name="AccountTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ActiveSStatusID_FK_in_Demographics">
+          <End Role="ActiveSStanding" Type="Self.ActiveSStanding" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Demographics" Type="Self.Demographics" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ActiveSStanding">
+              <PropertyRef Name="ActiveSStatusID" />
+            </Principal>
+            <Dependent Role="Demographics">
+              <PropertyRef Name="ActiveSStatusID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="AddressID_FK_in_Employee">
+          <End Role="Address" Type="Self.Address" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Employee" Type="Self.Employee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Address">
+              <PropertyRef Name="AddressID" />
+            </Principal>
+            <Dependent Role="Employee">
+              <PropertyRef Name="AddressID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="AddressID_FK_in_Patient">
+          <End Role="Address" Type="Self.Address" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Patient" Type="Self.Patient" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Address">
+              <PropertyRef Name="AddressID" />
+            </Principal>
+            <Dependent Role="Patient">
+              <PropertyRef Name="AddressID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="AdjustmentCodeID">
+          <End Role="AdjustmentCode" Type="Self.AdjustmentCode" Multiplicity="0..1" />
+          <End Role="Billing" Type="Self.Billing" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AdjustmentCode">
+              <PropertyRef Name="AdjustmentCodeID" />
+            </Principal>
+            <Dependent Role="Billing">
+              <PropertyRef Name="AdjustmentCodeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="AlcoholStatusID_FK_in_Demographics">
+          <End Role="AlchoholStanding" Type="Self.AlchoholStanding" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Demographics" Type="Self.Demographics" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AlchoholStanding">
+              <PropertyRef Name="AlcoholStatusID" />
+            </Principal>
+            <Dependent Role="Demographics">
+              <PropertyRef Name="AlcoholStatusID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="AllergyTypeID_FK_in_Allergies">
+          <End Role="AllergyType" Type="Self.AllergyType" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AllergiesName" Type="Self.AllergiesName" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AllergyType">
+              <PropertyRef Name="AllergyTypeID" />
+            </Principal>
+            <Dependent Role="AllergiesName">
+              <PropertyRef Name="AllergyTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CPTID_FK_in_CPT">
+          <End Role="CurrentProceduralTerminology" Type="Self.CurrentProceduralTerminology" Multiplicity="0..1" />
+          <End Role="Billing" Type="Self.Billing" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CurrentProceduralTerminology">
+              <PropertyRef Name="CurrentProceduralTerminologyID" />
+            </Principal>
+            <Dependent Role="Billing">
+              <PropertyRef Name="CurrentProceduralTerminologyID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DrugAbuseID_in_FK_Demographics">
+          <End Role="DrugAbuse" Type="Self.DrugAbuse" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Demographics" Type="Self.Demographics" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DrugAbuse">
+              <PropertyRef Name="DrugAbuseID" />
+            </Principal>
+            <Dependent Role="Demographics">
+              <PropertyRef Name="DrugAbuseID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DrugID_FK_in_PatientDrug">
+          <End Role="Drug" Type="Self.Drug" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="PatientDrug" Type="Self.PatientDrug" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Drug">
+              <PropertyRef Name="DrugID" />
+            </Principal>
+            <Dependent Role="PatientDrug">
+              <PropertyRef Name="DrugID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="EmergencyContactID_FK_in_Demographics">
+          <End Role="EmergencyContact" Type="Self.EmergencyContact" Multiplicity="0..1" />
+          <End Role="Demographics" Type="Self.Demographics" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EmergencyContact">
+              <PropertyRef Name="EmergencyContactID" />
+            </Principal>
+            <Dependent Role="Demographics">
+              <PropertyRef Name="EmergencyContactID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="EmergencyContactID_FK_in_PatientEmergencyContact">
+          <End Role="EmergencyContact" Type="Self.EmergencyContact" Multiplicity="0..1" />
+          <End Role="PatientEmergencyContact" Type="Self.PatientEmergencyContact" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EmergencyContact">
+              <PropertyRef Name="EmergencyContactID" />
+            </Principal>
+            <Dependent Role="PatientEmergencyContact">
+              <PropertyRef Name="EmergencyContactID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="EmployeeID_FK_Admin">
+          <End Role="Employee" Type="Self.Employee" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AccountsAdmin" Type="Self.AccountsAdmin" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="EmployeeID" />
+            </Principal>
+            <Dependent Role="AccountsAdmin">
+              <PropertyRef Name="EmployeeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="EmployeeID_FK_AspNetUsers">
+          <End Role="Employee" Type="Self.Employee" Multiplicity="0..1" />
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="EmployeeID" />
+            </Principal>
+            <Dependent Role="AspNetUsers">
+              <PropertyRef Name="EmployeeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="EmployeeID_OrderingProvider_in_CreateOrder">
+          <End Role="Employee" Type="Self.Employee" Multiplicity="1" />
+          <End Role="CreateOrderInternal" Type="Self.CreateOrderInternal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="EmployeeID" />
+            </Principal>
+            <Dependent Role="CreateOrderInternal">
+              <PropertyRef Name="OrderingProvider" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="EthnicityID_FK_in_Demographics">
+          <End Role="Ethnicity" Type="Self.Ethnicity" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Demographics" Type="Self.Demographics" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ethnicity">
+              <PropertyRef Name="EthnicityID" />
+            </Principal>
+            <Dependent Role="Demographics">
+              <PropertyRef Name="EthnicityID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserClaims" Type="Self.AspNetUserClaims" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserClaims">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserLogins" Type="Self.AspNetUserLogins" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserLogins">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId">
+          <End Role="AspNetRoles" Type="Self.AspNetRoles" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserRoles" Type="Self.AspNetUserRoles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetRoles">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserRoles">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserRoles" Type="Self.AspNetUserRoles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserRoles">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PatientAllergies_Allergies">
+          <End Role="AllergiesName" Type="Self.AllergiesName" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="PatientAllergies" Type="Self.PatientAllergies" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AllergiesName">
+              <PropertyRef Name="AllergiesID" />
+            </Principal>
+            <Dependent Role="PatientAllergies">
+              <PropertyRef Name="AllergiesID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ImmunizationID_FK_in_PatientImmunization">
+          <End Role="Immunizations" Type="Self.Immunizations" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="PatientImmunization" Type="Self.PatientImmunization" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Immunizations">
+              <PropertyRef Name="ImmunizationID" />
+            </Principal>
+            <Dependent Role="PatientImmunization">
+              <PropertyRef Name="ImmunizationID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="InsuranceID_FK_in_Billing">
+          <End Role="Insurance" Type="Self.Insurance" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Billing" Type="Self.Billing" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Insurance">
+              <PropertyRef Name="InsuranceID" />
+            </Principal>
+            <Dependent Role="Billing">
+              <PropertyRef Name="InsuranceID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="InsuranceID_FK_in_Patient">
+          <End Role="Insurance" Type="Self.Insurance" Multiplicity="0..1" />
+          <End Role="Patient" Type="Self.Patient" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Insurance">
+              <PropertyRef Name="InsuranceID" />
+            </Principal>
+            <Dependent Role="Patient">
+              <PropertyRef Name="InsuranceID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="InsuranceID_ForeignK_in_PatientInsurance">
+          <End Role="Insurance" Type="Self.Insurance" Multiplicity="1" />
+          <End Role="PatientInsurance" Type="Self.PatientInsurance" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Insurance">
+              <PropertyRef Name="InsuranceID" />
+            </Principal>
+            <Dependent Role="PatientInsurance">
+              <PropertyRef Name="InsuranceID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="MaritalStatusID_FK_in_Patient">
+          <End Role="MaritalStanding" Type="Self.MaritalStanding" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Patient" Type="Self.Patient" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MaritalStanding">
+              <PropertyRef Name="MaritalStatusID" />
+            </Principal>
+            <Dependent Role="Patient">
+              <PropertyRef Name="MaritalStatusID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ModifyID_FK_in_Accounts_Admin">
+          <End Role="Modify" Type="Self.Modify" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AccountsAdmin" Type="Self.AccountsAdmin" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Modify">
+              <PropertyRef Name="ModifyID" />
+            </Principal>
+            <Dependent Role="AccountsAdmin">
+              <PropertyRef Name="ModifyID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="OccupationID_FK_in_Demographics">
+          <End Role="Occupation" Type="Self.Occupation" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Demographics" Type="Self.Demographics" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Occupation">
+              <PropertyRef Name="OccupationID" />
+            </Principal>
+            <Dependent Role="Demographics">
+              <PropertyRef Name="OccupationID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PatientID_FK_in_AddLabReport">
+          <End Role="Patient" Type="Self.Patient" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AddLabReport" Type="Self.AddLabReport" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Patient">
+              <PropertyRef Name="PatientID" />
+            </Principal>
+            <Dependent Role="AddLabReport">
+              <PropertyRef Name="PatientID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PatientID_FK_in_Billing">
+          <End Role="Patient" Type="Self.Patient" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Billing" Type="Self.Billing" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Patient">
+              <PropertyRef Name="PatientID" />
+            </Principal>
+            <Dependent Role="Billing">
+              <PropertyRef Name="PatientID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PatientID_FK_in_CreateOrder">
+          <End Role="Patient" Type="Self.Patient" Multiplicity="1" />
+          <End Role="CreateOrderInternal" Type="Self.CreateOrderInternal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Patient">
+              <PropertyRef Name="PatientID" />
+            </Principal>
+            <Dependent Role="CreateOrderInternal">
+              <PropertyRef Name="PatientID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PatientID_FK_in_Demographics">
+          <End Role="Patient" Type="Self.Patient" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Demographics" Type="Self.Demographics" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Patient">
+              <PropertyRef Name="PatientID" />
+            </Principal>
+            <Dependent Role="Demographics">
+              <PropertyRef Name="PatientID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PatientID_FK_in_FamilyHistory">
+          <End Role="Patient" Type="Self.Patient" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="FamilyHistoryMedical" Type="Self.FamilyHistoryMedical" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Patient">
+              <PropertyRef Name="PatientID" />
+            </Principal>
+            <Dependent Role="FamilyHistoryMedical">
+              <PropertyRef Name="PatientID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PatientID_FK_in_Notes">
+          <End Role="Patient" Type="Self.Patient" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="NotesMedicalStaff" Type="Self.NotesMedicalStaff" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Patient">
+              <PropertyRef Name="PatientID" />
+            </Principal>
+            <Dependent Role="NotesMedicalStaff">
+              <PropertyRef Name="PatientID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PatientID_FK_in_PatientAllergies">
+          <End Role="Patient" Type="Self.Patient" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="PatientAllergies" Type="Self.PatientAllergies" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Patient">
+              <PropertyRef Name="PatientID" />
+            </Principal>
+            <Dependent Role="PatientAllergies">
+              <PropertyRef Name="PatientID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PatientID_FK_in_PatientDrug">
+          <End Role="Patient" Type="Self.Patient" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="PatientDrug" Type="Self.PatientDrug" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Patient">
+              <PropertyRef Name="PatientID" />
+            </Principal>
+            <Dependent Role="PatientDrug">
+              <PropertyRef Name="PatientID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PatientID_FK_in_PatientEmergencyContact">
+          <End Role="Patient" Type="Self.Patient" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="PatientEmergencyContact" Type="Self.PatientEmergencyContact" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Patient">
+              <PropertyRef Name="PatientID" />
+            </Principal>
+            <Dependent Role="PatientEmergencyContact">
+              <PropertyRef Name="PatientID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PatientID_FK_in_PatientImmunization">
+          <End Role="Patient" Type="Self.Patient" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="PatientImmunization" Type="Self.PatientImmunization" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Patient">
+              <PropertyRef Name="PatientID" />
+            </Principal>
+            <Dependent Role="PatientImmunization">
+              <PropertyRef Name="PatientID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PatientID_FK_in_PatientProblems">
+          <End Role="Patient" Type="Self.Patient" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="PatientProblems" Type="Self.PatientProblems" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Patient">
+              <PropertyRef Name="PatientID" />
+            </Principal>
+            <Dependent Role="PatientProblems">
+              <PropertyRef Name="PatientID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PatientID_FK_in_Vitals">
+          <End Role="Patient" Type="Self.Patient" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Vitals" Type="Self.Vitals" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Patient">
+              <PropertyRef Name="PatientID" />
+            </Principal>
+            <Dependent Role="Vitals">
+              <PropertyRef Name="PatientID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PatientID_ForeignK_in_PatientInsurance">
+          <End Role="Patient" Type="Self.Patient" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="PatientInsurance" Type="Self.PatientInsurance" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Patient">
+              <PropertyRef Name="PatientID" />
+            </Principal>
+            <Dependent Role="PatientInsurance">
+              <PropertyRef Name="PatientID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PaymentModeID_FK_Billing">
+          <End Role="PaymentMode" Type="Self.PaymentMode" Multiplicity="1" />
+          <End Role="Billing" Type="Self.Billing" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PaymentMode">
+              <PropertyRef Name="PaymentModeID" />
+            </Principal>
+            <Dependent Role="Billing">
+              <PropertyRef Name="PaymentModeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PhoneNumberID_FK_Employee">
+          <End Role="PhoneNumber" Type="Self.PhoneNumber" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Employee" Type="Self.Employee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PhoneNumber">
+              <PropertyRef Name="PhoneNumberID" />
+            </Principal>
+            <Dependent Role="Employee">
+              <PropertyRef Name="PhoneNumberID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PhoneNumberID_FK_in_EmergencyContact">
+          <End Role="PhoneNumber" Type="Self.PhoneNumber" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="EmergencyContact" Type="Self.EmergencyContact" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PhoneNumber">
+              <PropertyRef Name="PhoneNumberID" />
+            </Principal>
+            <Dependent Role="EmergencyContact">
+              <PropertyRef Name="PhoneNumberID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PhoneNumberID_FK_in_Patient">
+          <End Role="PhoneNumber" Type="Self.PhoneNumber" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Patient" Type="Self.Patient" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PhoneNumber">
+              <PropertyRef Name="PhoneNumberID" />
+            </Principal>
+            <Dependent Role="Patient">
+              <PropertyRef Name="PhoneNumberID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PhoneTypeID_FK_in_PhoneNumber">
+          <End Role="PhoneType" Type="Self.PhoneType" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="PhoneNumber" Type="Self.PhoneNumber" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PhoneType">
+              <PropertyRef Name="PhoneTypeID" />
+            </Principal>
+            <Dependent Role="PhoneNumber">
+              <PropertyRef Name="PhoneTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ProblemID_FK_in_FamilyHistory">
+          <End Role="Problems" Type="Self.Problems" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="FamilyHistoryMedical" Type="Self.FamilyHistoryMedical" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Problems">
+              <PropertyRef Name="ProblemID" />
+            </Principal>
+            <Dependent Role="FamilyHistoryMedical">
+              <PropertyRef Name="ProblemID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ProblemID_FK_in_PatientsProblem">
+          <End Role="Problems" Type="Self.Problems" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="PatientProblems" Type="Self.PatientProblems" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Problems">
+              <PropertyRef Name="ProblemID" />
+            </Principal>
+            <Dependent Role="PatientProblems">
+              <PropertyRef Name="ProblemID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="RaceID_FK_in_Demographics">
+          <End Role="Race" Type="Self.Race" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Demographics" Type="Self.Demographics" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Race">
+              <PropertyRef Name="RaceID" />
+            </Principal>
+            <Dependent Role="Demographics">
+              <PropertyRef Name="RaceID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="RelationshipID_FK_in_EmergencyContact">
+          <End Role="Relationship" Type="Self.Relationship" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="EmergencyContact" Type="Self.EmergencyContact" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Relationship">
+              <PropertyRef Name="RelationshipID" />
+            </Principal>
+            <Dependent Role="EmergencyContact">
+              <PropertyRef Name="RelationshipID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="RelationshipID_FK_in_FamilyHistory">
+          <End Role="Relationship" Type="Self.Relationship" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="FamilyHistoryMedical" Type="Self.FamilyHistoryMedical" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Relationship">
+              <PropertyRef Name="RelationshipID" />
+            </Principal>
+            <Dependent Role="FamilyHistoryMedical">
+              <PropertyRef Name="RelationshipID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ResponsibleProvider_EmployeeID_FK_CreateOrder">
+          <End Role="Employee" Type="Self.Employee" Multiplicity="1" />
+          <End Role="CreateOrderInternal" Type="Self.CreateOrderInternal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="EmployeeID" />
+            </Principal>
+            <Dependent Role="CreateOrderInternal">
+              <PropertyRef Name="ResponsibleOrder" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SmokingStatus_FK_in_Demographics">
+          <End Role="SmokingStanding" Type="Self.SmokingStanding" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Demographics" Type="Self.Demographics" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SmokingStanding">
+              <PropertyRef Name="SmokingStatusID" />
+            </Principal>
+            <Dependent Role="Demographics">
+              <PropertyRef Name="SmokingStatusID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="HEAP_540ModelStoreContainer">
+          <EntitySet Name="AccountsAdmin" EntityType="Self.AccountsAdmin" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AccountType" EntityType="Self.AccountType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ActiveSStanding" EntityType="Self.ActiveSStanding" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AddLabReport" EntityType="Self.AddLabReport" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Address" EntityType="Self.Address" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AdjustmentCode" EntityType="Self.AdjustmentCode" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AlchoholStanding" EntityType="Self.AlchoholStanding" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AllergiesName" EntityType="Self.AllergiesName" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AllergyType" EntityType="Self.AllergyType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetRoles" EntityType="Self.AspNetRoles" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetUserClaims" EntityType="Self.AspNetUserClaims" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetUserLogins" EntityType="Self.AspNetUserLogins" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetUserRoles" EntityType="Self.AspNetUserRoles" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetUsers" EntityType="Self.AspNetUsers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Billing" EntityType="Self.Billing" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CreateOrderInternal" EntityType="Self.CreateOrderInternal" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CurrentProceduralTerminology" EntityType="Self.CurrentProceduralTerminology" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Demographics" EntityType="Self.Demographics" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Drug" EntityType="Self.Drug" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DrugAbuse" EntityType="Self.DrugAbuse" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EmergencyContact" EntityType="Self.EmergencyContact" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Employee" EntityType="Self.Employee" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Ethnicity" EntityType="Self.Ethnicity" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FamilyHistoryMedical" EntityType="Self.FamilyHistoryMedical" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Immunizations" EntityType="Self.Immunizations" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Insurance" EntityType="Self.Insurance" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MaritalStanding" EntityType="Self.MaritalStanding" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Modify" EntityType="Self.Modify" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NotesMedicalStaff" EntityType="Self.NotesMedicalStaff" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Occupation" EntityType="Self.Occupation" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Patient" EntityType="Self.Patient" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PatientAllergies" EntityType="Self.PatientAllergies" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PatientDrug" EntityType="Self.PatientDrug" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PatientEmergencyContact" EntityType="Self.PatientEmergencyContact" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PatientImmunization" EntityType="Self.PatientImmunization" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PatientInsurance" EntityType="Self.PatientInsurance" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PatientProblems" EntityType="Self.PatientProblems" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PaymentMode" EntityType="Self.PaymentMode" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PhoneNumber" EntityType="Self.PhoneNumber" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PhoneType" EntityType="Self.PhoneType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Problems" EntityType="Self.Problems" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Race" EntityType="Self.Race" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Relationship" EntityType="Self.Relationship" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SmokingStanding" EntityType="Self.SmokingStanding" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Vitals" EntityType="Self.Vitals" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="__MigrationHistory" EntityType="Self.__MigrationHistory" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [__MigrationHistory].[MigrationId] AS [MigrationId], 
+    [__MigrationHistory].[ContextKey] AS [ContextKey], 
+    [__MigrationHistory].[Model] AS [Model], 
+    [__MigrationHistory].[ProductVersion] AS [ProductVersion]
+    FROM [dbo].[__MigrationHistory] AS [__MigrationHistory]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="AccountTypeID_FK_in_Accounts_Admin" Association="Self.AccountTypeID_FK_in_Accounts_Admin">
+            <End Role="AccountType" EntitySet="AccountType" />
+            <End Role="AccountsAdmin" EntitySet="AccountsAdmin" />
+          </AssociationSet>
+          <AssociationSet Name="ActiveSStatusID_FK_in_Demographics" Association="Self.ActiveSStatusID_FK_in_Demographics">
+            <End Role="ActiveSStanding" EntitySet="ActiveSStanding" />
+            <End Role="Demographics" EntitySet="Demographics" />
+          </AssociationSet>
+          <AssociationSet Name="AddressID_FK_in_Employee" Association="Self.AddressID_FK_in_Employee">
+            <End Role="Address" EntitySet="Address" />
+            <End Role="Employee" EntitySet="Employee" />
+          </AssociationSet>
+          <AssociationSet Name="AddressID_FK_in_Patient" Association="Self.AddressID_FK_in_Patient">
+            <End Role="Address" EntitySet="Address" />
+            <End Role="Patient" EntitySet="Patient" />
+          </AssociationSet>
+          <AssociationSet Name="AdjustmentCodeID" Association="Self.AdjustmentCodeID">
+            <End Role="AdjustmentCode" EntitySet="AdjustmentCode" />
+            <End Role="Billing" EntitySet="Billing" />
+          </AssociationSet>
+          <AssociationSet Name="AlcoholStatusID_FK_in_Demographics" Association="Self.AlcoholStatusID_FK_in_Demographics">
+            <End Role="AlchoholStanding" EntitySet="AlchoholStanding" />
+            <End Role="Demographics" EntitySet="Demographics" />
+          </AssociationSet>
+          <AssociationSet Name="AllergyTypeID_FK_in_Allergies" Association="Self.AllergyTypeID_FK_in_Allergies">
+            <End Role="AllergyType" EntitySet="AllergyType" />
+            <End Role="AllergiesName" EntitySet="AllergiesName" />
+          </AssociationSet>
+          <AssociationSet Name="CPTID_FK_in_CPT" Association="Self.CPTID_FK_in_CPT">
+            <End Role="CurrentProceduralTerminology" EntitySet="CurrentProceduralTerminology" />
+            <End Role="Billing" EntitySet="Billing" />
+          </AssociationSet>
+          <AssociationSet Name="DrugAbuseID_in_FK_Demographics" Association="Self.DrugAbuseID_in_FK_Demographics">
+            <End Role="DrugAbuse" EntitySet="DrugAbuse" />
+            <End Role="Demographics" EntitySet="Demographics" />
+          </AssociationSet>
+          <AssociationSet Name="DrugID_FK_in_PatientDrug" Association="Self.DrugID_FK_in_PatientDrug">
+            <End Role="Drug" EntitySet="Drug" />
+            <End Role="PatientDrug" EntitySet="PatientDrug" />
+          </AssociationSet>
+          <AssociationSet Name="EmergencyContactID_FK_in_Demographics" Association="Self.EmergencyContactID_FK_in_Demographics">
+            <End Role="EmergencyContact" EntitySet="EmergencyContact" />
+            <End Role="Demographics" EntitySet="Demographics" />
+          </AssociationSet>
+          <AssociationSet Name="EmergencyContactID_FK_in_PatientEmergencyContact" Association="Self.EmergencyContactID_FK_in_PatientEmergencyContact">
+            <End Role="EmergencyContact" EntitySet="EmergencyContact" />
+            <End Role="PatientEmergencyContact" EntitySet="PatientEmergencyContact" />
+          </AssociationSet>
+          <AssociationSet Name="EmployeeID_FK_Admin" Association="Self.EmployeeID_FK_Admin">
+            <End Role="Employee" EntitySet="Employee" />
+            <End Role="AccountsAdmin" EntitySet="AccountsAdmin" />
+          </AssociationSet>
+          <AssociationSet Name="EmployeeID_FK_AspNetUsers" Association="Self.EmployeeID_FK_AspNetUsers">
+            <End Role="Employee" EntitySet="Employee" />
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+          </AssociationSet>
+          <AssociationSet Name="EmployeeID_OrderingProvider_in_CreateOrder" Association="Self.EmployeeID_OrderingProvider_in_CreateOrder">
+            <End Role="Employee" EntitySet="Employee" />
+            <End Role="CreateOrderInternal" EntitySet="CreateOrderInternal" />
+          </AssociationSet>
+          <AssociationSet Name="EthnicityID_FK_in_Demographics" Association="Self.EthnicityID_FK_in_Demographics">
+            <End Role="Ethnicity" EntitySet="Ethnicity" />
+            <End Role="Demographics" EntitySet="Demographics" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserClaims" EntitySet="AspNetUserClaims" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserLogins" EntitySet="AspNetUserLogins" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId" Association="Self.FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId">
+            <End Role="AspNetRoles" EntitySet="AspNetRoles" />
+            <End Role="AspNetUserRoles" EntitySet="AspNetUserRoles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserRoles" EntitySet="AspNetUserRoles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PatientAllergies_Allergies" Association="Self.FK_PatientAllergies_Allergies">
+            <End Role="AllergiesName" EntitySet="AllergiesName" />
+            <End Role="PatientAllergies" EntitySet="PatientAllergies" />
+          </AssociationSet>
+          <AssociationSet Name="ImmunizationID_FK_in_PatientImmunization" Association="Self.ImmunizationID_FK_in_PatientImmunization">
+            <End Role="Immunizations" EntitySet="Immunizations" />
+            <End Role="PatientImmunization" EntitySet="PatientImmunization" />
+          </AssociationSet>
+          <AssociationSet Name="InsuranceID_FK_in_Billing" Association="Self.InsuranceID_FK_in_Billing">
+            <End Role="Insurance" EntitySet="Insurance" />
+            <End Role="Billing" EntitySet="Billing" />
+          </AssociationSet>
+          <AssociationSet Name="InsuranceID_FK_in_Patient" Association="Self.InsuranceID_FK_in_Patient">
+            <End Role="Insurance" EntitySet="Insurance" />
+            <End Role="Patient" EntitySet="Patient" />
+          </AssociationSet>
+          <AssociationSet Name="InsuranceID_ForeignK_in_PatientInsurance" Association="Self.InsuranceID_ForeignK_in_PatientInsurance">
+            <End Role="Insurance" EntitySet="Insurance" />
+            <End Role="PatientInsurance" EntitySet="PatientInsurance" />
+          </AssociationSet>
+          <AssociationSet Name="MaritalStatusID_FK_in_Patient" Association="Self.MaritalStatusID_FK_in_Patient">
+            <End Role="MaritalStanding" EntitySet="MaritalStanding" />
+            <End Role="Patient" EntitySet="Patient" />
+          </AssociationSet>
+          <AssociationSet Name="ModifyID_FK_in_Accounts_Admin" Association="Self.ModifyID_FK_in_Accounts_Admin">
+            <End Role="Modify" EntitySet="Modify" />
+            <End Role="AccountsAdmin" EntitySet="AccountsAdmin" />
+          </AssociationSet>
+          <AssociationSet Name="OccupationID_FK_in_Demographics" Association="Self.OccupationID_FK_in_Demographics">
+            <End Role="Occupation" EntitySet="Occupation" />
+            <End Role="Demographics" EntitySet="Demographics" />
+          </AssociationSet>
+          <AssociationSet Name="PatientID_FK_in_AddLabReport" Association="Self.PatientID_FK_in_AddLabReport">
+            <End Role="Patient" EntitySet="Patient" />
+            <End Role="AddLabReport" EntitySet="AddLabReport" />
+          </AssociationSet>
+          <AssociationSet Name="PatientID_FK_in_Billing" Association="Self.PatientID_FK_in_Billing">
+            <End Role="Patient" EntitySet="Patient" />
+            <End Role="Billing" EntitySet="Billing" />
+          </AssociationSet>
+          <AssociationSet Name="PatientID_FK_in_CreateOrder" Association="Self.PatientID_FK_in_CreateOrder">
+            <End Role="Patient" EntitySet="Patient" />
+            <End Role="CreateOrderInternal" EntitySet="CreateOrderInternal" />
+          </AssociationSet>
+          <AssociationSet Name="PatientID_FK_in_Demographics" Association="Self.PatientID_FK_in_Demographics">
+            <End Role="Patient" EntitySet="Patient" />
+            <End Role="Demographics" EntitySet="Demographics" />
+          </AssociationSet>
+          <AssociationSet Name="PatientID_FK_in_FamilyHistory" Association="Self.PatientID_FK_in_FamilyHistory">
+            <End Role="Patient" EntitySet="Patient" />
+            <End Role="FamilyHistoryMedical" EntitySet="FamilyHistoryMedical" />
+          </AssociationSet>
+          <AssociationSet Name="PatientID_FK_in_Notes" Association="Self.PatientID_FK_in_Notes">
+            <End Role="Patient" EntitySet="Patient" />
+            <End Role="NotesMedicalStaff" EntitySet="NotesMedicalStaff" />
+          </AssociationSet>
+          <AssociationSet Name="PatientID_FK_in_PatientAllergies" Association="Self.PatientID_FK_in_PatientAllergies">
+            <End Role="Patient" EntitySet="Patient" />
+            <End Role="PatientAllergies" EntitySet="PatientAllergies" />
+          </AssociationSet>
+          <AssociationSet Name="PatientID_FK_in_PatientDrug" Association="Self.PatientID_FK_in_PatientDrug">
+            <End Role="Patient" EntitySet="Patient" />
+            <End Role="PatientDrug" EntitySet="PatientDrug" />
+          </AssociationSet>
+          <AssociationSet Name="PatientID_FK_in_PatientEmergencyContact" Association="Self.PatientID_FK_in_PatientEmergencyContact">
+            <End Role="Patient" EntitySet="Patient" />
+            <End Role="PatientEmergencyContact" EntitySet="PatientEmergencyContact" />
+          </AssociationSet>
+          <AssociationSet Name="PatientID_FK_in_PatientImmunization" Association="Self.PatientID_FK_in_PatientImmunization">
+            <End Role="Patient" EntitySet="Patient" />
+            <End Role="PatientImmunization" EntitySet="PatientImmunization" />
+          </AssociationSet>
+          <AssociationSet Name="PatientID_FK_in_PatientProblems" Association="Self.PatientID_FK_in_PatientProblems">
+            <End Role="Patient" EntitySet="Patient" />
+            <End Role="PatientProblems" EntitySet="PatientProblems" />
+          </AssociationSet>
+          <AssociationSet Name="PatientID_FK_in_Vitals" Association="Self.PatientID_FK_in_Vitals">
+            <End Role="Patient" EntitySet="Patient" />
+            <End Role="Vitals" EntitySet="Vitals" />
+          </AssociationSet>
+          <AssociationSet Name="PatientID_ForeignK_in_PatientInsurance" Association="Self.PatientID_ForeignK_in_PatientInsurance">
+            <End Role="Patient" EntitySet="Patient" />
+            <End Role="PatientInsurance" EntitySet="PatientInsurance" />
+          </AssociationSet>
+          <AssociationSet Name="PaymentModeID_FK_Billing" Association="Self.PaymentModeID_FK_Billing">
+            <End Role="PaymentMode" EntitySet="PaymentMode" />
+            <End Role="Billing" EntitySet="Billing" />
+          </AssociationSet>
+          <AssociationSet Name="PhoneNumberID_FK_Employee" Association="Self.PhoneNumberID_FK_Employee">
+            <End Role="PhoneNumber" EntitySet="PhoneNumber" />
+            <End Role="Employee" EntitySet="Employee" />
+          </AssociationSet>
+          <AssociationSet Name="PhoneNumberID_FK_in_EmergencyContact" Association="Self.PhoneNumberID_FK_in_EmergencyContact">
+            <End Role="PhoneNumber" EntitySet="PhoneNumber" />
+            <End Role="EmergencyContact" EntitySet="EmergencyContact" />
+          </AssociationSet>
+          <AssociationSet Name="PhoneNumberID_FK_in_Patient" Association="Self.PhoneNumberID_FK_in_Patient">
+            <End Role="PhoneNumber" EntitySet="PhoneNumber" />
+            <End Role="Patient" EntitySet="Patient" />
+          </AssociationSet>
+          <AssociationSet Name="PhoneTypeID_FK_in_PhoneNumber" Association="Self.PhoneTypeID_FK_in_PhoneNumber">
+            <End Role="PhoneType" EntitySet="PhoneType" />
+            <End Role="PhoneNumber" EntitySet="PhoneNumber" />
+          </AssociationSet>
+          <AssociationSet Name="ProblemID_FK_in_FamilyHistory" Association="Self.ProblemID_FK_in_FamilyHistory">
+            <End Role="Problems" EntitySet="Problems" />
+            <End Role="FamilyHistoryMedical" EntitySet="FamilyHistoryMedical" />
+          </AssociationSet>
+          <AssociationSet Name="ProblemID_FK_in_PatientsProblem" Association="Self.ProblemID_FK_in_PatientsProblem">
+            <End Role="Problems" EntitySet="Problems" />
+            <End Role="PatientProblems" EntitySet="PatientProblems" />
+          </AssociationSet>
+          <AssociationSet Name="RaceID_FK_in_Demographics" Association="Self.RaceID_FK_in_Demographics">
+            <End Role="Race" EntitySet="Race" />
+            <End Role="Demographics" EntitySet="Demographics" />
+          </AssociationSet>
+          <AssociationSet Name="RelationshipID_FK_in_EmergencyContact" Association="Self.RelationshipID_FK_in_EmergencyContact">
+            <End Role="Relationship" EntitySet="Relationship" />
+            <End Role="EmergencyContact" EntitySet="EmergencyContact" />
+          </AssociationSet>
+          <AssociationSet Name="RelationshipID_FK_in_FamilyHistory" Association="Self.RelationshipID_FK_in_FamilyHistory">
+            <End Role="Relationship" EntitySet="Relationship" />
+            <End Role="FamilyHistoryMedical" EntitySet="FamilyHistoryMedical" />
+          </AssociationSet>
+          <AssociationSet Name="ResponsibleProvider_EmployeeID_FK_CreateOrder" Association="Self.ResponsibleProvider_EmployeeID_FK_CreateOrder">
+            <End Role="Employee" EntitySet="Employee" />
+            <End Role="CreateOrderInternal" EntitySet="CreateOrderInternal" />
+          </AssociationSet>
+          <AssociationSet Name="SmokingStatus_FK_in_Demographics" Association="Self.SmokingStatus_FK_in_Demographics">
+            <End Role="SmokingStanding" EntitySet="SmokingStanding" />
+            <End Role="Demographics" EntitySet="Demographics" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="HEAP_540Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="AccountsAdmin">
+          <Key>
+            <PropertyRef Name="AdminAccountID" />
+          </Key>
+          <Property Name="AdminAccountID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EmployeeID" Type="Int32" Nullable="false" />
+          <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="AccountTypeID" Type="Int32" Nullable="false" />
+          <Property Name="ModifyID" Type="Int32" Nullable="false" />
+          <Property Name="History" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="AccountType" Relationship="Self.AccountTypeID_FK_in_Accounts_Admin" FromRole="AccountsAdmin" ToRole="AccountType" />
+          <NavigationProperty Name="Employee" Relationship="Self.EmployeeID_FK_Admin" FromRole="AccountsAdmin" ToRole="Employee" />
+          <NavigationProperty Name="Modify" Relationship="Self.ModifyID_FK_in_Accounts_Admin" FromRole="AccountsAdmin" ToRole="Modify" />
+        </EntityType>
+        <EntityType Name="AccountType">
+          <Key>
+            <PropertyRef Name="AccountTypeID" />
+          </Key>
+          <Property Name="AccountTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AccountTypeName" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="AccountsAdmins" Relationship="Self.AccountTypeID_FK_in_Accounts_Admin" FromRole="AccountType" ToRole="AccountsAdmin" />
+        </EntityType>
+        <EntityType Name="ActiveSStanding">
+          <Key>
+            <PropertyRef Name="ActiveSStatusID" />
+          </Key>
+          <Property Name="ActiveSStatusID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ActiveSSType" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Demographics" Relationship="Self.ActiveSStatusID_FK_in_Demographics" FromRole="ActiveSStanding" ToRole="Demographics" />
+        </EntityType>
+        <EntityType Name="AddLabReport">
+          <Key>
+            <PropertyRef Name="AddLabReportID" />
+          </Key>
+          <Property Name="AddLabReportID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PatientID" Type="Int32" Nullable="false" />
+          <Property Name="WhereOrder" Type="String" MaxLength="35" FixedLength="false" Unicode="false" />
+          <Property Name="ResultDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Type" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Diagnoses" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Lab" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Patient" Relationship="Self.PatientID_FK_in_AddLabReport" FromRole="AddLabReport" ToRole="Patient" />
+        </EntityType>
+        <EntityType Name="Address">
+          <Key>
+            <PropertyRef Name="AddressID" />
+          </Key>
+          <Property Name="AddressID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="StreetName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="County" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ZipCode" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Employees" Relationship="Self.AddressID_FK_in_Employee" FromRole="Address" ToRole="Employee" />
+          <NavigationProperty Name="Patients" Relationship="Self.AddressID_FK_in_Patient" FromRole="Address" ToRole="Patient" />
+        </EntityType>
+        <EntityType Name="AdjustmentCode">
+          <Key>
+            <PropertyRef Name="AdjustmentCodeID" />
+          </Key>
+          <Property Name="AdjustmentCodeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AdjustmentDescription" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Billings" Relationship="Self.AdjustmentCodeID" FromRole="AdjustmentCode" ToRole="Billing" />
+        </EntityType>
+        <EntityType Name="AlchoholStanding">
+          <Key>
+            <PropertyRef Name="AlcoholStatusID" />
+          </Key>
+          <Property Name="AlcoholStatusID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AlcoholStatusType" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Demographics" Relationship="Self.AlcoholStatusID_FK_in_Demographics" FromRole="AlchoholStanding" ToRole="Demographics" />
+        </EntityType>
+        <EntityType Name="AllergiesName">
+          <Key>
+            <PropertyRef Name="AllergiesID" />
+          </Key>
+          <Property Name="AllergiesID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AllergyTypeID" Type="Int32" Nullable="false" />
+          <Property Name="AllergyName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="AllergyType" Relationship="Self.AllergyTypeID_FK_in_Allergies" FromRole="AllergiesName" ToRole="AllergyType" />
+          <NavigationProperty Name="PatientAllergies" Relationship="Self.FK_PatientAllergies_Allergies" FromRole="AllergiesName" ToRole="PatientAllergies" />
+        </EntityType>
+        <EntityType Name="AllergyType">
+          <Key>
+            <PropertyRef Name="AllergyTypeID" />
+          </Key>
+          <Property Name="AllergyTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AllergyTypeName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="AllergiesNames" Relationship="Self.AllergyTypeID_FK_in_Allergies" FromRole="AllergyType" ToRole="AllergiesName" />
+        </EntityType>
+        <EntityType Name="AspNetRole">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="AspNetUsers" Relationship="Self.AspNetUserRoles" FromRole="AspNetRoles" ToRole="AspNetUsers" />
+        </EntityType>
+        <EntityType Name="AspNetUserClaim">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ClaimType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ClaimValue" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="AspNetUser" Relationship="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" FromRole="AspNetUserClaims" ToRole="AspNetUsers" />
+        </EntityType>
+        <EntityType Name="AspNetUserLogin">
+          <Key>
+            <PropertyRef Name="LoginProvider" />
+            <PropertyRef Name="ProviderKey" />
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="LoginProvider" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ProviderKey" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="UserId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="AspNetUser" Relationship="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" FromRole="AspNetUserLogins" ToRole="AspNetUsers" />
+        </EntityType>
+        <EntityType Name="AspNetUser">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="EmailConfirmed" Type="Boolean" Nullable="false" />
+          <Property Name="PasswordHash" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SecurityStamp" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneNumberConfirmed" Type="Boolean" Nullable="false" />
+          <Property Name="TwoFactorEnabled" Type="Boolean" Nullable="false" />
+          <Property Name="LockoutEndDateUtc" Type="DateTime" Precision="3" />
+          <Property Name="LockoutEnabled" Type="Boolean" Nullable="false" />
+          <Property Name="AccessFailedCount" Type="Int32" Nullable="false" />
+          <Property Name="UserName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="EmployeeID" Type="Int32" />
+          <NavigationProperty Name="AspNetUserClaims" Relationship="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" FromRole="AspNetUsers" ToRole="AspNetUserClaims" />
+          <NavigationProperty Name="AspNetUserLogins" Relationship="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" FromRole="AspNetUsers" ToRole="AspNetUserLogins" />
+          <NavigationProperty Name="Employee" Relationship="Self.EmployeeID_FK_AspNetUsers" FromRole="AspNetUsers" ToRole="Employee" />
+          <NavigationProperty Name="AspNetRoles" Relationship="Self.AspNetUserRoles" FromRole="AspNetUsers" ToRole="AspNetRoles" />
+        </EntityType>
+        <EntityType Name="Billing">
+          <Key>
+            <PropertyRef Name="BillingID" />
+          </Key>
+          <Property Name="BillingID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CurrentProceduralTerminologyID" Type="Int32" />
+          <Property Name="Quantity" Type="Int32" />
+          <Property Name="Payment" Type="Double" Nullable="false" />
+          <Property Name="AdjustmentCodeID" Type="Int32" />
+          <Property Name="PaymentModeID" Type="Int32" Nullable="false" />
+          <Property Name="DatePaid" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="PaidBy" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Notes" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="PatientID" Type="Int32" Nullable="false" />
+          <Property Name="InsuranceID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="AdjustmentCode" Relationship="Self.AdjustmentCodeID" FromRole="Billing" ToRole="AdjustmentCode" />
+          <NavigationProperty Name="CurrentProceduralTerminology" Relationship="Self.CPTID_FK_in_CPT" FromRole="Billing" ToRole="CurrentProceduralTerminology" />
+          <NavigationProperty Name="Insurance" Relationship="Self.InsuranceID_FK_in_Billing" FromRole="Billing" ToRole="Insurance" />
+          <NavigationProperty Name="Patient" Relationship="Self.PatientID_FK_in_Billing" FromRole="Billing" ToRole="Patient" />
+          <NavigationProperty Name="PaymentMode" Relationship="Self.PaymentModeID_FK_Billing" FromRole="Billing" ToRole="PaymentMode" />
+        </EntityType>
+        <EntityType Name="CreateOrderInternal">
+          <Key>
+            <PropertyRef Name="OrderID" />
+          </Key>
+          <Property Name="OrderID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PatientID" Type="Int32" Nullable="false" />
+          <Property Name="OrderingProvider" Type="Int32" Nullable="false" />
+          <Property Name="Notes" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Diagnoses" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Lab" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ResponsibleOrder" Type="Int32" Nullable="false" />
+          <Property Name="Stat" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Employee" Relationship="Self.EmployeeID_OrderingProvider_in_CreateOrder" FromRole="CreateOrderInternal" ToRole="Employee" />
+          <NavigationProperty Name="Patient" Relationship="Self.PatientID_FK_in_CreateOrder" FromRole="CreateOrderInternal" ToRole="Patient" />
+          <NavigationProperty Name="Employee1" Relationship="Self.ResponsibleProvider_EmployeeID_FK_CreateOrder" FromRole="CreateOrderInternal" ToRole="Employee" />
+        </EntityType>
+        <EntityType Name="CurrentProceduralTerminology">
+          <Key>
+            <PropertyRef Name="CurrentProceduralTerminologyID" />
+          </Key>
+          <Property Name="CurrentProceduralTerminologyID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CPTActualNumber" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Billings" Relationship="Self.CPTID_FK_in_CPT" FromRole="CurrentProceduralTerminology" ToRole="Billing" />
+        </EntityType>
+        <EntityType Name="Demographic">
+          <Key>
+            <PropertyRef Name="DemographicID" />
+          </Key>
+          <Property Name="DemographicID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PatientID" Type="Int32" Nullable="false" />
+          <Property Name="OccupationID" Type="Int32" />
+          <Property Name="EthnicityID" Type="Int32" Nullable="false" />
+          <Property Name="RaceID" Type="Int32" Nullable="false" />
+          <Property Name="EmergencyContactID" Type="Int32" />
+          <Property Name="SmokingStatusID" Type="Int32" Nullable="false" />
+          <Property Name="AlcoholStatusID" Type="Int32" Nullable="false" />
+          <Property Name="ActiveSStatusID" Type="Int32" Nullable="false" />
+          <Property Name="DrugAbuseID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="ActiveSStanding" Relationship="Self.ActiveSStatusID_FK_in_Demographics" FromRole="Demographics" ToRole="ActiveSStanding" />
+          <NavigationProperty Name="AlchoholStanding" Relationship="Self.AlcoholStatusID_FK_in_Demographics" FromRole="Demographics" ToRole="AlchoholStanding" />
+          <NavigationProperty Name="DrugAbuse" Relationship="Self.DrugAbuseID_in_FK_Demographics" FromRole="Demographics" ToRole="DrugAbuse" />
+          <NavigationProperty Name="EmergencyContact" Relationship="Self.EmergencyContactID_FK_in_Demographics" FromRole="Demographics" ToRole="EmergencyContact" />
+          <NavigationProperty Name="Ethnicity" Relationship="Self.EthnicityID_FK_in_Demographics" FromRole="Demographics" ToRole="Ethnicity" />
+          <NavigationProperty Name="Occupation" Relationship="Self.OccupationID_FK_in_Demographics" FromRole="Demographics" ToRole="Occupation" />
+          <NavigationProperty Name="Patient" Relationship="Self.PatientID_FK_in_Demographics" FromRole="Demographics" ToRole="Patient" />
+          <NavigationProperty Name="Race" Relationship="Self.RaceID_FK_in_Demographics" FromRole="Demographics" ToRole="Race" />
+          <NavigationProperty Name="SmokingStanding" Relationship="Self.SmokingStatus_FK_in_Demographics" FromRole="Demographics" ToRole="SmokingStanding" />
+        </EntityType>
+        <EntityType Name="Drug">
+          <Key>
+            <PropertyRef Name="DrugID" />
+          </Key>
+          <Property Name="DrugID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DrugName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Dose" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="HowLong" Type="Int32" />
+          <NavigationProperty Name="PatientDrugs" Relationship="Self.DrugID_FK_in_PatientDrug" FromRole="Drug" ToRole="PatientDrug" />
+        </EntityType>
+        <EntityType Name="DrugAbuse">
+          <Key>
+            <PropertyRef Name="DrugAbuseID" />
+          </Key>
+          <Property Name="DrugAbuseID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DrugAbuseType" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Demographics" Relationship="Self.DrugAbuseID_in_FK_Demographics" FromRole="DrugAbuse" ToRole="Demographics" />
+        </EntityType>
+        <EntityType Name="EmergencyContact">
+          <Key>
+            <PropertyRef Name="EmergencyContactID" />
+          </Key>
+          <Property Name="EmergencyContactID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FirstName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="MiddleName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="LastName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PhoneNumberID" Type="Int32" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="RelationshipID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Demographics" Relationship="Self.EmergencyContactID_FK_in_Demographics" FromRole="EmergencyContact" ToRole="Demographics" />
+          <NavigationProperty Name="PatientEmergencyContacts" Relationship="Self.EmergencyContactID_FK_in_PatientEmergencyContact" FromRole="EmergencyContact" ToRole="PatientEmergencyContact" />
+          <NavigationProperty Name="PhoneNumber" Relationship="Self.PhoneNumberID_FK_in_EmergencyContact" FromRole="EmergencyContact" ToRole="PhoneNumber" />
+          <NavigationProperty Name="Relationship" Relationship="Self.RelationshipID_FK_in_EmergencyContact" FromRole="EmergencyContact" ToRole="Relationship" />
+        </EntityType>
+        <EntityType Name="Employee">
+          <Key>
+            <PropertyRef Name="EmployeeID" />
+          </Key>
+          <Property Name="EmployeeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FirstName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="MiddleName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="LastName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="AddressID" Type="Int32" Nullable="false" />
+          <Property Name="PhoneNumberID" Type="Int32" Nullable="false" />
+          <Property Name="Position" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Department" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="EmployeeSSN" Type="String" MaxLength="9" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="PersonalEmail" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="EmployeeDateOfBirth" Type="DateTime" Nullable="false" Precision="0" />
+          <NavigationProperty Name="AccountsAdmins" Relationship="Self.EmployeeID_FK_Admin" FromRole="Employee" ToRole="AccountsAdmin" />
+          <NavigationProperty Name="Address" Relationship="Self.AddressID_FK_in_Employee" FromRole="Employee" ToRole="Address" />
+          <NavigationProperty Name="AspNetUsers" Relationship="Self.EmployeeID_FK_AspNetUsers" FromRole="Employee" ToRole="AspNetUsers" />
+          <NavigationProperty Name="CreateOrderInternals" Relationship="Self.EmployeeID_OrderingProvider_in_CreateOrder" FromRole="Employee" ToRole="CreateOrderInternal" />
+          <NavigationProperty Name="CreateOrderInternals1" Relationship="Self.ResponsibleProvider_EmployeeID_FK_CreateOrder" FromRole="Employee" ToRole="CreateOrderInternal" />
+          <NavigationProperty Name="PhoneNumber" Relationship="Self.PhoneNumberID_FK_Employee" FromRole="Employee" ToRole="PhoneNumber" />
+        </EntityType>
+        <EntityType Name="Ethnicity">
+          <Key>
+            <PropertyRef Name="EthnicityID" />
+          </Key>
+          <Property Name="EthnicityID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EthnicityName" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Demographics" Relationship="Self.EthnicityID_FK_in_Demographics" FromRole="Ethnicity" ToRole="Demographics" />
+        </EntityType>
+        <EntityType Name="FamilyHistoryMedical">
+          <Key>
+            <PropertyRef Name="PatientFamilyProblemID" />
+          </Key>
+          <Property Name="PatientFamilyProblemID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProblemID" Type="Int32" Nullable="false" />
+          <Property Name="RelationshipID" Type="Int32" Nullable="false" />
+          <Property Name="PatientID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Patient" Relationship="Self.PatientID_FK_in_FamilyHistory" FromRole="FamilyHistoryMedical" ToRole="Patient" />
+          <NavigationProperty Name="Problem" Relationship="Self.ProblemID_FK_in_FamilyHistory" FromRole="FamilyHistoryMedical" ToRole="Problems" />
+          <NavigationProperty Name="Relationship" Relationship="Self.RelationshipID_FK_in_FamilyHistory" FromRole="FamilyHistoryMedical" ToRole="Relationship" />
+        </EntityType>
+        <EntityType Name="Immunization">
+          <Key>
+            <PropertyRef Name="ImmunizationID" />
+          </Key>
+          <Property Name="ImmunizationID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Vaccine" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="PatientImmunizations" Relationship="Self.ImmunizationID_FK_in_PatientImmunization" FromRole="Immunizations" ToRole="PatientImmunization" />
+        </EntityType>
+        <EntityType Name="Insurance">
+          <Key>
+            <PropertyRef Name="InsuranceID" />
+          </Key>
+          <Property Name="InsuranceID" Type="Int32" Nullable="false" />
+          <Property Name="InsuranceName" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="InsurancePlan" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="CoPay" Type="Double" />
+          <Property Name="Deductibles" Type="Double" />
+          <Property Name="PrimarySubscriber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Billings" Relationship="Self.InsuranceID_FK_in_Billing" FromRole="Insurance" ToRole="Billing" />
+          <NavigationProperty Name="Patients" Relationship="Self.InsuranceID_FK_in_Patient" FromRole="Insurance" ToRole="Patient" />
+          <NavigationProperty Name="PatientInsurances" Relationship="Self.InsuranceID_ForeignK_in_PatientInsurance" FromRole="Insurance" ToRole="PatientInsurance" />
+        </EntityType>
+        <EntityType Name="MaritalStanding">
+          <Key>
+            <PropertyRef Name="MaritalStatusID" />
+          </Key>
+          <Property Name="MaritalStatusID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MaritalStatusType" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Patients" Relationship="Self.MaritalStatusID_FK_in_Patient" FromRole="MaritalStanding" ToRole="Patient" />
+        </EntityType>
+        <EntityType Name="Modify">
+          <Key>
+            <PropertyRef Name="ModifyID" />
+          </Key>
+          <Property Name="ModifyID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ModifyType" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="AccountsAdmins" Relationship="Self.ModifyID_FK_in_Accounts_Admin" FromRole="Modify" ToRole="AccountsAdmin" />
+        </EntityType>
+        <EntityType Name="NotesMedicalStaff">
+          <Key>
+            <PropertyRef Name="NotesID" />
+          </Key>
+          <Property Name="NotesID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Date_Time_Recorded" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Notes" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="PatientID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Patient" Relationship="Self.PatientID_FK_in_Notes" FromRole="NotesMedicalStaff" ToRole="Patient" />
+        </EntityType>
+        <EntityType Name="Occupation">
+          <Key>
+            <PropertyRef Name="OccupationID" />
+          </Key>
+          <Property Name="OccupationID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PositionTitle" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="EmployerName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Demographics" Relationship="Self.OccupationID_FK_in_Demographics" FromRole="Occupation" ToRole="Demographics" />
+        </EntityType>
+        <EntityType Name="Patient">
+          <Key>
+            <PropertyRef Name="PatientID" />
+          </Key>
+          <Property Name="PatientID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FirstName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="MiddleName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="LastName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="AddressID" Type="Int32" Nullable="false" />
+          <Property Name="PhoneNumberID" Type="Int32" />
+          <Property Name="MaritalStatusID" Type="Int32" />
+          <Property Name="InsuranceID" Type="Int32" />
+          <Property Name="PatientSSN" Type="String" MaxLength="9" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="DateOfBirth" Type="DateTime" Nullable="false" Precision="0" />
+          <NavigationProperty Name="AddLabReports" Relationship="Self.PatientID_FK_in_AddLabReport" FromRole="Patient" ToRole="AddLabReport" />
+          <NavigationProperty Name="Address" Relationship="Self.AddressID_FK_in_Patient" FromRole="Patient" ToRole="Address" />
+          <NavigationProperty Name="Billings" Relationship="Self.PatientID_FK_in_Billing" FromRole="Patient" ToRole="Billing" />
+          <NavigationProperty Name="CreateOrderInternals" Relationship="Self.PatientID_FK_in_CreateOrder" FromRole="Patient" ToRole="CreateOrderInternal" />
+          <NavigationProperty Name="Demographics" Relationship="Self.PatientID_FK_in_Demographics" FromRole="Patient" ToRole="Demographics" />
+          <NavigationProperty Name="FamilyHistoryMedicals" Relationship="Self.PatientID_FK_in_FamilyHistory" FromRole="Patient" ToRole="FamilyHistoryMedical" />
+          <NavigationProperty Name="Insurance" Relationship="Self.InsuranceID_FK_in_Patient" FromRole="Patient" ToRole="Insurance" />
+          <NavigationProperty Name="MaritalStanding" Relationship="Self.MaritalStatusID_FK_in_Patient" FromRole="Patient" ToRole="MaritalStanding" />
+          <NavigationProperty Name="NotesMedicalStaffs" Relationship="Self.PatientID_FK_in_Notes" FromRole="Patient" ToRole="NotesMedicalStaff" />
+          <NavigationProperty Name="PatientAllergies" Relationship="Self.PatientID_FK_in_PatientAllergies" FromRole="Patient" ToRole="PatientAllergies" />
+          <NavigationProperty Name="PatientDrugs" Relationship="Self.PatientID_FK_in_PatientDrug" FromRole="Patient" ToRole="PatientDrug" />
+          <NavigationProperty Name="PatientEmergencyContacts" Relationship="Self.PatientID_FK_in_PatientEmergencyContact" FromRole="Patient" ToRole="PatientEmergencyContact" />
+          <NavigationProperty Name="PatientImmunizations" Relationship="Self.PatientID_FK_in_PatientImmunization" FromRole="Patient" ToRole="PatientImmunization" />
+          <NavigationProperty Name="PatientProblems" Relationship="Self.PatientID_FK_in_PatientProblems" FromRole="Patient" ToRole="PatientProblems" />
+          <NavigationProperty Name="Vitals" Relationship="Self.PatientID_FK_in_Vitals" FromRole="Patient" ToRole="Vitals" />
+          <NavigationProperty Name="PatientInsurances" Relationship="Self.PatientID_ForeignK_in_PatientInsurance" FromRole="Patient" ToRole="PatientInsurance" />
+          <NavigationProperty Name="PhoneNumber" Relationship="Self.PhoneNumberID_FK_in_Patient" FromRole="Patient" ToRole="PhoneNumber" />
+        </EntityType>
+        <EntityType Name="PatientAllergy">
+          <Key>
+            <PropertyRef Name="PatientAllergyID" />
+          </Key>
+          <Property Name="PatientAllergyID" Type="Int32" Nullable="false" />
+          <Property Name="PatientID" Type="Int32" Nullable="false" />
+          <Property Name="AllergiesID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="AllergiesName" Relationship="Self.FK_PatientAllergies_Allergies" FromRole="PatientAllergies" ToRole="AllergiesName" />
+          <NavigationProperty Name="Patient" Relationship="Self.PatientID_FK_in_PatientAllergies" FromRole="PatientAllergies" ToRole="Patient" />
+        </EntityType>
+        <EntityType Name="PatientDrug">
+          <Key>
+            <PropertyRef Name="PatientDrugID" />
+          </Key>
+          <Property Name="PatientDrugID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PatientID" Type="Int32" Nullable="false" />
+          <Property Name="DrugID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Drug" Relationship="Self.DrugID_FK_in_PatientDrug" FromRole="PatientDrug" ToRole="Drug" />
+          <NavigationProperty Name="Patient" Relationship="Self.PatientID_FK_in_PatientDrug" FromRole="PatientDrug" ToRole="Patient" />
+        </EntityType>
+        <EntityType Name="PatientEmergencyContact">
+          <Key>
+            <PropertyRef Name="PatientEmergencyContactID" />
+          </Key>
+          <Property Name="PatientEmergencyContactID" Type="Int32" Nullable="false" />
+          <Property Name="PatientID" Type="Int32" />
+          <Property Name="EmergencyContactID" Type="Int32" />
+          <NavigationProperty Name="EmergencyContact" Relationship="Self.EmergencyContactID_FK_in_PatientEmergencyContact" FromRole="PatientEmergencyContact" ToRole="EmergencyContact" />
+          <NavigationProperty Name="Patient" Relationship="Self.PatientID_FK_in_PatientEmergencyContact" FromRole="PatientEmergencyContact" ToRole="Patient" />
+        </EntityType>
+        <EntityType Name="PatientImmunization">
+          <Key>
+            <PropertyRef Name="PatientImmunizationID" />
+          </Key>
+          <Property Name="PatientImmunizationID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PatientID" Type="Int32" Nullable="false" />
+          <Property Name="ImmunizationID" Type="Int32" Nullable="false" />
+          <Property Name="DateGiven" Type="DateTime" Nullable="false" Precision="0" />
+          <NavigationProperty Name="Immunization" Relationship="Self.ImmunizationID_FK_in_PatientImmunization" FromRole="PatientImmunization" ToRole="Immunizations" />
+          <NavigationProperty Name="Patient" Relationship="Self.PatientID_FK_in_PatientImmunization" FromRole="PatientImmunization" ToRole="Patient" />
+        </EntityType>
+        <EntityType Name="PatientInsurance">
+          <Key>
+            <PropertyRef Name="PatientInsuranceID" />
+          </Key>
+          <Property Name="PatientInsuranceID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PatientID" Type="Int32" Nullable="false" />
+          <Property Name="InsuranceID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Insurance" Relationship="Self.InsuranceID_ForeignK_in_PatientInsurance" FromRole="PatientInsurance" ToRole="Insurance" />
+          <NavigationProperty Name="Patient" Relationship="Self.PatientID_ForeignK_in_PatientInsurance" FromRole="PatientInsurance" ToRole="Patient" />
+        </EntityType>
+        <EntityType Name="PatientProblem">
+          <Key>
+            <PropertyRef Name="PatientProblemID" />
+          </Key>
+          <Property Name="PatientProblemID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PatientID" Type="Int32" Nullable="false" />
+          <Property Name="ProblemID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Patient" Relationship="Self.PatientID_FK_in_PatientProblems" FromRole="PatientProblems" ToRole="Patient" />
+          <NavigationProperty Name="Problem" Relationship="Self.ProblemID_FK_in_PatientsProblem" FromRole="PatientProblems" ToRole="Problems" />
+        </EntityType>
+        <EntityType Name="PaymentMode">
+          <Key>
+            <PropertyRef Name="PaymentModeID" />
+          </Key>
+          <Property Name="PaymentModeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PaymentModeType" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Billings" Relationship="Self.PaymentModeID_FK_Billing" FromRole="PaymentMode" ToRole="Billing" />
+        </EntityType>
+        <EntityType Name="PhoneNumber">
+          <Key>
+            <PropertyRef Name="PhoneNumberID" />
+          </Key>
+          <Property Name="PhoneNumberID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PhoneNumber1" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PhoneTypeID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="EmergencyContacts" Relationship="Self.PhoneNumberID_FK_in_EmergencyContact" FromRole="PhoneNumber" ToRole="EmergencyContact" />
+          <NavigationProperty Name="Employees" Relationship="Self.PhoneNumberID_FK_Employee" FromRole="PhoneNumber" ToRole="Employee" />
+          <NavigationProperty Name="Patients" Relationship="Self.PhoneNumberID_FK_in_Patient" FromRole="PhoneNumber" ToRole="Patient" />
+          <NavigationProperty Name="PhoneType" Relationship="Self.PhoneTypeID_FK_in_PhoneNumber" FromRole="PhoneNumber" ToRole="PhoneType" />
+        </EntityType>
+        <EntityType Name="PhoneType">
+          <Key>
+            <PropertyRef Name="PhoneTypeID" />
+          </Key>
+          <Property Name="PhoneTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PhoneTypeName" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="PhoneNumbers" Relationship="Self.PhoneTypeID_FK_in_PhoneNumber" FromRole="PhoneType" ToRole="PhoneNumber" />
+        </EntityType>
+        <EntityType Name="Problem">
+          <Key>
+            <PropertyRef Name="ProblemID" />
+          </Key>
+          <Property Name="ProblemID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProblemsName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="FamilyHistoryMedicals" Relationship="Self.ProblemID_FK_in_FamilyHistory" FromRole="Problems" ToRole="FamilyHistoryMedical" />
+          <NavigationProperty Name="PatientProblems" Relationship="Self.ProblemID_FK_in_PatientsProblem" FromRole="Problems" ToRole="PatientProblems" />
+        </EntityType>
+        <EntityType Name="Race">
+          <Key>
+            <PropertyRef Name="RaceID" />
+          </Key>
+          <Property Name="RaceID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RaceName" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Demographics" Relationship="Self.RaceID_FK_in_Demographics" FromRole="Race" ToRole="Demographics" />
+        </EntityType>
+        <EntityType Name="Relationship">
+          <Key>
+            <PropertyRef Name="RelationshipID" />
+          </Key>
+          <Property Name="RelationshipID" Type="Int32" Nullable="false" />
+          <Property Name="RelationshipType" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="EmergencyContacts" Relationship="Self.RelationshipID_FK_in_EmergencyContact" FromRole="Relationship" ToRole="EmergencyContact" />
+          <NavigationProperty Name="FamilyHistoryMedicals" Relationship="Self.RelationshipID_FK_in_FamilyHistory" FromRole="Relationship" ToRole="FamilyHistoryMedical" />
+        </EntityType>
+        <EntityType Name="SmokingStanding">
+          <Key>
+            <PropertyRef Name="SmokingStatusID" />
+          </Key>
+          <Property Name="SmokingStatusID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SmokingStatusType" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Demographics" Relationship="Self.SmokingStatus_FK_in_Demographics" FromRole="SmokingStanding" ToRole="Demographics" />
+        </EntityType>
+        <EntityType Name="Vital">
+          <Key>
+            <PropertyRef Name="VitalID" />
+          </Key>
+          <Property Name="VitalID" Type="Int32" Nullable="false" />
+          <Property Name="DateAndTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="BloodPressure" Type="Int32" Nullable="false" />
+          <Property Name="Heart_Rate" Type="Int32" Nullable="false" />
+          <Property Name="Respiratory_Rate" Type="Int32" Nullable="false" />
+          <Property Name="Height_Length" Type="Int32" Nullable="false" />
+          <Property Name="Weight" Type="Double" Nullable="false" />
+          <Property Name="Temperature" Type="Int32" Nullable="false" />
+          <Property Name="Comments" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="PatientID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Patient" Relationship="Self.PatientID_FK_in_Vitals" FromRole="Vitals" ToRole="Patient" />
+        </EntityType>
+        <EntityType Name="C__MigrationHistory">
+          <Key>
+            <PropertyRef Name="MigrationId" />
+            <PropertyRef Name="ContextKey" />
+            <PropertyRef Name="Model" />
+            <PropertyRef Name="ProductVersion" />
+          </Key>
+          <Property Name="MigrationId" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ContextKey" Type="String" MaxLength="300" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Model" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+          <Property Name="ProductVersion" Type="String" MaxLength="32" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <Association Name="AccountTypeID_FK_in_Accounts_Admin">
+          <End Role="AccountType" Type="Self.AccountType" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AccountsAdmin" Type="Self.AccountsAdmin" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AccountType">
+              <PropertyRef Name="AccountTypeID" />
+            </Principal>
+            <Dependent Role="AccountsAdmin">
+              <PropertyRef Name="AccountTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="EmployeeID_FK_Admin">
+          <End Role="Employee" Type="Self.Employee" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AccountsAdmin" Type="Self.AccountsAdmin" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="EmployeeID" />
+            </Principal>
+            <Dependent Role="AccountsAdmin">
+              <PropertyRef Name="EmployeeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ModifyID_FK_in_Accounts_Admin">
+          <End Role="Modify" Type="Self.Modify" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AccountsAdmin" Type="Self.AccountsAdmin" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Modify">
+              <PropertyRef Name="ModifyID" />
+            </Principal>
+            <Dependent Role="AccountsAdmin">
+              <PropertyRef Name="ModifyID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ActiveSStatusID_FK_in_Demographics">
+          <End Role="ActiveSStanding" Type="Self.ActiveSStanding" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Demographics" Type="Self.Demographic" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ActiveSStanding">
+              <PropertyRef Name="ActiveSStatusID" />
+            </Principal>
+            <Dependent Role="Demographics">
+              <PropertyRef Name="ActiveSStatusID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PatientID_FK_in_AddLabReport">
+          <End Role="Patient" Type="Self.Patient" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AddLabReport" Type="Self.AddLabReport" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Patient">
+              <PropertyRef Name="PatientID" />
+            </Principal>
+            <Dependent Role="AddLabReport">
+              <PropertyRef Name="PatientID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="AddressID_FK_in_Employee">
+          <End Role="Address" Type="Self.Address" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Employee" Type="Self.Employee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Address">
+              <PropertyRef Name="AddressID" />
+            </Principal>
+            <Dependent Role="Employee">
+              <PropertyRef Name="AddressID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="AddressID_FK_in_Patient">
+          <End Role="Address" Type="Self.Address" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Patient" Type="Self.Patient" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Address">
+              <PropertyRef Name="AddressID" />
+            </Principal>
+            <Dependent Role="Patient">
+              <PropertyRef Name="AddressID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="AdjustmentCodeID">
+          <End Role="AdjustmentCode" Type="Self.AdjustmentCode" Multiplicity="0..1" />
+          <End Role="Billing" Type="Self.Billing" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AdjustmentCode">
+              <PropertyRef Name="AdjustmentCodeID" />
+            </Principal>
+            <Dependent Role="Billing">
+              <PropertyRef Name="AdjustmentCodeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="AlcoholStatusID_FK_in_Demographics">
+          <End Role="AlchoholStanding" Type="Self.AlchoholStanding" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Demographics" Type="Self.Demographic" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AlchoholStanding">
+              <PropertyRef Name="AlcoholStatusID" />
+            </Principal>
+            <Dependent Role="Demographics">
+              <PropertyRef Name="AlcoholStatusID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="AllergyTypeID_FK_in_Allergies">
+          <End Role="AllergyType" Type="Self.AllergyType" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AllergiesName" Type="Self.AllergiesName" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AllergyType">
+              <PropertyRef Name="AllergyTypeID" />
+            </Principal>
+            <Dependent Role="AllergiesName">
+              <PropertyRef Name="AllergyTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PatientAllergies_Allergies">
+          <End Role="AllergiesName" Type="Self.AllergiesName" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="PatientAllergies" Type="Self.PatientAllergy" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AllergiesName">
+              <PropertyRef Name="AllergiesID" />
+            </Principal>
+            <Dependent Role="PatientAllergies">
+              <PropertyRef Name="AllergiesID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+          <End Role="AspNetUsers" Type="Self.AspNetUser" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserClaims" Type="Self.AspNetUserClaim" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserClaims">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+          <End Role="AspNetUsers" Type="Self.AspNetUser" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserLogins" Type="Self.AspNetUserLogin" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserLogins">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="EmployeeID_FK_AspNetUsers">
+          <End Role="Employee" Type="Self.Employee" Multiplicity="0..1" />
+          <End Role="AspNetUsers" Type="Self.AspNetUser" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="EmployeeID" />
+            </Principal>
+            <Dependent Role="AspNetUsers">
+              <PropertyRef Name="EmployeeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CPTID_FK_in_CPT">
+          <End Role="CurrentProceduralTerminology" Type="Self.CurrentProceduralTerminology" Multiplicity="0..1" />
+          <End Role="Billing" Type="Self.Billing" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CurrentProceduralTerminology">
+              <PropertyRef Name="CurrentProceduralTerminologyID" />
+            </Principal>
+            <Dependent Role="Billing">
+              <PropertyRef Name="CurrentProceduralTerminologyID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="InsuranceID_FK_in_Billing">
+          <End Role="Insurance" Type="Self.Insurance" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Billing" Type="Self.Billing" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Insurance">
+              <PropertyRef Name="InsuranceID" />
+            </Principal>
+            <Dependent Role="Billing">
+              <PropertyRef Name="InsuranceID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PatientID_FK_in_Billing">
+          <End Role="Patient" Type="Self.Patient" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Billing" Type="Self.Billing" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Patient">
+              <PropertyRef Name="PatientID" />
+            </Principal>
+            <Dependent Role="Billing">
+              <PropertyRef Name="PatientID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PaymentModeID_FK_Billing">
+          <End Role="PaymentMode" Type="Self.PaymentMode" Multiplicity="1" />
+          <End Role="Billing" Type="Self.Billing" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PaymentMode">
+              <PropertyRef Name="PaymentModeID" />
+            </Principal>
+            <Dependent Role="Billing">
+              <PropertyRef Name="PaymentModeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="EmployeeID_OrderingProvider_in_CreateOrder">
+          <End Role="Employee" Type="Self.Employee" Multiplicity="1" />
+          <End Role="CreateOrderInternal" Type="Self.CreateOrderInternal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="EmployeeID" />
+            </Principal>
+            <Dependent Role="CreateOrderInternal">
+              <PropertyRef Name="OrderingProvider" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PatientID_FK_in_CreateOrder">
+          <End Role="Patient" Type="Self.Patient" Multiplicity="1" />
+          <End Role="CreateOrderInternal" Type="Self.CreateOrderInternal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Patient">
+              <PropertyRef Name="PatientID" />
+            </Principal>
+            <Dependent Role="CreateOrderInternal">
+              <PropertyRef Name="PatientID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ResponsibleProvider_EmployeeID_FK_CreateOrder">
+          <End Role="Employee" Type="Self.Employee" Multiplicity="1" />
+          <End Role="CreateOrderInternal" Type="Self.CreateOrderInternal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="EmployeeID" />
+            </Principal>
+            <Dependent Role="CreateOrderInternal">
+              <PropertyRef Name="ResponsibleOrder" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DrugAbuseID_in_FK_Demographics">
+          <End Role="DrugAbuse" Type="Self.DrugAbuse" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Demographics" Type="Self.Demographic" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DrugAbuse">
+              <PropertyRef Name="DrugAbuseID" />
+            </Principal>
+            <Dependent Role="Demographics">
+              <PropertyRef Name="DrugAbuseID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="EmergencyContactID_FK_in_Demographics">
+          <End Role="EmergencyContact" Type="Self.EmergencyContact" Multiplicity="0..1" />
+          <End Role="Demographics" Type="Self.Demographic" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EmergencyContact">
+              <PropertyRef Name="EmergencyContactID" />
+            </Principal>
+            <Dependent Role="Demographics">
+              <PropertyRef Name="EmergencyContactID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="EthnicityID_FK_in_Demographics">
+          <End Role="Ethnicity" Type="Self.Ethnicity" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Demographics" Type="Self.Demographic" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ethnicity">
+              <PropertyRef Name="EthnicityID" />
+            </Principal>
+            <Dependent Role="Demographics">
+              <PropertyRef Name="EthnicityID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="OccupationID_FK_in_Demographics">
+          <End Role="Occupation" Type="Self.Occupation" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Demographics" Type="Self.Demographic" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Occupation">
+              <PropertyRef Name="OccupationID" />
+            </Principal>
+            <Dependent Role="Demographics">
+              <PropertyRef Name="OccupationID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PatientID_FK_in_Demographics">
+          <End Role="Patient" Type="Self.Patient" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Demographics" Type="Self.Demographic" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Patient">
+              <PropertyRef Name="PatientID" />
+            </Principal>
+            <Dependent Role="Demographics">
+              <PropertyRef Name="PatientID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="RaceID_FK_in_Demographics">
+          <End Role="Race" Type="Self.Race" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Demographics" Type="Self.Demographic" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Race">
+              <PropertyRef Name="RaceID" />
+            </Principal>
+            <Dependent Role="Demographics">
+              <PropertyRef Name="RaceID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SmokingStatus_FK_in_Demographics">
+          <End Role="SmokingStanding" Type="Self.SmokingStanding" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Demographics" Type="Self.Demographic" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SmokingStanding">
+              <PropertyRef Name="SmokingStatusID" />
+            </Principal>
+            <Dependent Role="Demographics">
+              <PropertyRef Name="SmokingStatusID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DrugID_FK_in_PatientDrug">
+          <End Role="Drug" Type="Self.Drug" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="PatientDrug" Type="Self.PatientDrug" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Drug">
+              <PropertyRef Name="DrugID" />
+            </Principal>
+            <Dependent Role="PatientDrug">
+              <PropertyRef Name="DrugID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="EmergencyContactID_FK_in_PatientEmergencyContact">
+          <End Role="EmergencyContact" Type="Self.EmergencyContact" Multiplicity="0..1" />
+          <End Role="PatientEmergencyContact" Type="Self.PatientEmergencyContact" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EmergencyContact">
+              <PropertyRef Name="EmergencyContactID" />
+            </Principal>
+            <Dependent Role="PatientEmergencyContact">
+              <PropertyRef Name="EmergencyContactID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PhoneNumberID_FK_in_EmergencyContact">
+          <End Role="PhoneNumber" Type="Self.PhoneNumber" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="EmergencyContact" Type="Self.EmergencyContact" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PhoneNumber">
+              <PropertyRef Name="PhoneNumberID" />
+            </Principal>
+            <Dependent Role="EmergencyContact">
+              <PropertyRef Name="PhoneNumberID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="RelationshipID_FK_in_EmergencyContact">
+          <End Role="Relationship" Type="Self.Relationship" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="EmergencyContact" Type="Self.EmergencyContact" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Relationship">
+              <PropertyRef Name="RelationshipID" />
+            </Principal>
+            <Dependent Role="EmergencyContact">
+              <PropertyRef Name="RelationshipID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PhoneNumberID_FK_Employee">
+          <End Role="PhoneNumber" Type="Self.PhoneNumber" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Employee" Type="Self.Employee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PhoneNumber">
+              <PropertyRef Name="PhoneNumberID" />
+            </Principal>
+            <Dependent Role="Employee">
+              <PropertyRef Name="PhoneNumberID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PatientID_FK_in_FamilyHistory">
+          <End Role="Patient" Type="Self.Patient" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="FamilyHistoryMedical" Type="Self.FamilyHistoryMedical" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Patient">
+              <PropertyRef Name="PatientID" />
+            </Principal>
+            <Dependent Role="FamilyHistoryMedical">
+              <PropertyRef Name="PatientID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ProblemID_FK_in_FamilyHistory">
+          <End Role="Problems" Type="Self.Problem" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="FamilyHistoryMedical" Type="Self.FamilyHistoryMedical" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Problems">
+              <PropertyRef Name="ProblemID" />
+            </Principal>
+            <Dependent Role="FamilyHistoryMedical">
+              <PropertyRef Name="ProblemID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="RelationshipID_FK_in_FamilyHistory">
+          <End Role="Relationship" Type="Self.Relationship" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="FamilyHistoryMedical" Type="Self.FamilyHistoryMedical" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Relationship">
+              <PropertyRef Name="RelationshipID" />
+            </Principal>
+            <Dependent Role="FamilyHistoryMedical">
+              <PropertyRef Name="RelationshipID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ImmunizationID_FK_in_PatientImmunization">
+          <End Role="Immunizations" Type="Self.Immunization" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="PatientImmunization" Type="Self.PatientImmunization" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Immunizations">
+              <PropertyRef Name="ImmunizationID" />
+            </Principal>
+            <Dependent Role="PatientImmunization">
+              <PropertyRef Name="ImmunizationID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="InsuranceID_FK_in_Patient">
+          <End Role="Insurance" Type="Self.Insurance" Multiplicity="0..1" />
+          <End Role="Patient" Type="Self.Patient" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Insurance">
+              <PropertyRef Name="InsuranceID" />
+            </Principal>
+            <Dependent Role="Patient">
+              <PropertyRef Name="InsuranceID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="InsuranceID_ForeignK_in_PatientInsurance">
+          <End Role="Insurance" Type="Self.Insurance" Multiplicity="1" />
+          <End Role="PatientInsurance" Type="Self.PatientInsurance" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Insurance">
+              <PropertyRef Name="InsuranceID" />
+            </Principal>
+            <Dependent Role="PatientInsurance">
+              <PropertyRef Name="InsuranceID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="MaritalStatusID_FK_in_Patient">
+          <End Role="MaritalStanding" Type="Self.MaritalStanding" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Patient" Type="Self.Patient" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MaritalStanding">
+              <PropertyRef Name="MaritalStatusID" />
+            </Principal>
+            <Dependent Role="Patient">
+              <PropertyRef Name="MaritalStatusID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PatientID_FK_in_Notes">
+          <End Role="Patient" Type="Self.Patient" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="NotesMedicalStaff" Type="Self.NotesMedicalStaff" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Patient">
+              <PropertyRef Name="PatientID" />
+            </Principal>
+            <Dependent Role="NotesMedicalStaff">
+              <PropertyRef Name="PatientID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PatientID_FK_in_PatientAllergies">
+          <End Role="Patient" Type="Self.Patient" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="PatientAllergies" Type="Self.PatientAllergy" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Patient">
+              <PropertyRef Name="PatientID" />
+            </Principal>
+            <Dependent Role="PatientAllergies">
+              <PropertyRef Name="PatientID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PatientID_FK_in_PatientDrug">
+          <End Role="Patient" Type="Self.Patient" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="PatientDrug" Type="Self.PatientDrug" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Patient">
+              <PropertyRef Name="PatientID" />
+            </Principal>
+            <Dependent Role="PatientDrug">
+              <PropertyRef Name="PatientID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PatientID_FK_in_PatientEmergencyContact">
+          <End Role="Patient" Type="Self.Patient" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="PatientEmergencyContact" Type="Self.PatientEmergencyContact" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Patient">
+              <PropertyRef Name="PatientID" />
+            </Principal>
+            <Dependent Role="PatientEmergencyContact">
+              <PropertyRef Name="PatientID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PatientID_FK_in_PatientImmunization">
+          <End Role="Patient" Type="Self.Patient" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="PatientImmunization" Type="Self.PatientImmunization" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Patient">
+              <PropertyRef Name="PatientID" />
+            </Principal>
+            <Dependent Role="PatientImmunization">
+              <PropertyRef Name="PatientID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PatientID_FK_in_PatientProblems">
+          <End Role="Patient" Type="Self.Patient" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="PatientProblems" Type="Self.PatientProblem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Patient">
+              <PropertyRef Name="PatientID" />
+            </Principal>
+            <Dependent Role="PatientProblems">
+              <PropertyRef Name="PatientID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PatientID_FK_in_Vitals">
+          <End Role="Patient" Type="Self.Patient" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Vitals" Type="Self.Vital" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Patient">
+              <PropertyRef Name="PatientID" />
+            </Principal>
+            <Dependent Role="Vitals">
+              <PropertyRef Name="PatientID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PatientID_ForeignK_in_PatientInsurance">
+          <End Role="Patient" Type="Self.Patient" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="PatientInsurance" Type="Self.PatientInsurance" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Patient">
+              <PropertyRef Name="PatientID" />
+            </Principal>
+            <Dependent Role="PatientInsurance">
+              <PropertyRef Name="PatientID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PhoneNumberID_FK_in_Patient">
+          <End Role="PhoneNumber" Type="Self.PhoneNumber" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Patient" Type="Self.Patient" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PhoneNumber">
+              <PropertyRef Name="PhoneNumberID" />
+            </Principal>
+            <Dependent Role="Patient">
+              <PropertyRef Name="PhoneNumberID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ProblemID_FK_in_PatientsProblem">
+          <End Role="Problems" Type="Self.Problem" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="PatientProblems" Type="Self.PatientProblem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Problems">
+              <PropertyRef Name="ProblemID" />
+            </Principal>
+            <Dependent Role="PatientProblems">
+              <PropertyRef Name="ProblemID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PhoneTypeID_FK_in_PhoneNumber">
+          <End Role="PhoneType" Type="Self.PhoneType" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="PhoneNumber" Type="Self.PhoneNumber" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PhoneType">
+              <PropertyRef Name="PhoneTypeID" />
+            </Principal>
+            <Dependent Role="PhoneNumber">
+              <PropertyRef Name="PhoneTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="AspNetUserRoles">
+          <End Role="AspNetRoles" Type="Self.AspNetRole" Multiplicity="*" />
+          <End Role="AspNetUsers" Type="Self.AspNetUser" Multiplicity="*" />
+        </Association>
+        <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="AccountsAdmins" EntityType="Self.AccountsAdmin" />
+          <EntitySet Name="AccountTypes" EntityType="Self.AccountType" />
+          <EntitySet Name="ActiveSStandings" EntityType="Self.ActiveSStanding" />
+          <EntitySet Name="AddLabReports" EntityType="Self.AddLabReport" />
+          <EntitySet Name="Addresses" EntityType="Self.Address" />
+          <EntitySet Name="AdjustmentCodes" EntityType="Self.AdjustmentCode" />
+          <EntitySet Name="AlchoholStandings" EntityType="Self.AlchoholStanding" />
+          <EntitySet Name="AllergiesNames" EntityType="Self.AllergiesName" />
+          <EntitySet Name="AllergyTypes" EntityType="Self.AllergyType" />
+          <EntitySet Name="AspNetRoles" EntityType="Self.AspNetRole" />
+          <EntitySet Name="AspNetUserClaims" EntityType="Self.AspNetUserClaim" />
+          <EntitySet Name="AspNetUserLogins" EntityType="Self.AspNetUserLogin" />
+          <EntitySet Name="AspNetUsers" EntityType="Self.AspNetUser" />
+          <EntitySet Name="Billings" EntityType="Self.Billing" />
+          <EntitySet Name="CreateOrderInternals" EntityType="Self.CreateOrderInternal" />
+          <EntitySet Name="CurrentProceduralTerminologies" EntityType="Self.CurrentProceduralTerminology" />
+          <EntitySet Name="Demographics" EntityType="Self.Demographic" />
+          <EntitySet Name="Drugs" EntityType="Self.Drug" />
+          <EntitySet Name="DrugAbuses" EntityType="Self.DrugAbuse" />
+          <EntitySet Name="EmergencyContacts" EntityType="Self.EmergencyContact" />
+          <EntitySet Name="Employees" EntityType="Self.Employee" />
+          <EntitySet Name="Ethnicities" EntityType="Self.Ethnicity" />
+          <EntitySet Name="FamilyHistoryMedicals" EntityType="Self.FamilyHistoryMedical" />
+          <EntitySet Name="Immunizations" EntityType="Self.Immunization" />
+          <EntitySet Name="Insurances" EntityType="Self.Insurance" />
+          <EntitySet Name="MaritalStandings" EntityType="Self.MaritalStanding" />
+          <EntitySet Name="Modifies" EntityType="Self.Modify" />
+          <EntitySet Name="NotesMedicalStaffs" EntityType="Self.NotesMedicalStaff" />
+          <EntitySet Name="Occupations" EntityType="Self.Occupation" />
+          <EntitySet Name="Patients" EntityType="Self.Patient" />
+          <EntitySet Name="PatientAllergies" EntityType="Self.PatientAllergy" />
+          <EntitySet Name="PatientDrugs" EntityType="Self.PatientDrug" />
+          <EntitySet Name="PatientEmergencyContacts" EntityType="Self.PatientEmergencyContact" />
+          <EntitySet Name="PatientImmunizations" EntityType="Self.PatientImmunization" />
+          <EntitySet Name="PatientInsurances" EntityType="Self.PatientInsurance" />
+          <EntitySet Name="PatientProblems" EntityType="Self.PatientProblem" />
+          <EntitySet Name="PaymentModes" EntityType="Self.PaymentMode" />
+          <EntitySet Name="PhoneNumbers" EntityType="Self.PhoneNumber" />
+          <EntitySet Name="PhoneTypes" EntityType="Self.PhoneType" />
+          <EntitySet Name="Problems" EntityType="Self.Problem" />
+          <EntitySet Name="Races" EntityType="Self.Race" />
+          <EntitySet Name="Relationships" EntityType="Self.Relationship" />
+          <EntitySet Name="SmokingStandings" EntityType="Self.SmokingStanding" />
+          <EntitySet Name="Vitals" EntityType="Self.Vital" />
+          <EntitySet Name="C__MigrationHistory" EntityType="Self.C__MigrationHistory" />
+          <AssociationSet Name="AccountTypeID_FK_in_Accounts_Admin" Association="Self.AccountTypeID_FK_in_Accounts_Admin">
+            <End Role="AccountType" EntitySet="AccountTypes" />
+            <End Role="AccountsAdmin" EntitySet="AccountsAdmins" />
+          </AssociationSet>
+          <AssociationSet Name="EmployeeID_FK_Admin" Association="Self.EmployeeID_FK_Admin">
+            <End Role="Employee" EntitySet="Employees" />
+            <End Role="AccountsAdmin" EntitySet="AccountsAdmins" />
+          </AssociationSet>
+          <AssociationSet Name="ModifyID_FK_in_Accounts_Admin" Association="Self.ModifyID_FK_in_Accounts_Admin">
+            <End Role="Modify" EntitySet="Modifies" />
+            <End Role="AccountsAdmin" EntitySet="AccountsAdmins" />
+          </AssociationSet>
+          <AssociationSet Name="ActiveSStatusID_FK_in_Demographics" Association="Self.ActiveSStatusID_FK_in_Demographics">
+            <End Role="ActiveSStanding" EntitySet="ActiveSStandings" />
+            <End Role="Demographics" EntitySet="Demographics" />
+          </AssociationSet>
+          <AssociationSet Name="PatientID_FK_in_AddLabReport" Association="Self.PatientID_FK_in_AddLabReport">
+            <End Role="Patient" EntitySet="Patients" />
+            <End Role="AddLabReport" EntitySet="AddLabReports" />
+          </AssociationSet>
+          <AssociationSet Name="AddressID_FK_in_Employee" Association="Self.AddressID_FK_in_Employee">
+            <End Role="Address" EntitySet="Addresses" />
+            <End Role="Employee" EntitySet="Employees" />
+          </AssociationSet>
+          <AssociationSet Name="AddressID_FK_in_Patient" Association="Self.AddressID_FK_in_Patient">
+            <End Role="Address" EntitySet="Addresses" />
+            <End Role="Patient" EntitySet="Patients" />
+          </AssociationSet>
+          <AssociationSet Name="AdjustmentCodeID" Association="Self.AdjustmentCodeID">
+            <End Role="AdjustmentCode" EntitySet="AdjustmentCodes" />
+            <End Role="Billing" EntitySet="Billings" />
+          </AssociationSet>
+          <AssociationSet Name="AlcoholStatusID_FK_in_Demographics" Association="Self.AlcoholStatusID_FK_in_Demographics">
+            <End Role="AlchoholStanding" EntitySet="AlchoholStandings" />
+            <End Role="Demographics" EntitySet="Demographics" />
+          </AssociationSet>
+          <AssociationSet Name="AllergyTypeID_FK_in_Allergies" Association="Self.AllergyTypeID_FK_in_Allergies">
+            <End Role="AllergyType" EntitySet="AllergyTypes" />
+            <End Role="AllergiesName" EntitySet="AllergiesNames" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PatientAllergies_Allergies" Association="Self.FK_PatientAllergies_Allergies">
+            <End Role="AllergiesName" EntitySet="AllergiesNames" />
+            <End Role="PatientAllergies" EntitySet="PatientAllergies" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserClaims" EntitySet="AspNetUserClaims" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserLogins" EntitySet="AspNetUserLogins" />
+          </AssociationSet>
+          <AssociationSet Name="EmployeeID_FK_AspNetUsers" Association="Self.EmployeeID_FK_AspNetUsers">
+            <End Role="Employee" EntitySet="Employees" />
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+          </AssociationSet>
+          <AssociationSet Name="CPTID_FK_in_CPT" Association="Self.CPTID_FK_in_CPT">
+            <End Role="CurrentProceduralTerminology" EntitySet="CurrentProceduralTerminologies" />
+            <End Role="Billing" EntitySet="Billings" />
+          </AssociationSet>
+          <AssociationSet Name="InsuranceID_FK_in_Billing" Association="Self.InsuranceID_FK_in_Billing">
+            <End Role="Insurance" EntitySet="Insurances" />
+            <End Role="Billing" EntitySet="Billings" />
+          </AssociationSet>
+          <AssociationSet Name="PatientID_FK_in_Billing" Association="Self.PatientID_FK_in_Billing">
+            <End Role="Patient" EntitySet="Patients" />
+            <End Role="Billing" EntitySet="Billings" />
+          </AssociationSet>
+          <AssociationSet Name="PaymentModeID_FK_Billing" Association="Self.PaymentModeID_FK_Billing">
+            <End Role="PaymentMode" EntitySet="PaymentModes" />
+            <End Role="Billing" EntitySet="Billings" />
+          </AssociationSet>
+          <AssociationSet Name="EmployeeID_OrderingProvider_in_CreateOrder" Association="Self.EmployeeID_OrderingProvider_in_CreateOrder">
+            <End Role="Employee" EntitySet="Employees" />
+            <End Role="CreateOrderInternal" EntitySet="CreateOrderInternals" />
+          </AssociationSet>
+          <AssociationSet Name="PatientID_FK_in_CreateOrder" Association="Self.PatientID_FK_in_CreateOrder">
+            <End Role="Patient" EntitySet="Patients" />
+            <End Role="CreateOrderInternal" EntitySet="CreateOrderInternals" />
+          </AssociationSet>
+          <AssociationSet Name="ResponsibleProvider_EmployeeID_FK_CreateOrder" Association="Self.ResponsibleProvider_EmployeeID_FK_CreateOrder">
+            <End Role="Employee" EntitySet="Employees" />
+            <End Role="CreateOrderInternal" EntitySet="CreateOrderInternals" />
+          </AssociationSet>
+          <AssociationSet Name="DrugAbuseID_in_FK_Demographics" Association="Self.DrugAbuseID_in_FK_Demographics">
+            <End Role="DrugAbuse" EntitySet="DrugAbuses" />
+            <End Role="Demographics" EntitySet="Demographics" />
+          </AssociationSet>
+          <AssociationSet Name="EmergencyContactID_FK_in_Demographics" Association="Self.EmergencyContactID_FK_in_Demographics">
+            <End Role="EmergencyContact" EntitySet="EmergencyContacts" />
+            <End Role="Demographics" EntitySet="Demographics" />
+          </AssociationSet>
+          <AssociationSet Name="EthnicityID_FK_in_Demographics" Association="Self.EthnicityID_FK_in_Demographics">
+            <End Role="Ethnicity" EntitySet="Ethnicities" />
+            <End Role="Demographics" EntitySet="Demographics" />
+          </AssociationSet>
+          <AssociationSet Name="OccupationID_FK_in_Demographics" Association="Self.OccupationID_FK_in_Demographics">
+            <End Role="Occupation" EntitySet="Occupations" />
+            <End Role="Demographics" EntitySet="Demographics" />
+          </AssociationSet>
+          <AssociationSet Name="PatientID_FK_in_Demographics" Association="Self.PatientID_FK_in_Demographics">
+            <End Role="Patient" EntitySet="Patients" />
+            <End Role="Demographics" EntitySet="Demographics" />
+          </AssociationSet>
+          <AssociationSet Name="RaceID_FK_in_Demographics" Association="Self.RaceID_FK_in_Demographics">
+            <End Role="Race" EntitySet="Races" />
+            <End Role="Demographics" EntitySet="Demographics" />
+          </AssociationSet>
+          <AssociationSet Name="SmokingStatus_FK_in_Demographics" Association="Self.SmokingStatus_FK_in_Demographics">
+            <End Role="SmokingStanding" EntitySet="SmokingStandings" />
+            <End Role="Demographics" EntitySet="Demographics" />
+          </AssociationSet>
+          <AssociationSet Name="DrugID_FK_in_PatientDrug" Association="Self.DrugID_FK_in_PatientDrug">
+            <End Role="Drug" EntitySet="Drugs" />
+            <End Role="PatientDrug" EntitySet="PatientDrugs" />
+          </AssociationSet>
+          <AssociationSet Name="EmergencyContactID_FK_in_PatientEmergencyContact" Association="Self.EmergencyContactID_FK_in_PatientEmergencyContact">
+            <End Role="EmergencyContact" EntitySet="EmergencyContacts" />
+            <End Role="PatientEmergencyContact" EntitySet="PatientEmergencyContacts" />
+          </AssociationSet>
+          <AssociationSet Name="PhoneNumberID_FK_in_EmergencyContact" Association="Self.PhoneNumberID_FK_in_EmergencyContact">
+            <End Role="PhoneNumber" EntitySet="PhoneNumbers" />
+            <End Role="EmergencyContact" EntitySet="EmergencyContacts" />
+          </AssociationSet>
+          <AssociationSet Name="RelationshipID_FK_in_EmergencyContact" Association="Self.RelationshipID_FK_in_EmergencyContact">
+            <End Role="Relationship" EntitySet="Relationships" />
+            <End Role="EmergencyContact" EntitySet="EmergencyContacts" />
+          </AssociationSet>
+          <AssociationSet Name="PhoneNumberID_FK_Employee" Association="Self.PhoneNumberID_FK_Employee">
+            <End Role="PhoneNumber" EntitySet="PhoneNumbers" />
+            <End Role="Employee" EntitySet="Employees" />
+          </AssociationSet>
+          <AssociationSet Name="PatientID_FK_in_FamilyHistory" Association="Self.PatientID_FK_in_FamilyHistory">
+            <End Role="Patient" EntitySet="Patients" />
+            <End Role="FamilyHistoryMedical" EntitySet="FamilyHistoryMedicals" />
+          </AssociationSet>
+          <AssociationSet Name="ProblemID_FK_in_FamilyHistory" Association="Self.ProblemID_FK_in_FamilyHistory">
+            <End Role="Problems" EntitySet="Problems" />
+            <End Role="FamilyHistoryMedical" EntitySet="FamilyHistoryMedicals" />
+          </AssociationSet>
+          <AssociationSet Name="RelationshipID_FK_in_FamilyHistory" Association="Self.RelationshipID_FK_in_FamilyHistory">
+            <End Role="Relationship" EntitySet="Relationships" />
+            <End Role="FamilyHistoryMedical" EntitySet="FamilyHistoryMedicals" />
+          </AssociationSet>
+          <AssociationSet Name="ImmunizationID_FK_in_PatientImmunization" Association="Self.ImmunizationID_FK_in_PatientImmunization">
+            <End Role="Immunizations" EntitySet="Immunizations" />
+            <End Role="PatientImmunization" EntitySet="PatientImmunizations" />
+          </AssociationSet>
+          <AssociationSet Name="InsuranceID_FK_in_Patient" Association="Self.InsuranceID_FK_in_Patient">
+            <End Role="Insurance" EntitySet="Insurances" />
+            <End Role="Patient" EntitySet="Patients" />
+          </AssociationSet>
+          <AssociationSet Name="InsuranceID_ForeignK_in_PatientInsurance" Association="Self.InsuranceID_ForeignK_in_PatientInsurance">
+            <End Role="Insurance" EntitySet="Insurances" />
+            <End Role="PatientInsurance" EntitySet="PatientInsurances" />
+          </AssociationSet>
+          <AssociationSet Name="MaritalStatusID_FK_in_Patient" Association="Self.MaritalStatusID_FK_in_Patient">
+            <End Role="MaritalStanding" EntitySet="MaritalStandings" />
+            <End Role="Patient" EntitySet="Patients" />
+          </AssociationSet>
+          <AssociationSet Name="PatientID_FK_in_Notes" Association="Self.PatientID_FK_in_Notes">
+            <End Role="Patient" EntitySet="Patients" />
+            <End Role="NotesMedicalStaff" EntitySet="NotesMedicalStaffs" />
+          </AssociationSet>
+          <AssociationSet Name="PatientID_FK_in_PatientAllergies" Association="Self.PatientID_FK_in_PatientAllergies">
+            <End Role="Patient" EntitySet="Patients" />
+            <End Role="PatientAllergies" EntitySet="PatientAllergies" />
+          </AssociationSet>
+          <AssociationSet Name="PatientID_FK_in_PatientDrug" Association="Self.PatientID_FK_in_PatientDrug">
+            <End Role="Patient" EntitySet="Patients" />
+            <End Role="PatientDrug" EntitySet="PatientDrugs" />
+          </AssociationSet>
+          <AssociationSet Name="PatientID_FK_in_PatientEmergencyContact" Association="Self.PatientID_FK_in_PatientEmergencyContact">
+            <End Role="Patient" EntitySet="Patients" />
+            <End Role="PatientEmergencyContact" EntitySet="PatientEmergencyContacts" />
+          </AssociationSet>
+          <AssociationSet Name="PatientID_FK_in_PatientImmunization" Association="Self.PatientID_FK_in_PatientImmunization">
+            <End Role="Patient" EntitySet="Patients" />
+            <End Role="PatientImmunization" EntitySet="PatientImmunizations" />
+          </AssociationSet>
+          <AssociationSet Name="PatientID_FK_in_PatientProblems" Association="Self.PatientID_FK_in_PatientProblems">
+            <End Role="Patient" EntitySet="Patients" />
+            <End Role="PatientProblems" EntitySet="PatientProblems" />
+          </AssociationSet>
+          <AssociationSet Name="PatientID_FK_in_Vitals" Association="Self.PatientID_FK_in_Vitals">
+            <End Role="Patient" EntitySet="Patients" />
+            <End Role="Vitals" EntitySet="Vitals" />
+          </AssociationSet>
+          <AssociationSet Name="PatientID_ForeignK_in_PatientInsurance" Association="Self.PatientID_ForeignK_in_PatientInsurance">
+            <End Role="Patient" EntitySet="Patients" />
+            <End Role="PatientInsurance" EntitySet="PatientInsurances" />
+          </AssociationSet>
+          <AssociationSet Name="PhoneNumberID_FK_in_Patient" Association="Self.PhoneNumberID_FK_in_Patient">
+            <End Role="PhoneNumber" EntitySet="PhoneNumbers" />
+            <End Role="Patient" EntitySet="Patients" />
+          </AssociationSet>
+          <AssociationSet Name="ProblemID_FK_in_PatientsProblem" Association="Self.ProblemID_FK_in_PatientsProblem">
+            <End Role="Problems" EntitySet="Problems" />
+            <End Role="PatientProblems" EntitySet="PatientProblems" />
+          </AssociationSet>
+          <AssociationSet Name="PhoneTypeID_FK_in_PhoneNumber" Association="Self.PhoneTypeID_FK_in_PhoneNumber">
+            <End Role="PhoneType" EntitySet="PhoneTypes" />
+            <End Role="PhoneNumber" EntitySet="PhoneNumbers" />
+          </AssociationSet>
+          <AssociationSet Name="AspNetUserRoles" Association="Self.AspNetUserRoles">
+            <End Role="AspNetRoles" EntitySet="AspNetRoles" />
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="HEAP_540ModelStoreContainer" CdmEntityContainer="Entities">
+          <EntitySetMapping Name="AccountsAdmins">
+            <EntityTypeMapping TypeName="HEAP_540Model.AccountsAdmin">
+              <MappingFragment StoreEntitySet="AccountsAdmin">
+                <ScalarProperty Name="AdminAccountID" ColumnName="AdminAccountID" />
+                <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="AccountTypeID" ColumnName="AccountTypeID" />
+                <ScalarProperty Name="ModifyID" ColumnName="ModifyID" />
+                <ScalarProperty Name="History" ColumnName="History" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AccountTypes">
+            <EntityTypeMapping TypeName="HEAP_540Model.AccountType">
+              <MappingFragment StoreEntitySet="AccountType">
+                <ScalarProperty Name="AccountTypeID" ColumnName="AccountTypeID" />
+                <ScalarProperty Name="AccountTypeName" ColumnName="AccountTypeName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ActiveSStandings">
+            <EntityTypeMapping TypeName="HEAP_540Model.ActiveSStanding">
+              <MappingFragment StoreEntitySet="ActiveSStanding">
+                <ScalarProperty Name="ActiveSStatusID" ColumnName="ActiveSStatusID" />
+                <ScalarProperty Name="ActiveSSType" ColumnName="ActiveSSType" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AddLabReports">
+            <EntityTypeMapping TypeName="HEAP_540Model.AddLabReport">
+              <MappingFragment StoreEntitySet="AddLabReport">
+                <ScalarProperty Name="AddLabReportID" ColumnName="AddLabReportID" />
+                <ScalarProperty Name="PatientID" ColumnName="PatientID" />
+                <ScalarProperty Name="WhereOrder" ColumnName="WhereOrder" />
+                <ScalarProperty Name="ResultDate" ColumnName="ResultDate" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Diagnoses" ColumnName="Diagnoses" />
+                <ScalarProperty Name="Lab" ColumnName="Lab" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Addresses">
+            <EntityTypeMapping TypeName="HEAP_540Model.Address">
+              <MappingFragment StoreEntitySet="Address">
+                <ScalarProperty Name="AddressID" ColumnName="AddressID" />
+                <ScalarProperty Name="StreetName" ColumnName="StreetName" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="County" ColumnName="County" />
+                <ScalarProperty Name="ZipCode" ColumnName="ZipCode" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AdjustmentCodes">
+            <EntityTypeMapping TypeName="HEAP_540Model.AdjustmentCode">
+              <MappingFragment StoreEntitySet="AdjustmentCode">
+                <ScalarProperty Name="AdjustmentCodeID" ColumnName="AdjustmentCodeID" />
+                <ScalarProperty Name="AdjustmentDescription" ColumnName="AdjustmentDescription" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AlchoholStandings">
+            <EntityTypeMapping TypeName="HEAP_540Model.AlchoholStanding">
+              <MappingFragment StoreEntitySet="AlchoholStanding">
+                <ScalarProperty Name="AlcoholStatusID" ColumnName="AlcoholStatusID" />
+                <ScalarProperty Name="AlcoholStatusType" ColumnName="AlcoholStatusType" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AllergiesNames">
+            <EntityTypeMapping TypeName="HEAP_540Model.AllergiesName">
+              <MappingFragment StoreEntitySet="AllergiesName">
+                <ScalarProperty Name="AllergiesID" ColumnName="AllergiesID" />
+                <ScalarProperty Name="AllergyTypeID" ColumnName="AllergyTypeID" />
+                <ScalarProperty Name="AllergyName" ColumnName="AllergyName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AllergyTypes">
+            <EntityTypeMapping TypeName="HEAP_540Model.AllergyType">
+              <MappingFragment StoreEntitySet="AllergyType">
+                <ScalarProperty Name="AllergyTypeID" ColumnName="AllergyTypeID" />
+                <ScalarProperty Name="AllergyTypeName" ColumnName="AllergyTypeName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AspNetRoles">
+            <EntityTypeMapping TypeName="HEAP_540Model.AspNetRole">
+              <MappingFragment StoreEntitySet="AspNetRoles">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AspNetUserClaims">
+            <EntityTypeMapping TypeName="HEAP_540Model.AspNetUserClaim">
+              <MappingFragment StoreEntitySet="AspNetUserClaims">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="ClaimType" ColumnName="ClaimType" />
+                <ScalarProperty Name="ClaimValue" ColumnName="ClaimValue" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AspNetUserLogins">
+            <EntityTypeMapping TypeName="HEAP_540Model.AspNetUserLogin">
+              <MappingFragment StoreEntitySet="AspNetUserLogins">
+                <ScalarProperty Name="LoginProvider" ColumnName="LoginProvider" />
+                <ScalarProperty Name="ProviderKey" ColumnName="ProviderKey" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AspNetUsers">
+            <EntityTypeMapping TypeName="HEAP_540Model.AspNetUser">
+              <MappingFragment StoreEntitySet="AspNetUsers">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="EmailConfirmed" ColumnName="EmailConfirmed" />
+                <ScalarProperty Name="PasswordHash" ColumnName="PasswordHash" />
+                <ScalarProperty Name="SecurityStamp" ColumnName="SecurityStamp" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="PhoneNumberConfirmed" ColumnName="PhoneNumberConfirmed" />
+                <ScalarProperty Name="TwoFactorEnabled" ColumnName="TwoFactorEnabled" />
+                <ScalarProperty Name="LockoutEndDateUtc" ColumnName="LockoutEndDateUtc" />
+                <ScalarProperty Name="LockoutEnabled" ColumnName="LockoutEnabled" />
+                <ScalarProperty Name="AccessFailedCount" ColumnName="AccessFailedCount" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Billings">
+            <EntityTypeMapping TypeName="HEAP_540Model.Billing">
+              <MappingFragment StoreEntitySet="Billing">
+                <ScalarProperty Name="BillingID" ColumnName="BillingID" />
+                <ScalarProperty Name="CurrentProceduralTerminologyID" ColumnName="CurrentProceduralTerminologyID" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="Payment" ColumnName="Payment" />
+                <ScalarProperty Name="AdjustmentCodeID" ColumnName="AdjustmentCodeID" />
+                <ScalarProperty Name="PaymentModeID" ColumnName="PaymentModeID" />
+                <ScalarProperty Name="DatePaid" ColumnName="DatePaid" />
+                <ScalarProperty Name="PaidBy" ColumnName="PaidBy" />
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+                <ScalarProperty Name="PatientID" ColumnName="PatientID" />
+                <ScalarProperty Name="InsuranceID" ColumnName="InsuranceID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CreateOrderInternals">
+            <EntityTypeMapping TypeName="HEAP_540Model.CreateOrderInternal">
+              <MappingFragment StoreEntitySet="CreateOrderInternal">
+                <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+                <ScalarProperty Name="PatientID" ColumnName="PatientID" />
+                <ScalarProperty Name="OrderingProvider" ColumnName="OrderingProvider" />
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+                <ScalarProperty Name="Diagnoses" ColumnName="Diagnoses" />
+                <ScalarProperty Name="Lab" ColumnName="Lab" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="ResponsibleOrder" ColumnName="ResponsibleOrder" />
+                <ScalarProperty Name="Stat" ColumnName="Stat" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CurrentProceduralTerminologies">
+            <EntityTypeMapping TypeName="HEAP_540Model.CurrentProceduralTerminology">
+              <MappingFragment StoreEntitySet="CurrentProceduralTerminology">
+                <ScalarProperty Name="CurrentProceduralTerminologyID" ColumnName="CurrentProceduralTerminologyID" />
+                <ScalarProperty Name="CPTActualNumber" ColumnName="CPTActualNumber" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Demographics">
+            <EntityTypeMapping TypeName="HEAP_540Model.Demographic">
+              <MappingFragment StoreEntitySet="Demographics">
+                <ScalarProperty Name="DemographicID" ColumnName="DemographicID" />
+                <ScalarProperty Name="PatientID" ColumnName="PatientID" />
+                <ScalarProperty Name="OccupationID" ColumnName="OccupationID" />
+                <ScalarProperty Name="EthnicityID" ColumnName="EthnicityID" />
+                <ScalarProperty Name="RaceID" ColumnName="RaceID" />
+                <ScalarProperty Name="EmergencyContactID" ColumnName="EmergencyContactID" />
+                <ScalarProperty Name="SmokingStatusID" ColumnName="SmokingStatusID" />
+                <ScalarProperty Name="AlcoholStatusID" ColumnName="AlcoholStatusID" />
+                <ScalarProperty Name="ActiveSStatusID" ColumnName="ActiveSStatusID" />
+                <ScalarProperty Name="DrugAbuseID" ColumnName="DrugAbuseID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Drugs">
+            <EntityTypeMapping TypeName="HEAP_540Model.Drug">
+              <MappingFragment StoreEntitySet="Drug">
+                <ScalarProperty Name="DrugID" ColumnName="DrugID" />
+                <ScalarProperty Name="DrugName" ColumnName="DrugName" />
+                <ScalarProperty Name="Dose" ColumnName="Dose" />
+                <ScalarProperty Name="HowLong" ColumnName="HowLong" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DrugAbuses">
+            <EntityTypeMapping TypeName="HEAP_540Model.DrugAbuse">
+              <MappingFragment StoreEntitySet="DrugAbuse">
+                <ScalarProperty Name="DrugAbuseID" ColumnName="DrugAbuseID" />
+                <ScalarProperty Name="DrugAbuseType" ColumnName="DrugAbuseType" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EmergencyContacts">
+            <EntityTypeMapping TypeName="HEAP_540Model.EmergencyContact">
+              <MappingFragment StoreEntitySet="EmergencyContact">
+                <ScalarProperty Name="EmergencyContactID" ColumnName="EmergencyContactID" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="PhoneNumberID" ColumnName="PhoneNumberID" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="RelationshipID" ColumnName="RelationshipID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Employees">
+            <EntityTypeMapping TypeName="HEAP_540Model.Employee">
+              <MappingFragment StoreEntitySet="Employee">
+                <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="AddressID" ColumnName="AddressID" />
+                <ScalarProperty Name="PhoneNumberID" ColumnName="PhoneNumberID" />
+                <ScalarProperty Name="Position" ColumnName="Position" />
+                <ScalarProperty Name="Department" ColumnName="Department" />
+                <ScalarProperty Name="EmployeeSSN" ColumnName="EmployeeSSN" />
+                <ScalarProperty Name="PersonalEmail" ColumnName="PersonalEmail" />
+                <ScalarProperty Name="EmployeeDateOfBirth" ColumnName="EmployeeDateOfBirth" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Ethnicities">
+            <EntityTypeMapping TypeName="HEAP_540Model.Ethnicity">
+              <MappingFragment StoreEntitySet="Ethnicity">
+                <ScalarProperty Name="EthnicityID" ColumnName="EthnicityID" />
+                <ScalarProperty Name="EthnicityName" ColumnName="EthnicityName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FamilyHistoryMedicals">
+            <EntityTypeMapping TypeName="HEAP_540Model.FamilyHistoryMedical">
+              <MappingFragment StoreEntitySet="FamilyHistoryMedical">
+                <ScalarProperty Name="PatientFamilyProblemID" ColumnName="PatientFamilyProblemID" />
+                <ScalarProperty Name="ProblemID" ColumnName="ProblemID" />
+                <ScalarProperty Name="RelationshipID" ColumnName="RelationshipID" />
+                <ScalarProperty Name="PatientID" ColumnName="PatientID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Immunizations">
+            <EntityTypeMapping TypeName="HEAP_540Model.Immunization">
+              <MappingFragment StoreEntitySet="Immunizations">
+                <ScalarProperty Name="ImmunizationID" ColumnName="ImmunizationID" />
+                <ScalarProperty Name="Vaccine" ColumnName="Vaccine" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Insurances">
+            <EntityTypeMapping TypeName="HEAP_540Model.Insurance">
+              <MappingFragment StoreEntitySet="Insurance">
+                <ScalarProperty Name="InsuranceID" ColumnName="InsuranceID" />
+                <ScalarProperty Name="InsuranceName" ColumnName="InsuranceName" />
+                <ScalarProperty Name="InsurancePlan" ColumnName="InsurancePlan" />
+                <ScalarProperty Name="CoPay" ColumnName="CoPay" />
+                <ScalarProperty Name="Deductibles" ColumnName="Deductibles" />
+                <ScalarProperty Name="PrimarySubscriber" ColumnName="PrimarySubscriber" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MaritalStandings">
+            <EntityTypeMapping TypeName="HEAP_540Model.MaritalStanding">
+              <MappingFragment StoreEntitySet="MaritalStanding">
+                <ScalarProperty Name="MaritalStatusID" ColumnName="MaritalStatusID" />
+                <ScalarProperty Name="MaritalStatusType" ColumnName="MaritalStatusType" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Modifies">
+            <EntityTypeMapping TypeName="HEAP_540Model.Modify">
+              <MappingFragment StoreEntitySet="Modify">
+                <ScalarProperty Name="ModifyID" ColumnName="ModifyID" />
+                <ScalarProperty Name="ModifyType" ColumnName="ModifyType" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NotesMedicalStaffs">
+            <EntityTypeMapping TypeName="HEAP_540Model.NotesMedicalStaff">
+              <MappingFragment StoreEntitySet="NotesMedicalStaff">
+                <ScalarProperty Name="NotesID" ColumnName="NotesID" />
+                <ScalarProperty Name="Date_Time_Recorded" ColumnName="Date_Time_Recorded" />
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+                <ScalarProperty Name="PatientID" ColumnName="PatientID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Occupations">
+            <EntityTypeMapping TypeName="HEAP_540Model.Occupation">
+              <MappingFragment StoreEntitySet="Occupation">
+                <ScalarProperty Name="OccupationID" ColumnName="OccupationID" />
+                <ScalarProperty Name="PositionTitle" ColumnName="PositionTitle" />
+                <ScalarProperty Name="EmployerName" ColumnName="EmployerName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Patients">
+            <EntityTypeMapping TypeName="HEAP_540Model.Patient">
+              <MappingFragment StoreEntitySet="Patient">
+                <ScalarProperty Name="PatientID" ColumnName="PatientID" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="AddressID" ColumnName="AddressID" />
+                <ScalarProperty Name="PhoneNumberID" ColumnName="PhoneNumberID" />
+                <ScalarProperty Name="MaritalStatusID" ColumnName="MaritalStatusID" />
+                <ScalarProperty Name="InsuranceID" ColumnName="InsuranceID" />
+                <ScalarProperty Name="PatientSSN" ColumnName="PatientSSN" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PatientAllergies">
+            <EntityTypeMapping TypeName="HEAP_540Model.PatientAllergy">
+              <MappingFragment StoreEntitySet="PatientAllergies">
+                <ScalarProperty Name="PatientAllergyID" ColumnName="PatientAllergyID" />
+                <ScalarProperty Name="PatientID" ColumnName="PatientID" />
+                <ScalarProperty Name="AllergiesID" ColumnName="AllergiesID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PatientDrugs">
+            <EntityTypeMapping TypeName="HEAP_540Model.PatientDrug">
+              <MappingFragment StoreEntitySet="PatientDrug">
+                <ScalarProperty Name="PatientDrugID" ColumnName="PatientDrugID" />
+                <ScalarProperty Name="PatientID" ColumnName="PatientID" />
+                <ScalarProperty Name="DrugID" ColumnName="DrugID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PatientEmergencyContacts">
+            <EntityTypeMapping TypeName="HEAP_540Model.PatientEmergencyContact">
+              <MappingFragment StoreEntitySet="PatientEmergencyContact">
+                <ScalarProperty Name="PatientEmergencyContactID" ColumnName="PatientEmergencyContactID" />
+                <ScalarProperty Name="PatientID" ColumnName="PatientID" />
+                <ScalarProperty Name="EmergencyContactID" ColumnName="EmergencyContactID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PatientImmunizations">
+            <EntityTypeMapping TypeName="HEAP_540Model.PatientImmunization">
+              <MappingFragment StoreEntitySet="PatientImmunization">
+                <ScalarProperty Name="PatientImmunizationID" ColumnName="PatientImmunizationID" />
+                <ScalarProperty Name="PatientID" ColumnName="PatientID" />
+                <ScalarProperty Name="ImmunizationID" ColumnName="ImmunizationID" />
+                <ScalarProperty Name="DateGiven" ColumnName="DateGiven" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PatientInsurances">
+            <EntityTypeMapping TypeName="HEAP_540Model.PatientInsurance">
+              <MappingFragment StoreEntitySet="PatientInsurance">
+                <ScalarProperty Name="PatientInsuranceID" ColumnName="PatientInsuranceID" />
+                <ScalarProperty Name="PatientID" ColumnName="PatientID" />
+                <ScalarProperty Name="InsuranceID" ColumnName="InsuranceID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PatientProblems">
+            <EntityTypeMapping TypeName="HEAP_540Model.PatientProblem">
+              <MappingFragment StoreEntitySet="PatientProblems">
+                <ScalarProperty Name="PatientProblemID" ColumnName="PatientProblemID" />
+                <ScalarProperty Name="PatientID" ColumnName="PatientID" />
+                <ScalarProperty Name="ProblemID" ColumnName="ProblemID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PaymentModes">
+            <EntityTypeMapping TypeName="HEAP_540Model.PaymentMode">
+              <MappingFragment StoreEntitySet="PaymentMode">
+                <ScalarProperty Name="PaymentModeID" ColumnName="PaymentModeID" />
+                <ScalarProperty Name="PaymentModeType" ColumnName="PaymentModeType" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PhoneNumbers">
+            <EntityTypeMapping TypeName="HEAP_540Model.PhoneNumber">
+              <MappingFragment StoreEntitySet="PhoneNumber">
+                <ScalarProperty Name="PhoneNumberID" ColumnName="PhoneNumberID" />
+                <ScalarProperty Name="PhoneNumber1" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="PhoneTypeID" ColumnName="PhoneTypeID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PhoneTypes">
+            <EntityTypeMapping TypeName="HEAP_540Model.PhoneType">
+              <MappingFragment StoreEntitySet="PhoneType">
+                <ScalarProperty Name="PhoneTypeID" ColumnName="PhoneTypeID" />
+                <ScalarProperty Name="PhoneTypeName" ColumnName="PhoneTypeName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Problems">
+            <EntityTypeMapping TypeName="HEAP_540Model.Problem">
+              <MappingFragment StoreEntitySet="Problems">
+                <ScalarProperty Name="ProblemID" ColumnName="ProblemID" />
+                <ScalarProperty Name="ProblemsName" ColumnName="ProblemsName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Races">
+            <EntityTypeMapping TypeName="HEAP_540Model.Race">
+              <MappingFragment StoreEntitySet="Race">
+                <ScalarProperty Name="RaceID" ColumnName="RaceID" />
+                <ScalarProperty Name="RaceName" ColumnName="RaceName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Relationships">
+            <EntityTypeMapping TypeName="HEAP_540Model.Relationship">
+              <MappingFragment StoreEntitySet="Relationship">
+                <ScalarProperty Name="RelationshipID" ColumnName="RelationshipID" />
+                <ScalarProperty Name="RelationshipType" ColumnName="RelationshipType" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SmokingStandings">
+            <EntityTypeMapping TypeName="HEAP_540Model.SmokingStanding">
+              <MappingFragment StoreEntitySet="SmokingStanding">
+                <ScalarProperty Name="SmokingStatusID" ColumnName="SmokingStatusID" />
+                <ScalarProperty Name="SmokingStatusType" ColumnName="SmokingStatusType" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Vitals">
+            <EntityTypeMapping TypeName="HEAP_540Model.Vital">
+              <MappingFragment StoreEntitySet="Vitals">
+                <ScalarProperty Name="VitalID" ColumnName="VitalID" />
+                <ScalarProperty Name="DateAndTime" ColumnName="DateAndTime" />
+                <ScalarProperty Name="BloodPressure" ColumnName="BloodPressure" />
+                <ScalarProperty Name="Heart_Rate" ColumnName="Heart_Rate" />
+                <ScalarProperty Name="Respiratory_Rate" ColumnName="Respiratory_Rate" />
+                <ScalarProperty Name="Height_Length" ColumnName="Height_Length" />
+                <ScalarProperty Name="Weight" ColumnName="Weight" />
+                <ScalarProperty Name="Temperature" ColumnName="Temperature" />
+                <ScalarProperty Name="Comments" ColumnName="Comments" />
+                <ScalarProperty Name="PatientID" ColumnName="PatientID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="C__MigrationHistory">
+            <EntityTypeMapping TypeName="HEAP_540Model.C__MigrationHistory">
+              <MappingFragment StoreEntitySet="__MigrationHistory">
+                <ScalarProperty Name="MigrationId" ColumnName="MigrationId" />
+                <ScalarProperty Name="ContextKey" ColumnName="ContextKey" />
+                <ScalarProperty Name="Model" ColumnName="Model" />
+                <ScalarProperty Name="ProductVersion" ColumnName="ProductVersion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="AspNetUserRoles" TypeName="HEAP_540Model.AspNetUserRoles" StoreEntitySet="AspNetUserRoles">
+            <EndProperty Name="AspNetRoles">
+              <ScalarProperty Name="Id" ColumnName="RoleId" />
+            </EndProperty>
+            <EndProperty Name="AspNetUsers">
+              <ScalarProperty Name="Id" ColumnName="UserId" />
+            </EndProperty>
+          </AssociationSetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

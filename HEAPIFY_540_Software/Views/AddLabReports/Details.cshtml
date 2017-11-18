@@ -1,0 +1,66 @@
+﻿@model HEAPIFY_540_Software.Models.AddLabReport
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>AddLabReport</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Patient.FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Patient.FirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WhereOrder)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WhereOrder)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ResultDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ResultDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Type)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Type)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Diagnoses)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Diagnoses)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Lab)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Lab)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.AddLabReportID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

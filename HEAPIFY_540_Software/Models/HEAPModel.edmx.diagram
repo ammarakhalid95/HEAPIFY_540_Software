@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="a6563d6b374942c8b20183f29ddeda0f" Name="Diagram1">
+        <EntityTypeShape EntityType="HEAP_540Model.AccountsAdmin" Width="1.5" PointX="11.25" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="HEAP_540Model.AccountType" Width="1.5" PointX="9" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="HEAP_540Model.ActiveSStanding" Width="1.5" PointX="9" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HEAP_540Model.AddLabReport" Width="1.5" PointX="8.25" PointY="20" IsExpanded="true" />
+        <EntityTypeShape EntityType="HEAP_540Model.Address" Width="1.5" PointX="3.75" PointY="18.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="HEAP_540Model.AdjustmentCode" Width="1.5" PointX="0.75" PointY="17" IsExpanded="true" />
+        <EntityTypeShape EntityType="HEAP_540Model.AlchoholStanding" Width="1.5" PointX="9" PointY="11" IsExpanded="true" />
+        <EntityTypeShape EntityType="HEAP_540Model.AllergiesName" Width="1.5" PointX="9" PointY="16.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="HEAP_540Model.AllergyType" Width="1.5" PointX="6.75" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HEAP_540Model.AspNetRole" Width="1.5" PointX="12" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HEAP_540Model.AspNetUserClaim" Width="1.5" PointX="16.5" PointY="11.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="HEAP_540Model.AspNetUserLogin" Width="1.5" PointX="16.5" PointY="14" IsExpanded="true" />
+        <EntityTypeShape EntityType="HEAP_540Model.AspNetUser" Width="1.5" PointX="14.25" PointY="11.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="HEAP_540Model.Billing" Width="1.5" PointX="3" PointY="22.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="HEAP_540Model.CreateOrderInternal" Width="1.5" PointX="8.25" PointY="23.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="HEAP_540Model.CurrentProceduralTerminology" Width="1.5" PointX="0.75" PointY="19.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="HEAP_540Model.Demographic" Width="1.5" PointX="11.25" PointY="22.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="HEAP_540Model.Drug" Width="1.5" PointX="9" PointY="49.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="HEAP_540Model.DrugAbuse" Width="1.5" PointX="9" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="HEAP_540Model.EmergencyContact" Width="1.5" PointX="9" PointY="31.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HEAP_540Model.Employee" Width="1.5" PointX="6" PointY="11.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="HEAP_540Model.Ethnicity" Width="1.5" PointX="9" PointY="39.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="HEAP_540Model.FamilyHistoryMedical" Width="1.5" PointX="8.25" PointY="28.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="HEAP_540Model.Immunization" Width="1.5" PointX="12" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HEAP_540Model.Insurance" Width="1.5" PointX="0.75" PointY="23.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="HEAP_540Model.MaritalStanding" Width="1.5" PointX="3.75" PointY="27.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HEAP_540Model.Modify" Width="1.5" PointX="9" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="HEAP_540Model.NotesMedicalStaff" Width="1.5" PointX="8.25" PointY="35.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="HEAP_540Model.Occupation" Width="1.5" PointX="9" PointY="42" IsExpanded="true" />
+        <EntityTypeShape EntityType="HEAP_540Model.Patient" Width="1.5" PointX="6" PointY="21.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="HEAP_540Model.PatientAllergy" Width="1.5" PointX="11.25" PointY="18.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="HEAP_540Model.PatientDrug" Width="1.5" PointX="11.25" PointY="28.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="HEAP_540Model.PatientEmergencyContact" Width="1.5" PointX="14.25" PointY="23.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="HEAP_540Model.PatientImmunization" Width="1.5" PointX="14.25" PointY="20.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="HEAP_540Model.PatientInsurance" Width="1.5" PointX="14.25" PointY="26.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="HEAP_540Model.PatientProblem" Width="1.5" PointX="14.25" PointY="17.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="HEAP_540Model.PaymentMode" Width="1.5" PointX="0.75" PointY="27" IsExpanded="true" />
+        <EntityTypeShape EntityType="HEAP_540Model.PhoneNumber" Width="1.5" PointX="3.75" PointY="30.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="HEAP_540Model.PhoneType" Width="1.5" PointX="1.5" PointY="30.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="HEAP_540Model.Problem" Width="1.5" PointX="12" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HEAP_540Model.Race" Width="1.5" PointX="9" PointY="44.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="HEAP_540Model.Relationship" Width="1.5" PointX="6.75" PointY="32.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="HEAP_540Model.SmokingStanding" Width="1.5" PointX="9" PointY="46.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="HEAP_540Model.Vital" Width="1.5" PointX="8.25" PointY="55.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="HEAP_540Model.C__MigrationHistory" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="HEAP_540Model.AccountTypeID_FK_in_Accounts_Admin" ManuallyRouted="false" />
+        <AssociationConnector Association="HEAP_540Model.EmployeeID_FK_Admin" ManuallyRouted="false" />
+        <AssociationConnector Association="HEAP_540Model.ModifyID_FK_in_Accounts_Admin" ManuallyRouted="false" />
+        <AssociationConnector Association="HEAP_540Model.ActiveSStatusID_FK_in_Demographics" ManuallyRouted="false" />
+        <AssociationConnector Association="HEAP_540Model.PatientID_FK_in_AddLabReport" ManuallyRouted="false" />
+        <AssociationConnector Association="HEAP_540Model.AddressID_FK_in_Employee" ManuallyRouted="false" />
+        <AssociationConnector Association="HEAP_540Model.AddressID_FK_in_Patient" ManuallyRouted="false" />
+        <AssociationConnector Association="HEAP_540Model.AdjustmentCodeID" ManuallyRouted="false" />
+        <AssociationConnector Association="HEAP_540Model.AlcoholStatusID_FK_in_Demographics" ManuallyRouted="false" />
+        <AssociationConnector Association="HEAP_540Model.AllergyTypeID_FK_in_Allergies" ManuallyRouted="false" />
+        <AssociationConnector Association="HEAP_540Model.FK_PatientAllergies_Allergies" ManuallyRouted="false" />
+        <AssociationConnector Association="HEAP_540Model.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="HEAP_540Model.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="HEAP_540Model.EmployeeID_FK_AspNetUsers" ManuallyRouted="false" />
+        <AssociationConnector Association="HEAP_540Model.CPTID_FK_in_CPT" ManuallyRouted="false" />
+        <AssociationConnector Association="HEAP_540Model.InsuranceID_FK_in_Billing" ManuallyRouted="false" />
+        <AssociationConnector Association="HEAP_540Model.PatientID_FK_in_Billing" ManuallyRouted="false" />
+        <AssociationConnector Association="HEAP_540Model.PaymentModeID_FK_Billing" ManuallyRouted="false" />
+        <AssociationConnector Association="HEAP_540Model.EmployeeID_OrderingProvider_in_CreateOrder" ManuallyRouted="false" />
+        <AssociationConnector Association="HEAP_540Model.PatientID_FK_in_CreateOrder" ManuallyRouted="false" />
+        <AssociationConnector Association="HEAP_540Model.ResponsibleProvider_EmployeeID_FK_CreateOrder" ManuallyRouted="false" />
+        <AssociationConnector Association="HEAP_540Model.DrugAbuseID_in_FK_Demographics" ManuallyRouted="false" />
+        <AssociationConnector Association="HEAP_540Model.EmergencyContactID_FK_in_Demographics" ManuallyRouted="false" />
+        <AssociationConnector Association="HEAP_540Model.EthnicityID_FK_in_Demographics" ManuallyRouted="false" />
+        <AssociationConnector Association="HEAP_540Model.OccupationID_FK_in_Demographics" ManuallyRouted="false" />
+        <AssociationConnector Association="HEAP_540Model.PatientID_FK_in_Demographics" ManuallyRouted="false" />
+        <AssociationConnector Association="HEAP_540Model.RaceID_FK_in_Demographics" ManuallyRouted="false" />
+        <AssociationConnector Association="HEAP_540Model.SmokingStatus_FK_in_Demographics" ManuallyRouted="false" />
+        <AssociationConnector Association="HEAP_540Model.DrugID_FK_in_PatientDrug" ManuallyRouted="false" />
+        <AssociationConnector Association="HEAP_540Model.EmergencyContactID_FK_in_PatientEmergencyContact" ManuallyRouted="false" />
+        <AssociationConnector Association="HEAP_540Model.PhoneNumberID_FK_in_EmergencyContact" ManuallyRouted="false" />
+        <AssociationConnector Association="HEAP_540Model.RelationshipID_FK_in_EmergencyContact" ManuallyRouted="false" />
+        <AssociationConnector Association="HEAP_540Model.PhoneNumberID_FK_Employee" ManuallyRouted="false" />
+        <AssociationConnector Association="HEAP_540Model.PatientID_FK_in_FamilyHistory" ManuallyRouted="false" />
+        <AssociationConnector Association="HEAP_540Model.ProblemID_FK_in_FamilyHistory" ManuallyRouted="false" />
+        <AssociationConnector Association="HEAP_540Model.RelationshipID_FK_in_FamilyHistory" ManuallyRouted="false" />
+        <AssociationConnector Association="HEAP_540Model.ImmunizationID_FK_in_PatientImmunization" ManuallyRouted="false" />
+        <AssociationConnector Association="HEAP_540Model.InsuranceID_FK_in_Patient" ManuallyRouted="false" />
+        <AssociationConnector Association="HEAP_540Model.InsuranceID_ForeignK_in_PatientInsurance" ManuallyRouted="false" />
+        <AssociationConnector Association="HEAP_540Model.MaritalStatusID_FK_in_Patient" ManuallyRouted="false" />
+        <AssociationConnector Association="HEAP_540Model.PatientID_FK_in_Notes" ManuallyRouted="false" />
+        <AssociationConnector Association="HEAP_540Model.PatientID_FK_in_PatientAllergies" ManuallyRouted="false" />
+        <AssociationConnector Association="HEAP_540Model.PatientID_FK_in_PatientDrug" ManuallyRouted="false" />
+        <AssociationConnector Association="HEAP_540Model.PatientID_FK_in_PatientEmergencyContact" ManuallyRouted="false" />
+        <AssociationConnector Association="HEAP_540Model.PatientID_FK_in_PatientImmunization" ManuallyRouted="false" />
+        <AssociationConnector Association="HEAP_540Model.PatientID_FK_in_PatientProblems" ManuallyRouted="false" />
+        <AssociationConnector Association="HEAP_540Model.PatientID_FK_in_Vitals" ManuallyRouted="false" />
+        <AssociationConnector Association="HEAP_540Model.PatientID_ForeignK_in_PatientInsurance" ManuallyRouted="false" />
+        <AssociationConnector Association="HEAP_540Model.PhoneNumberID_FK_in_Patient" ManuallyRouted="false" />
+        <AssociationConnector Association="HEAP_540Model.ProblemID_FK_in_PatientsProblem" ManuallyRouted="false" />
+        <AssociationConnector Association="HEAP_540Model.PhoneTypeID_FK_in_PhoneNumber" ManuallyRouted="false" />
+        <AssociationConnector Association="HEAP_540Model.AspNetUserRoles" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

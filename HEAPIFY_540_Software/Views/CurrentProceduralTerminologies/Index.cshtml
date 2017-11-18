@@ -1,0 +1,39 @@
+﻿@model IEnumerable<HEAPIFY_540_Software.Models.CurrentProceduralTerminology>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CPTActualNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CPTActualNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.CurrentProceduralTerminologyID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.CurrentProceduralTerminologyID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.CurrentProceduralTerminologyID })
+        </td>
+    </tr>
+}
+
+</table>

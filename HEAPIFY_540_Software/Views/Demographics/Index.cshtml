@@ -1,0 +1,81 @@
+﻿@model IEnumerable<HEAPIFY_540_Software.Models.Demographic>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ActiveSStanding.ActiveSSType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AlchoholStanding.AlcoholStatusType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DrugAbuse.DrugAbuseType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EmergencyContact.FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Ethnicity.EthnicityName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Occupation.PositionTitle)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Patient.FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Race.RaceName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SmokingStanding.SmokingStatusType)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ActiveSStanding.ActiveSSType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AlchoholStanding.AlcoholStatusType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DrugAbuse.DrugAbuseType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EmergencyContact.FirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ethnicity.EthnicityName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Occupation.PositionTitle)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Patient.FirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Race.RaceName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SmokingStanding.SmokingStatusType)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.DemographicID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.DemographicID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.DemographicID })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,90 @@
+﻿@model HEAPIFY_540_Software.Models.Demographic
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Demographic</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ActiveSStanding.ActiveSSType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ActiveSStanding.ActiveSSType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AlchoholStanding.AlcoholStatusType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AlchoholStanding.AlcoholStatusType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DrugAbuse.DrugAbuseType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DrugAbuse.DrugAbuseType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EmergencyContact.FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EmergencyContact.FirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Ethnicity.EthnicityName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ethnicity.EthnicityName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Occupation.PositionTitle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Occupation.PositionTitle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Patient.FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Patient.FirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Race.RaceName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Race.RaceName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SmokingStanding.SmokingStatusType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SmokingStanding.SmokingStatusType)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.DemographicID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
