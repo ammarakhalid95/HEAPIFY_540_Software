@@ -1,0 +1,26 @@
+﻿@model HEAPIFY_540_Software.Models.Modify
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Modify</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ModifyType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ModifyType)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ModifyID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

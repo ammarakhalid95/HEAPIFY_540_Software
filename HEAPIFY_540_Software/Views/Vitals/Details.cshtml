@@ -1,0 +1,90 @@
+﻿@model HEAPIFY_540_Software.Models.Vital
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Vital</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.DateAndTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateAndTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BloodPressure)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BloodPressure)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Heart_Rate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Heart_Rate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Respiratory_Rate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Respiratory_Rate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Height_Length)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Height_Length)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Weight)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Weight)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Temperature)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Temperature)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Comments)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Comments)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Patient.FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Patient.FirstName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.VitalID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

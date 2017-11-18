@@ -1,0 +1,58 @@
+﻿@model HEAPIFY_540_Software.Models.Insurance
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Insurance</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.InsuranceName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InsuranceName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InsurancePlan)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InsurancePlan)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CoPay)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CoPay)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Deductibles)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Deductibles)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PrimarySubscriber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PrimarySubscriber)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.InsuranceID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

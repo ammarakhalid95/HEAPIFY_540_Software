@@ -1,0 +1,42 @@
+﻿@model HEAPIFY_540_Software.Models.PatientImmunization
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>PatientImmunization</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.DateGiven)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateGiven)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Immunization.Vaccine)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Immunization.Vaccine)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Patient.FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Patient.FirstName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.PatientImmunizationID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -20,7 +20,7 @@ namespace HEAPIFY_540_Software.Models
         {
             this.PatientAllergies = new HashSet<PatientAllergy>();
         }
-
+    
         [Key]
         public int AllergiesID { get; set; }
         public int AllergyTypeID { get; set; }

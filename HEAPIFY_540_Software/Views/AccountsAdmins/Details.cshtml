@@ -11,6 +11,22 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
+            @Html.DisplayNameFor(model => model.Date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.History)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.History)
+        </dd>
+
+        <dt>
             @Html.DisplayNameFor(model => model.AccountType.AccountTypeName)
         </dt>
 
@@ -32,22 +48,6 @@
 
         <dd>
             @Html.DisplayFor(model => model.Modify.ModifyType)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Date)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Date)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.History)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.History)
         </dd>
 
     </dl>

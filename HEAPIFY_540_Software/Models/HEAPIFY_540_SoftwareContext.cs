@@ -69,5 +69,37 @@ namespace HEAPIFY_540_Software.Models
         public System.Data.Entity.DbSet<HEAPIFY_540_Software.Models.Race> Races { get; set; }
 
         public System.Data.Entity.DbSet<HEAPIFY_540_Software.Models.SmokingStanding> SmokingStandings { get; set; }
+
+        public System.Data.Entity.DbSet<HEAPIFY_540_Software.Models.Drug> Drugs { get; set; }
+
+        public System.Data.Entity.DbSet<HEAPIFY_540_Software.Models.PhoneNumber> PhoneNumbers { get; set; }
+
+        public System.Data.Entity.DbSet<HEAPIFY_540_Software.Models.Relationship> Relationships { get; set; }
+
+        public System.Data.Entity.DbSet<HEAPIFY_540_Software.Models.FamilyHistoryMedical> FamilyHistoryMedicals { get; set; }
+
+        public System.Data.Entity.DbSet<HEAPIFY_540_Software.Models.Problem> Problems { get; set; }
+
+        public System.Data.Entity.DbSet<HEAPIFY_540_Software.Models.Immunization> Immunizations { get; set; }
+
+        public System.Data.Entity.DbSet<HEAPIFY_540_Software.Models.MaritalStanding> MaritalStandings { get; set; }
+
+        public System.Data.Entity.DbSet<HEAPIFY_540_Software.Models.NotesMedicalStaff> NotesMedicalStaffs { get; set; }
+
+        public System.Data.Entity.DbSet<HEAPIFY_540_Software.Models.PatientAllergy> PatientAllergies { get; set; }
+
+        public System.Data.Entity.DbSet<HEAPIFY_540_Software.Models.PatientDrug> PatientDrugs { get; set; }
+
+        public System.Data.Entity.DbSet<HEAPIFY_540_Software.Models.PatientEmergencyContact> PatientEmergencyContacts { get; set; }
+
+        public System.Data.Entity.DbSet<HEAPIFY_540_Software.Models.PatientImmunization> PatientImmunizations { get; set; }
+
+        public System.Data.Entity.DbSet<HEAPIFY_540_Software.Models.PatientInsurance> PatientInsurances { get; set; }
+
+        public System.Data.Entity.DbSet<HEAPIFY_540_Software.Models.PatientProblem> PatientProblems { get; set; }
+
+        public System.Data.Entity.DbSet<HEAPIFY_540_Software.Models.PhoneType> PhoneTypes { get; set; }
+
+        public System.Data.Entity.DbSet<HEAPIFY_540_Software.Models.Vital> Vitals { get; set; }
     }
 }

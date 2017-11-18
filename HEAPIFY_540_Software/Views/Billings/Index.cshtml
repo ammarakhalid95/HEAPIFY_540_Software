@@ -12,21 +12,6 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.AdjustmentCode.AdjustmentDescription)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CurrentProceduralTerminology.CPTActualNumber)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Insurance.InsuranceName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Patient.FirstName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.PaymentMode.PaymentModeType)
-        </th>
-        <th>
             @Html.DisplayNameFor(model => model.Quantity)
         </th>
         <th>
@@ -41,26 +26,26 @@
         <th>
             @Html.DisplayNameFor(model => model.Notes)
         </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AdjustmentCode.AdjustmentDescription)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CurrentProceduralTerminology.CPTActualNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Insurance.InsuranceName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Patient.FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PaymentMode.PaymentModeType)
+        </th>
         <th></th>
     </tr>
 
 @foreach (var item in Model) {
     <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.AdjustmentCode.AdjustmentDescription)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CurrentProceduralTerminology.CPTActualNumber)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Insurance.InsuranceName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Patient.FirstName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.PaymentMode.PaymentModeType)
-        </td>
         <td>
             @Html.DisplayFor(modelItem => item.Quantity)
         </td>
@@ -75,6 +60,21 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Notes)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AdjustmentCode.AdjustmentDescription)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CurrentProceduralTerminology.CPTActualNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Insurance.InsuranceName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Patient.FirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PaymentMode.PaymentModeType)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.BillingID }) |

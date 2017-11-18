@@ -35,14 +35,14 @@ warning 6002: The table/view 'HEAP_540.dbo.__MigrationHistory' does not have a p
             <PropertyRef Name="AccountTypeID" />
           </Key>
           <Property Name="AccountTypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="AccountTypeName" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="AccountTypeName" Type="varchar" MaxLength="20" Nullable="false" />
         </EntityType>
         <EntityType Name="ActiveSStanding">
           <Key>
             <PropertyRef Name="ActiveSStatusID" />
           </Key>
           <Property Name="ActiveSStatusID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="ActiveSSType" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="ActiveSSType" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="AddLabReport">
           <Key>
@@ -50,7 +50,7 @@ warning 6002: The table/view 'HEAP_540.dbo.__MigrationHistory' does not have a p
           </Key>
           <Property Name="AddLabReportID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="PatientID" Type="int" Nullable="false" />
-          <Property Name="WhereOrder" Type="varchar" MaxLength="35" />
+          <Property Name="WhereOrder" Type="varchar" MaxLength="50" />
           <Property Name="ResultDate" Type="date" Nullable="false" />
           <Property Name="Type" Type="char" MaxLength="20" Nullable="false" />
           <Property Name="Diagnoses" Type="varchar" MaxLength="40" Nullable="false" />
@@ -61,7 +61,7 @@ warning 6002: The table/view 'HEAP_540.dbo.__MigrationHistory' does not have a p
             <PropertyRef Name="AddressID" />
           </Key>
           <Property Name="AddressID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="StreetName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="StreetName" Type="varchar(max)" Nullable="false" />
           <Property Name="City" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="County" Type="varchar" MaxLength="50" />
           <Property Name="ZipCode" Type="int" Nullable="false" />
@@ -78,7 +78,7 @@ warning 6002: The table/view 'HEAP_540.dbo.__MigrationHistory' does not have a p
             <PropertyRef Name="AlcoholStatusID" />
           </Key>
           <Property Name="AlcoholStatusID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="AlcoholStatusType" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="AlcoholStatusType" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="AllergiesName">
           <Key>
@@ -86,14 +86,14 @@ warning 6002: The table/view 'HEAP_540.dbo.__MigrationHistory' does not have a p
           </Key>
           <Property Name="AllergiesID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="AllergyTypeID" Type="int" Nullable="false" />
-          <Property Name="AllergyName" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="AllergyName" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="AllergyType">
           <Key>
             <PropertyRef Name="AllergyTypeID" />
           </Key>
           <Property Name="AllergyTypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="AllergyTypeName" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="AllergyTypeName" Type="varchar" MaxLength="30" Nullable="false" />
         </EntityType>
         <EntityType Name="AspNetRoles">
           <Key>
@@ -206,7 +206,7 @@ warning 6002: The table/view 'HEAP_540.dbo.__MigrationHistory' does not have a p
           </Key>
           <Property Name="DrugID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="DrugName" Type="varchar" MaxLength="50" />
-          <Property Name="Dose" Type="varchar" MaxLength="15" />
+          <Property Name="Dose" Type="varchar" MaxLength="30" />
           <Property Name="HowLong" Type="int" />
         </EntityType>
         <EntityType Name="DrugAbuse">
@@ -214,7 +214,7 @@ warning 6002: The table/view 'HEAP_540.dbo.__MigrationHistory' does not have a p
             <PropertyRef Name="DrugAbuseID" />
           </Key>
           <Property Name="DrugAbuseID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="DrugAbuseType" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="DrugAbuseType" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="EmergencyContact">
           <Key>
@@ -238,8 +238,8 @@ warning 6002: The table/view 'HEAP_540.dbo.__MigrationHistory' does not have a p
           <Property Name="LastName" Type="varchar" MaxLength="20" Nullable="false" />
           <Property Name="AddressID" Type="int" Nullable="false" />
           <Property Name="PhoneNumberID" Type="int" Nullable="false" />
-          <Property Name="Position" Type="varchar" MaxLength="20" Nullable="false" />
-          <Property Name="Department" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Position" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Department" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="EmployeeSSN" Type="char" MaxLength="9" Nullable="false" />
           <Property Name="PersonalEmail" Type="varchar" MaxLength="30" Nullable="false" />
           <Property Name="EmployeeDateOfBirth" Type="date" Nullable="false" />
@@ -249,7 +249,7 @@ warning 6002: The table/view 'HEAP_540.dbo.__MigrationHistory' does not have a p
             <PropertyRef Name="EthnicityID" />
           </Key>
           <Property Name="EthnicityID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="EthnicityName" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="EthnicityName" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="FamilyHistoryMedical">
           <Key>
@@ -265,15 +265,15 @@ warning 6002: The table/view 'HEAP_540.dbo.__MigrationHistory' does not have a p
             <PropertyRef Name="ImmunizationID" />
           </Key>
           <Property Name="ImmunizationID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Vaccine" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="Vaccine" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="Insurance">
           <Key>
             <PropertyRef Name="InsuranceID" />
           </Key>
           <Property Name="InsuranceID" Type="int" Nullable="false" />
-          <Property Name="InsuranceName" Type="varchar" MaxLength="15" Nullable="false" />
-          <Property Name="InsurancePlan" Type="varchar" MaxLength="10" />
+          <Property Name="InsuranceName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="InsurancePlan" Type="varchar" MaxLength="50" />
           <Property Name="CoPay" Type="float" />
           <Property Name="Deductibles" Type="float" />
           <Property Name="PrimarySubscriber" Type="varchar" MaxLength="50" Nullable="false" />
@@ -283,14 +283,14 @@ warning 6002: The table/view 'HEAP_540.dbo.__MigrationHistory' does not have a p
             <PropertyRef Name="MaritalStatusID" />
           </Key>
           <Property Name="MaritalStatusID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="MaritalStatusType" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="MaritalStatusType" Type="varchar" MaxLength="25" Nullable="false" />
         </EntityType>
         <EntityType Name="Modify">
           <Key>
             <PropertyRef Name="ModifyID" />
           </Key>
           <Property Name="ModifyID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="ModifyType" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="ModifyType" Type="varchar" MaxLength="20" Nullable="false" />
         </EntityType>
         <EntityType Name="NotesMedicalStaff">
           <Key>
@@ -306,8 +306,8 @@ warning 6002: The table/view 'HEAP_540.dbo.__MigrationHistory' does not have a p
             <PropertyRef Name="OccupationID" />
           </Key>
           <Property Name="OccupationID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="PositionTitle" Type="varchar" MaxLength="20" />
-          <Property Name="EmployerName" Type="varchar" MaxLength="20" />
+          <Property Name="PositionTitle" Type="varchar" MaxLength="50" />
+          <Property Name="EmployerName" Type="varchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="Patient">
           <Key>
@@ -322,7 +322,7 @@ warning 6002: The table/view 'HEAP_540.dbo.__MigrationHistory' does not have a p
           <Property Name="MaritalStatusID" Type="int" />
           <Property Name="InsuranceID" Type="int" />
           <Property Name="PatientSSN" Type="char" MaxLength="9" Nullable="false" />
-          <Property Name="Email" Type="varchar" MaxLength="20" />
+          <Property Name="Email" Type="varchar" MaxLength="50" />
           <Property Name="DateOfBirth" Type="date" Nullable="false" />
         </EntityType>
         <EntityType Name="PatientAllergies">
@@ -379,7 +379,7 @@ warning 6002: The table/view 'HEAP_540.dbo.__MigrationHistory' does not have a p
             <PropertyRef Name="PaymentModeID" />
           </Key>
           <Property Name="PaymentModeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="PaymentModeType" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="PaymentModeType" Type="varchar" MaxLength="20" Nullable="false" />
         </EntityType>
         <EntityType Name="PhoneNumber">
           <Key>
@@ -394,7 +394,7 @@ warning 6002: The table/view 'HEAP_540.dbo.__MigrationHistory' does not have a p
             <PropertyRef Name="PhoneTypeID" />
           </Key>
           <Property Name="PhoneTypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="PhoneTypeName" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="PhoneTypeName" Type="varchar" MaxLength="15" Nullable="false" />
         </EntityType>
         <EntityType Name="Problems">
           <Key>
@@ -408,21 +408,21 @@ warning 6002: The table/view 'HEAP_540.dbo.__MigrationHistory' does not have a p
             <PropertyRef Name="RaceID" />
           </Key>
           <Property Name="RaceID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="RaceName" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="RaceName" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="Relationship">
           <Key>
             <PropertyRef Name="RelationshipID" />
           </Key>
           <Property Name="RelationshipID" Type="int" Nullable="false" />
-          <Property Name="RelationshipType" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="RelationshipType" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="SmokingStanding">
           <Key>
             <PropertyRef Name="SmokingStatusID" />
           </Key>
           <Property Name="SmokingStatusID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="SmokingStatusType" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="SmokingStatusType" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="Vitals">
           <Key>
@@ -1450,7 +1450,7 @@ warning 6002: The table/view 'HEAP_540.dbo.__MigrationHistory' does not have a p
             <PropertyRef Name="AccountTypeID" />
           </Key>
           <Property Name="AccountTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="AccountTypeName" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="AccountTypeName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="AccountsAdmins" Relationship="Self.AccountTypeID_FK_in_Accounts_Admin" FromRole="AccountType" ToRole="AccountsAdmin" />
         </EntityType>
         <EntityType Name="ActiveSStanding">
@@ -1458,7 +1458,7 @@ warning 6002: The table/view 'HEAP_540.dbo.__MigrationHistory' does not have a p
             <PropertyRef Name="ActiveSStatusID" />
           </Key>
           <Property Name="ActiveSStatusID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="ActiveSSType" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ActiveSSType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="Demographics" Relationship="Self.ActiveSStatusID_FK_in_Demographics" FromRole="ActiveSStanding" ToRole="Demographics" />
         </EntityType>
         <EntityType Name="AddLabReport">
@@ -1467,7 +1467,7 @@ warning 6002: The table/view 'HEAP_540.dbo.__MigrationHistory' does not have a p
           </Key>
           <Property Name="AddLabReportID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="PatientID" Type="Int32" Nullable="false" />
-          <Property Name="WhereOrder" Type="String" MaxLength="35" FixedLength="false" Unicode="false" />
+          <Property Name="WhereOrder" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="ResultDate" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="Type" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
           <Property Name="Diagnoses" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
@@ -1479,7 +1479,7 @@ warning 6002: The table/view 'HEAP_540.dbo.__MigrationHistory' does not have a p
             <PropertyRef Name="AddressID" />
           </Key>
           <Property Name="AddressID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="StreetName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="StreetName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="County" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="ZipCode" Type="Int32" Nullable="false" />
@@ -1499,7 +1499,7 @@ warning 6002: The table/view 'HEAP_540.dbo.__MigrationHistory' does not have a p
             <PropertyRef Name="AlcoholStatusID" />
           </Key>
           <Property Name="AlcoholStatusID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="AlcoholStatusType" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="AlcoholStatusType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="Demographics" Relationship="Self.AlcoholStatusID_FK_in_Demographics" FromRole="AlchoholStanding" ToRole="Demographics" />
         </EntityType>
         <EntityType Name="AllergiesName">
@@ -1508,7 +1508,7 @@ warning 6002: The table/view 'HEAP_540.dbo.__MigrationHistory' does not have a p
           </Key>
           <Property Name="AllergiesID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="AllergyTypeID" Type="Int32" Nullable="false" />
-          <Property Name="AllergyName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="AllergyName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="AllergyType" Relationship="Self.AllergyTypeID_FK_in_Allergies" FromRole="AllergiesName" ToRole="AllergyType" />
           <NavigationProperty Name="PatientAllergies" Relationship="Self.FK_PatientAllergies_Allergies" FromRole="AllergiesName" ToRole="PatientAllergies" />
         </EntityType>
@@ -1517,7 +1517,7 @@ warning 6002: The table/view 'HEAP_540.dbo.__MigrationHistory' does not have a p
             <PropertyRef Name="AllergyTypeID" />
           </Key>
           <Property Name="AllergyTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="AllergyTypeName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="AllergyTypeName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="AllergiesNames" Relationship="Self.AllergyTypeID_FK_in_Allergies" FromRole="AllergyType" ToRole="AllergiesName" />
         </EntityType>
         <EntityType Name="AspNetRole">
@@ -1648,7 +1648,7 @@ warning 6002: The table/view 'HEAP_540.dbo.__MigrationHistory' does not have a p
           </Key>
           <Property Name="DrugID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="DrugName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Dose" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="Dose" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
           <Property Name="HowLong" Type="Int32" />
           <NavigationProperty Name="PatientDrugs" Relationship="Self.DrugID_FK_in_PatientDrug" FromRole="Drug" ToRole="PatientDrug" />
         </EntityType>
@@ -1657,7 +1657,7 @@ warning 6002: The table/view 'HEAP_540.dbo.__MigrationHistory' does not have a p
             <PropertyRef Name="DrugAbuseID" />
           </Key>
           <Property Name="DrugAbuseID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="DrugAbuseType" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DrugAbuseType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="Demographics" Relationship="Self.DrugAbuseID_in_FK_Demographics" FromRole="DrugAbuse" ToRole="Demographics" />
         </EntityType>
         <EntityType Name="EmergencyContact">
@@ -1686,8 +1686,8 @@ warning 6002: The table/view 'HEAP_540.dbo.__MigrationHistory' does not have a p
           <Property Name="LastName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="AddressID" Type="Int32" Nullable="false" />
           <Property Name="PhoneNumberID" Type="Int32" Nullable="false" />
-          <Property Name="Position" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Department" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Position" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Department" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="EmployeeSSN" Type="String" MaxLength="9" FixedLength="true" Unicode="false" Nullable="false" />
           <Property Name="PersonalEmail" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="EmployeeDateOfBirth" Type="DateTime" Nullable="false" Precision="0" />
@@ -1703,7 +1703,7 @@ warning 6002: The table/view 'HEAP_540.dbo.__MigrationHistory' does not have a p
             <PropertyRef Name="EthnicityID" />
           </Key>
           <Property Name="EthnicityID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="EthnicityName" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="EthnicityName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="Demographics" Relationship="Self.EthnicityID_FK_in_Demographics" FromRole="Ethnicity" ToRole="Demographics" />
         </EntityType>
         <EntityType Name="FamilyHistoryMedical">
@@ -1723,7 +1723,7 @@ warning 6002: The table/view 'HEAP_540.dbo.__MigrationHistory' does not have a p
             <PropertyRef Name="ImmunizationID" />
           </Key>
           <Property Name="ImmunizationID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Vaccine" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Vaccine" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="PatientImmunizations" Relationship="Self.ImmunizationID_FK_in_PatientImmunization" FromRole="Immunizations" ToRole="PatientImmunization" />
         </EntityType>
         <EntityType Name="Insurance">
@@ -1731,8 +1731,8 @@ warning 6002: The table/view 'HEAP_540.dbo.__MigrationHistory' does not have a p
             <PropertyRef Name="InsuranceID" />
           </Key>
           <Property Name="InsuranceID" Type="Int32" Nullable="false" />
-          <Property Name="InsuranceName" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="InsurancePlan" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="InsuranceName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="InsurancePlan" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="CoPay" Type="Double" />
           <Property Name="Deductibles" Type="Double" />
           <Property Name="PrimarySubscriber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
@@ -1745,7 +1745,7 @@ warning 6002: The table/view 'HEAP_540.dbo.__MigrationHistory' does not have a p
             <PropertyRef Name="MaritalStatusID" />
           </Key>
           <Property Name="MaritalStatusID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="MaritalStatusType" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="MaritalStatusType" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="Patients" Relationship="Self.MaritalStatusID_FK_in_Patient" FromRole="MaritalStanding" ToRole="Patient" />
         </EntityType>
         <EntityType Name="Modify">
@@ -1753,7 +1753,7 @@ warning 6002: The table/view 'HEAP_540.dbo.__MigrationHistory' does not have a p
             <PropertyRef Name="ModifyID" />
           </Key>
           <Property Name="ModifyID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="ModifyType" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ModifyType" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="AccountsAdmins" Relationship="Self.ModifyID_FK_in_Accounts_Admin" FromRole="Modify" ToRole="AccountsAdmin" />
         </EntityType>
         <EntityType Name="NotesMedicalStaff">
@@ -1771,8 +1771,8 @@ warning 6002: The table/view 'HEAP_540.dbo.__MigrationHistory' does not have a p
             <PropertyRef Name="OccupationID" />
           </Key>
           <Property Name="OccupationID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="PositionTitle" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="EmployerName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="PositionTitle" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="EmployerName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Demographics" Relationship="Self.OccupationID_FK_in_Demographics" FromRole="Occupation" ToRole="Demographics" />
         </EntityType>
         <EntityType Name="Patient">
@@ -1788,7 +1788,7 @@ warning 6002: The table/view 'HEAP_540.dbo.__MigrationHistory' does not have a p
           <Property Name="MaritalStatusID" Type="Int32" />
           <Property Name="InsuranceID" Type="Int32" />
           <Property Name="PatientSSN" Type="String" MaxLength="9" FixedLength="true" Unicode="false" Nullable="false" />
-          <Property Name="Email" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="DateOfBirth" Type="DateTime" Nullable="false" Precision="0" />
           <NavigationProperty Name="AddLabReports" Relationship="Self.PatientID_FK_in_AddLabReport" FromRole="Patient" ToRole="AddLabReport" />
           <NavigationProperty Name="Address" Relationship="Self.AddressID_FK_in_Patient" FromRole="Patient" ToRole="Address" />
@@ -1874,7 +1874,7 @@ warning 6002: The table/view 'HEAP_540.dbo.__MigrationHistory' does not have a p
             <PropertyRef Name="PaymentModeID" />
           </Key>
           <Property Name="PaymentModeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="PaymentModeType" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PaymentModeType" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="Billings" Relationship="Self.PaymentModeID_FK_Billing" FromRole="PaymentMode" ToRole="Billing" />
         </EntityType>
         <EntityType Name="PhoneNumber">
@@ -1894,7 +1894,7 @@ warning 6002: The table/view 'HEAP_540.dbo.__MigrationHistory' does not have a p
             <PropertyRef Name="PhoneTypeID" />
           </Key>
           <Property Name="PhoneTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="PhoneTypeName" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PhoneTypeName" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="PhoneNumbers" Relationship="Self.PhoneTypeID_FK_in_PhoneNumber" FromRole="PhoneType" ToRole="PhoneNumber" />
         </EntityType>
         <EntityType Name="Problem">
@@ -1911,7 +1911,7 @@ warning 6002: The table/view 'HEAP_540.dbo.__MigrationHistory' does not have a p
             <PropertyRef Name="RaceID" />
           </Key>
           <Property Name="RaceID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="RaceName" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="RaceName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="Demographics" Relationship="Self.RaceID_FK_in_Demographics" FromRole="Race" ToRole="Demographics" />
         </EntityType>
         <EntityType Name="Relationship">
@@ -1919,7 +1919,7 @@ warning 6002: The table/view 'HEAP_540.dbo.__MigrationHistory' does not have a p
             <PropertyRef Name="RelationshipID" />
           </Key>
           <Property Name="RelationshipID" Type="Int32" Nullable="false" />
-          <Property Name="RelationshipType" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="RelationshipType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="EmergencyContacts" Relationship="Self.RelationshipID_FK_in_EmergencyContact" FromRole="Relationship" ToRole="EmergencyContact" />
           <NavigationProperty Name="FamilyHistoryMedicals" Relationship="Self.RelationshipID_FK_in_FamilyHistory" FromRole="Relationship" ToRole="FamilyHistoryMedical" />
         </EntityType>
@@ -1928,7 +1928,7 @@ warning 6002: The table/view 'HEAP_540.dbo.__MigrationHistory' does not have a p
             <PropertyRef Name="SmokingStatusID" />
           </Key>
           <Property Name="SmokingStatusID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="SmokingStatusType" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SmokingStatusType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="Demographics" Relationship="Self.SmokingStatus_FK_in_Demographics" FromRole="SmokingStanding" ToRole="Demographics" />
         </EntityType>
         <EntityType Name="Vital">

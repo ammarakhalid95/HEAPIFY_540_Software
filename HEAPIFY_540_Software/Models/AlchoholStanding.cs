@@ -20,7 +20,7 @@ namespace HEAPIFY_540_Software.Models
         {
             this.Demographics = new HashSet<Demographic>();
         }
-
+    
         [Key]
         public int AlcoholStatusID { get; set; }
         public string AlcoholStatusType { get; set; }

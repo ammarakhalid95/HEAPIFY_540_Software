@@ -20,7 +20,7 @@ namespace HEAPIFY_540_Software.Models
         {
             this.Patients = new HashSet<Patient>();
         }
-
+    
         [Key]
         public int MaritalStatusID { get; set; }
         public string MaritalStatusType { get; set; }

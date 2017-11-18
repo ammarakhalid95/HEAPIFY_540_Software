@@ -1,0 +1,42 @@
+﻿@model HEAPIFY_540_Software.Models.FamilyHistoryMedical
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>FamilyHistoryMedical</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Patient.FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Patient.FirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Problem.ProblemsName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Problem.ProblemsName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Relationship.RelationshipType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Relationship.RelationshipType)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.PatientFamilyProblemID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

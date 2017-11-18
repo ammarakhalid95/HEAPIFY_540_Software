@@ -1,0 +1,26 @@
+﻿@model HEAPIFY_540_Software.Models.SmokingStanding
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>SmokingStanding</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.SmokingStatusType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SmokingStatusType)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.SmokingStatusID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

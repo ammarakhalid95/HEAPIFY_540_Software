@@ -1,0 +1,34 @@
+﻿@model HEAPIFY_540_Software.Models.Occupation
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Occupation</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.PositionTitle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PositionTitle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EmployerName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EmployerName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.OccupationID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

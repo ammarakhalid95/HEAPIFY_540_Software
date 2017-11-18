@@ -13,7 +13,6 @@ namespace HEAPIFY_540_Software.Controllers
     public class AccountsAdminsController : Controller
     {
         private HEAPIFY_540_SoftwareContext db = new HEAPIFY_540_SoftwareContext();
-        //private HEAPConnection db = new HEAPConnection();
 
         // GET: AccountsAdmins
         public ActionResult Index()

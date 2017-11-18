@@ -17,7 +17,7 @@ namespace HEAPIFY_540_Software.Controllers
         // GET: CreateOrderInternals
         public ActionResult Index()
         {
-            var createOrderInternals = db.CreateOrderInternals.Include(c => c.Patient);
+            var createOrderInternals = db.CreateOrderInternals.Include(c => c.Employee).Include(c => c.Patient).Include(c => c.Employee1);
             return View(createOrderInternals.ToList());
         }
 
@@ -39,7 +39,9 @@ namespace HEAPIFY_540_Software.Controllers
         // GET: CreateOrderInternals/Create
         public ActionResult Create()
         {
+            ViewBag.OrderingProvider = new SelectList(db.Employees, "EmployeeID", "FirstName");
             ViewBag.PatientID = new SelectList(db.Patients, "PatientID", "FirstName");
+            ViewBag.ResponsibleOrder = new SelectList(db.Employees, "EmployeeID", "FirstName");
             return View();
         }
 
@@ -57,7 +59,9 @@ namespace HEAPIFY_540_Software.Controllers
                 return RedirectToAction("Index");
             }
 
+            ViewBag.OrderingProvider = new SelectList(db.Employees, "EmployeeID", "FirstName", createOrderInternal.OrderingProvider);
             ViewBag.PatientID = new SelectList(db.Patients, "PatientID", "FirstName", createOrderInternal.PatientID);
+            ViewBag.ResponsibleOrder = new SelectList(db.Employees, "EmployeeID", "FirstName", createOrderInternal.ResponsibleOrder);
             return View(createOrderInternal);
         }
 
@@ -73,7 +77,9 @@ namespace HEAPIFY_540_Software.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.OrderingProvider = new SelectList(db.Employees, "EmployeeID", "FirstName", createOrderInternal.OrderingProvider);
             ViewBag.PatientID = new SelectList(db.Patients, "PatientID", "FirstName", createOrderInternal.PatientID);
+            ViewBag.ResponsibleOrder = new SelectList(db.Employees, "EmployeeID", "FirstName", createOrderInternal.ResponsibleOrder);
             return View(createOrderInternal);
         }
 
@@ -90,7 +96,9 @@ namespace HEAPIFY_540_Software.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            ViewBag.OrderingProvider = new SelectList(db.Employees, "EmployeeID", "FirstName", createOrderInternal.OrderingProvider);
             ViewBag.PatientID = new SelectList(db.Patients, "PatientID", "FirstName", createOrderInternal.PatientID);
+            ViewBag.ResponsibleOrder = new SelectList(db.Employees, "EmployeeID", "FirstName", createOrderInternal.ResponsibleOrder);
             return View(createOrderInternal);
         }
 

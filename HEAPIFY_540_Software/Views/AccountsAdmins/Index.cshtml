@@ -12,6 +12,12 @@
 <table class="table">
     <tr>
         <th>
+            @Html.DisplayNameFor(model => model.Date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.History)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.AccountType.AccountTypeName)
         </th>
         <th>
@@ -20,17 +26,17 @@
         <th>
             @Html.DisplayNameFor(model => model.Modify.ModifyType)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Date)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.History)
-        </th>
         <th></th>
     </tr>
 
 @foreach (var item in Model) {
     <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.History)
+        </td>
         <td>
             @Html.DisplayFor(modelItem => item.AccountType.AccountTypeName)
         </td>
@@ -39,12 +45,6 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Modify.ModifyType)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Date)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.History)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.AdminAccountID }) |

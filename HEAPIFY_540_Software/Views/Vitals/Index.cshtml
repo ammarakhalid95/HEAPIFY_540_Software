@@ -1,0 +1,81 @@
+﻿@model IEnumerable<HEAPIFY_540_Software.Models.Vital>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.DateAndTime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BloodPressure)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Heart_Rate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Respiratory_Rate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Height_Length)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Weight)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Temperature)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Comments)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Patient.FirstName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateAndTime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BloodPressure)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Heart_Rate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Respiratory_Rate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Height_Length)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Weight)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Temperature)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Comments)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Patient.FirstName)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.VitalID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.VitalID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.VitalID })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,57 @@
+﻿@model IEnumerable<HEAPIFY_540_Software.Models.Insurance>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.InsuranceName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.InsurancePlan)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CoPay)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Deductibles)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PrimarySubscriber)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.InsuranceName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.InsurancePlan)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CoPay)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Deductibles)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PrimarySubscriber)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.InsuranceID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.InsuranceID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.InsuranceID })
+        </td>
+    </tr>
+}
+
+</table>

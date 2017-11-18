@@ -1,0 +1,26 @@
+﻿@model HEAPIFY_540_Software.Models.Relationship
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Relationship</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.RelationshipType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RelationshipType)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.RelationshipID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

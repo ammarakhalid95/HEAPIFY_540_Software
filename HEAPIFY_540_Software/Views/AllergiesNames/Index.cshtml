@@ -12,10 +12,10 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.AllergyType.AllergyTypeName)
+            @Html.DisplayNameFor(model => model.AllergyName)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.AllergyName)
+            @Html.DisplayNameFor(model => model.AllergyType.AllergyTypeName)
         </th>
         <th></th>
     </tr>
@@ -23,10 +23,10 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.AllergyType.AllergyTypeName)
+            @Html.DisplayFor(modelItem => item.AllergyName)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.AllergyName)
+            @Html.DisplayFor(modelItem => item.AllergyType.AllergyTypeName)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.AllergiesID }) |

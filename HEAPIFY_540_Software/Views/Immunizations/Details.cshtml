@@ -1,0 +1,26 @@
+﻿@model HEAPIFY_540_Software.Models.Immunization
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Immunization</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Vaccine)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Vaccine)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ImmunizationID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
