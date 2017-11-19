@@ -10,6 +10,7 @@ using HEAPIFY_540_Software.Models;
 
 namespace HEAPIFY_540_Software.Controllers
 {
+    [Authorize(Roles = "Medical Staff")]
     public class NotesMedicalStaffsController : Controller
     {
         private HEAPIFY_540_SoftwareContext db = new HEAPIFY_540_SoftwareContext();
@@ -39,7 +40,7 @@ namespace HEAPIFY_540_Software.Controllers
         // GET: NotesMedicalStaffs/Create
         public ActionResult Create()
         {
-            ViewBag.PatientID = new SelectList(db.Patients, "PatientID", "FirstName");
+            ViewBag.PatientID = new SelectList(db.Patients, "PatientID", "FullName");
             return View();
         }
 

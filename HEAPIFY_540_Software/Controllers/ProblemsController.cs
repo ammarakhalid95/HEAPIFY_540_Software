@@ -18,6 +18,10 @@ namespace HEAPIFY_540_Software.Controllers
         public ActionResult Index()
         {
             return View(db.Problems.ToList());
+
+            
+            //return View(db.Problems);
+       
         }
 
         // GET: Problems/Details/5

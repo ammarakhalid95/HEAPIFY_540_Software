@@ -1,5 +1,6 @@
 ﻿@model IEnumerable<HEAPIFY_540_Software.Models.Problem>
 
+
 @{
     ViewBag.Title = "Index";
 }
@@ -13,6 +14,7 @@
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.ProblemsName)
+
         </th>
         <th></th>
     </tr>
@@ -21,6 +23,7 @@
     <tr>
         <td>
             @Html.DisplayFor(modelItem => item.ProblemsName)
+            
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.ProblemID }) |

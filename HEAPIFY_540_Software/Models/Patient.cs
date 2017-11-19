@@ -44,6 +44,15 @@ namespace HEAPIFY_540_Software.Models
         public string Email { get; set; }
         public System.DateTime DateOfBirth { get; set; }
     
+        // Added 11/19/2017 16:30 -- PLB
+        public string FullName
+        {
+            get
+            {
+                return FirstName + " " + MiddleName + " " + LastName;
+            }
+        }
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<AddLabReport> AddLabReports { get; set; }
         public virtual Address Address { get; set; }

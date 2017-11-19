@@ -11,13 +11,13 @@ namespace HEAPIFY_540_Software.Models
 {
     using System;
     using System.Collections.Generic;
-    
+   
     public partial class PatientProblem
     {
         public int PatientProblemID { get; set; }
         public int PatientID { get; set; }
         public int ProblemID { get; set; }
-    
+        
         public virtual Patient Patient { get; set; }
         public virtual Problem Problem { get; set; }
     }
