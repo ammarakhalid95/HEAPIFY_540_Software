@@ -1,31 +1,78 @@
 ﻿@{
-    ViewBag.Title = "Home Page";
+    ViewBag.Title = "HEAPIFY MANAGER";
 }
 
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-</div>
 
+<h2>@ViewBag.Title.</h2>
+
+
+
+@*<div class="jumbotron">
+        <h1>ASP.NET</h1>
+        <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
+        <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+    </div>*@
+
+<div class="col-md-3">
+    <h1>Medical</h1>
+    <ul class=" list-group">
+        <li class=" list-group-item"><a href="~/Demographics/Index" class=" btn btn-primary btn-block">Clinical</a></li>
+        <li class=" list-group-item"><a href=" /Test/Index" class=" btn btn-primary btn-block">Administrative</a></li>
+
+    </ul>
+    @*@{
+            Html.RenderAction("SideMenu", "Test");
+        }*@
+
+</div>
 <div class="row">
     <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+        </ul>
+
+        <h1>Financial</h1>
+
+        <ul class="list-group">
+            <li class=" list-group-item-heading">Employees</li>
+            <li class=" list-group-item"><a href=" /Test/Index" class=" btn btn-success btn-block">Look Up Employee</a></li>
+            <li class=" list-group-item"><a href=" /Test/Index" class=" btn btn-success btn-block">Add Employee</a></li>
+            <li class=" list-group-item"><a href=" /Test/Index" class=" btn btn-success btn-block">Payroll</a></li>
+            <li class=" list-group-item-heading">Patients</li>
+            <li class=" list-group-item"><a href=" /Test/Index" class=" btn btn-warning btn-block">Bill Patient</a></li>
+
+
+        </ul>
+
+        @*<h2>Getting started</h2>
+            <p>
+                ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
+                enables a clean separation of concerns and gives you full control over markup
+                for enjoyable, agile development.
+            </p>
+            <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>*@
     </div>
     <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+        </ul>
+
+        <h1>Employee Personal Information</h1>
+        <ul class=" list-group">
+            <li class=" list-group-item"><a href=" /Employees/Index" class=" btn btn-danger btn-block">Information</a></li>
+            <li class=" list-group-item"><a href=" /Test/Index" class=" btn btn-danger btn-block">Payroll</a></li>
+
+        </ul>
+        @*<h2>Get more libraries</h2>
+            <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
+            <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>*@
     </div>
     <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+
+        <h1>Administrator</h1>
+        <ul class=" list-group">
+            <li class=" list-group-item"><a href=" /Test/Index" class=" btn btn-info btn-block">Employee Accounts</a></li>
+
+        </ul>
+        @*<h2>Web Hosting</h2>
+            <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
+            <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>*@
     </div>
 </div>
+

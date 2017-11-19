@@ -234,6 +234,7 @@
     <Compile Include="Controllers\RelationshipsController.cs" />
     <Compile Include="Controllers\RolesController.cs" />
     <Compile Include="Controllers\SmokingStandingsController.cs" />
+    <Compile Include="Controllers\TestController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Controllers\VitalsController.cs" />
     <Compile Include="Global.asax.cs">
@@ -674,9 +675,11 @@
     <Content Include="Views\Vitals\Details.cshtml" />
     <Content Include="Views\Vitals\Edit.cshtml" />
     <Content Include="Views\Vitals\Index.cshtml" />
+    <Content Include="Views\Shared\SideMenu.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Test\" />
     <Folder Include="Views\Users\" />
   </ItemGroup>
   <ItemGroup>
