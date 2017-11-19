@@ -11,7 +11,12 @@ namespace HEAPIFY_540_Software.Models
 {
     using System;
     using System.Collections.Generic;
+
+   
+        
+
     
+
     public partial class Problem
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -20,10 +25,13 @@ namespace HEAPIFY_540_Software.Models
             this.FamilyHistoryMedicals = new HashSet<FamilyHistoryMedical>();
             this.PatientProblems = new HashSet<PatientProblem>();
         }
-    
+
+       
+
         public int ProblemID { get; set; }
         public string ProblemsName { get; set; }
-    
+        
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<FamilyHistoryMedical> FamilyHistoryMedicals { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
