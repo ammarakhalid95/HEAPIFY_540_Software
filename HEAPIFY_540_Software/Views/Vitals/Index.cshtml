@@ -11,7 +11,7 @@
 </p>
 <table class="table">
     <tr>
-        <th>
+        @*<th>
             @Html.DisplayNameFor(model => model.DateAndTime)
         </th>
         <th>
@@ -37,7 +37,12 @@
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Patient.FirstName)
+        </th>*@
+
+        <th>
+            @Html.DisplayNameFor(model => model.Patient.FullName)
         </th>
+
         <th></th>
     </tr>
 
@@ -68,7 +73,7 @@
             @Html.DisplayFor(modelItem => item.Comments)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Patient.FirstName)
+            @Html.DisplayFor(modelItem => item.Patient.FullName)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.VitalID }) |
