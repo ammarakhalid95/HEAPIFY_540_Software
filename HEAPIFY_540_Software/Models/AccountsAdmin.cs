@@ -11,11 +11,9 @@ namespace HEAPIFY_540_Software.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-
+    
     public partial class AccountsAdmin
     {
-        [Key]
         public int AdminAccountID { get; set; }
         public int EmployeeID { get; set; }
         public System.DateTime Date { get; set; }

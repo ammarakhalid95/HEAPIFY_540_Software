@@ -11,11 +11,9 @@ namespace HEAPIFY_540_Software.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-
+    
     public partial class AspNetUserLogin
     {
-        [Key]
         public string LoginProvider { get; set; }
         public string ProviderKey { get; set; }
         public string UserId { get; set; }
