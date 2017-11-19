@@ -11,8 +11,7 @@ namespace HEAPIFY_540_Software.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-
+    
     public partial class AllergiesName
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -21,7 +20,6 @@ namespace HEAPIFY_540_Software.Models
             this.PatientAllergies = new HashSet<PatientAllergy>();
         }
     
-        [Key]
         public int AllergiesID { get; set; }
         public int AllergyTypeID { get; set; }
         public string AllergyName { get; set; }

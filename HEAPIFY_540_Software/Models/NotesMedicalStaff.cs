@@ -11,11 +11,9 @@ namespace HEAPIFY_540_Software.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-
+    
     public partial class NotesMedicalStaff
     {
-        [Key]
         public int NotesID { get; set; }
         public System.DateTime Date_Time_Recorded { get; set; }
         public string Notes { get; set; }

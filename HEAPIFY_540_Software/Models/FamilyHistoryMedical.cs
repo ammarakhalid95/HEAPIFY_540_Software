@@ -11,11 +11,9 @@ namespace HEAPIFY_540_Software.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-
+    
     public partial class FamilyHistoryMedical
     {
-        [Key]
         public int PatientFamilyProblemID { get; set; }
         public int ProblemID { get; set; }
         public int RelationshipID { get; set; }

@@ -11,8 +11,7 @@ namespace HEAPIFY_540_Software.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-
+    
     public partial class ActiveSStanding
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -21,7 +20,6 @@ namespace HEAPIFY_540_Software.Models
             this.Demographics = new HashSet<Demographic>();
         }
     
-        [Key]
         public int ActiveSStatusID { get; set; }
         public string ActiveSSType { get; set; }
     
