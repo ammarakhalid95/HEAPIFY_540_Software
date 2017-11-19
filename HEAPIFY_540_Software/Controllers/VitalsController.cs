@@ -39,7 +39,7 @@ namespace HEAPIFY_540_Software.Controllers
         // GET: Vitals/Create
         public ActionResult Create()
         {
-            ViewBag.PatientID = new SelectList(db.Patients, "PatientID", "FirstName");
+            ViewBag.PatientID = new SelectList(db.Patients, "PatientID", "FullName");
             return View();
         }
 

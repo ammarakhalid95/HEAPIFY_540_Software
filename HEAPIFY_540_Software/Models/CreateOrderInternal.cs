@@ -11,11 +11,9 @@ namespace HEAPIFY_540_Software.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-
+    
     public partial class CreateOrderInternal
     {
-        [Key]
         public int OrderID { get; set; }
         public int PatientID { get; set; }
         public int OrderingProvider { get; set; }
