@@ -10,6 +10,7 @@ using HEAPIFY_540_Software.Models;
 
 namespace HEAPIFY_540_Software.Controllers
 {
+    [Authorize(Roles = "Patient Billing Representative")]
     public class BillingsController : Controller
     {
         private HEAPIFY_540_SoftwareContext db = new HEAPIFY_540_SoftwareContext();
