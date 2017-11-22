@@ -44,12 +44,16 @@ namespace HEAPIFY_540_Software.Models
         public string Email { get; set; }
         public System.DateTime DateOfBirth { get; set; }
     
-        // Added 11/19/2017 16:30 -- PLB
+        // Added 11/19/2017 16:30 -- PLB -- Create Method
+        // Added 11/19/2017 18:55 -- PLB -- Add if/else statement
         public string FullName
         {
             get
             {
-                return FirstName + " " + MiddleName + " " + LastName;
+                if (MiddleName == "")
+                    return FirstName + " " + LastName;
+                else
+                    return FirstName + " " + MiddleName + " " + LastName;
             }
         }
 

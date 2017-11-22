@@ -6,6 +6,7 @@ using System.Web.Mvc;
 
 namespace HEAPIFY_540_Software.Controllers
 {
+    [Authorize]
     public class HomeController : Controller
     {
         public ActionResult Index()
