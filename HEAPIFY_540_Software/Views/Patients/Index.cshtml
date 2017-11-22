@@ -11,7 +11,7 @@
 </p>
 <table class="table">
     <tr>
-        <th>
+        @*<th>
             @Html.DisplayNameFor(model => model.FirstName)
         </th>
         <th>
@@ -19,17 +19,20 @@
         </th>
         <th>
             @Html.DisplayNameFor(model => model.LastName)
-        </th>
-        <th>
+        </th>*@
+    <th>
+       Patient
+    </th>
+        @*<th>
             @Html.DisplayNameFor(model => model.PatientSSN)
-        </th>
-        <th>
+        </th>*@
+        @*<th>
             @Html.DisplayNameFor(model => model.Email)
-        </th>
+        </th>*@
         <th>
             @Html.DisplayNameFor(model => model.DateOfBirth)
         </th>
-        <th>
+        @*<th>
             @Html.DisplayNameFor(model => model.Address.StreetName)
         </th>
         <th>
@@ -41,12 +44,12 @@
         <th>
             @Html.DisplayNameFor(model => model.PhoneNumber.PhoneNumber1)
         </th>
-        <th></th>
+        <th></th>*@
     </tr>
 
 @foreach (var item in Model) {
     <tr>
-        <td>
+        @*<td>
             @Html.DisplayFor(modelItem => item.FirstName)
         </td>
         <td>
@@ -54,17 +57,21 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.LastName)
-        </td>
+        </td>*@
         <td>
+            @Html.DisplayFor(modelItem => item.FullName)
+        </td>
+
+        @*<td>
             @Html.DisplayFor(modelItem => item.PatientSSN)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Email)
-        </td>
+        </td>*@
         <td>
             @Html.DisplayFor(modelItem => item.DateOfBirth)
         </td>
-        <td>
+        @*<td>
             @Html.DisplayFor(modelItem => item.Address.StreetName)
         </td>
         <td>
@@ -75,7 +82,7 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.PhoneNumber.PhoneNumber1)
-        </td>
+        </td>*@
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.PatientID }) |
             @Html.ActionLink("Details", "Details", new { id=item.PatientID }) |
