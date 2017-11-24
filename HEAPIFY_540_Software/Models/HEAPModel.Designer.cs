@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'C:\Users\EricaLinz\source\repos\HEAPIFY_540_Software2\HEAPIFY_540_Software\Models\HEAPModel.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\Users\Ammara Khalid\Documents\Visual Studio 2017\Projects\HEAPIFY_540_Software\HEAPIFY_540_Software\Models\HEAPModel.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using HEAPIFY_540_Software.Models;
+using Newtonsoft.Json;
 
 namespace HEAPIFY_540_Software.Controllers
 {
@@ -132,6 +133,11 @@ namespace HEAPIFY_540_Software.Controllers
                 db.Dispose();
             }
             base.Dispose(disposing);
+        }
+
+        public ActionResult ModalPopUp()
+        {
+            return View();
         }
     }
 }

@@ -676,9 +676,12 @@
     <Content Include="Views\Vitals\Edit.cshtml" />
     <Content Include="Views\Vitals\Index.cshtml" />
     <Content Include="Views\Shared\SideMenu.cshtml" />
+    <Content Include="Views\EmergencyContacts\ModalPopUp.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\EmergencyContactView\" />
+    <Folder Include="Views\EmergencyContact\" />
     <Folder Include="Views\Test\" />
     <Folder Include="Views\Users\" />
   </ItemGroup>
