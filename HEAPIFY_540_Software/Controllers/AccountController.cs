@@ -12,7 +12,7 @@ using HEAPIFY_540_Software.Models;
 
 namespace HEAPIFY_540_Software.Controllers
 {
-    [Authorize]
+    [Authorize(Roles = "IT Administrator")]
     public class AccountController : Controller
     {
         private ApplicationSignInManager _signInManager;
@@ -138,7 +138,7 @@ namespace HEAPIFY_540_Software.Controllers
 
         //
         // GET: /Account/Register
-        [AllowAnonymous]
+        // [AllowAnonymous] -- 11/26/2017 PLB
         public ActionResult Register()
         {
             ViewBag.Name = new SelectList(context.Roles.Where(u => !u.Name.Contains("IT Administrator"))
