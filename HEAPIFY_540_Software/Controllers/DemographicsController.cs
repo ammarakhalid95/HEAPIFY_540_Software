@@ -19,8 +19,42 @@ namespace HEAPIFY_540_Software.Controllers
         public ActionResult Index()
         {
             var demographics = db.Demographics.Include(d => d.ActiveSStanding).Include(d => d.AlchoholStanding).Include(d => d.DrugAbuse).Include(d => d.EmergencyContact).Include(d => d.Ethnicity).Include(d => d.Occupation).Include(d => d.Patient).Include(d => d.Race).Include(d => d.SmokingStanding);
+
+            //List<PhoneNumber> list = db.PhoneNumbers.ToList();
+            //ViewBag.PhoneNumberList = new SelectList(list, "PhoneNumberID", "PhoneNumber1");
+
             return View(demographics.ToList());
+            //return View();
         }
+
+        //[HttpPost]
+        //public ActionResult Create(EmergencyContact model)
+        //{
+        //    try
+        //    {
+        //        HEAPIFY_540_SoftwareContext db = new HEAPIFY_540_SoftwareContext();
+        //        //List<PhoneNumber> list = db.PhoneNumbers.ToList();
+        //        //ViewBag.PhoneNumberList = new SelectList(list, "PhoneNumberID", "PhoneNumber1");
+
+        //        EmergencyContact e = new EmergencyContact();
+        //        e.FirstName = model.FirstName;
+        //        e.MiddleName = model.MiddleName;
+        //        e.LastName = model.LastName;
+        //        //e.PhoneNumberID = model.PhoneNumberID;
+        //        e.Email = model.Email;
+                
+
+        //        db.EmergencyContacts.Add(e);
+        //        db.SaveChanges();
+
+        //        return View();
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        throw ex;
+        //    }
+
+        //}
 
         // GET: Demographics/Details/5
         public ActionResult Details(int? id)
@@ -46,8 +80,9 @@ namespace HEAPIFY_540_Software.Controllers
             ViewBag.EmergencyContactID = new SelectList(db.EmergencyContacts, "EmergencyContactID", "FirstName");
             ViewBag.EthnicityID = new SelectList(db.Ethnicities, "EthnicityID", "EthnicityName");
             ViewBag.OccupationID = new SelectList(db.Occupations, "OccupationID", "PositionTitle");
-            ViewBag.PatientID = new SelectList(db.Patients, "PatientID", "FirstName");
+            ViewBag.PatientID = new SelectList(db.Patients, "PatientID", "FullName");
             ViewBag.RaceID = new SelectList(db.Races, "RaceID", "RaceName");
+            //ViewBag.EmergencyContact.RelationshipID = new SelectList(db.Relationships, "RelationshipID", "RelationshipType");
             ViewBag.SmokingStatusID = new SelectList(db.SmokingStandings, "SmokingStatusID", "SmokingStatusType");
             return View();
         }
@@ -72,7 +107,7 @@ namespace HEAPIFY_540_Software.Controllers
             ViewBag.EmergencyContactID = new SelectList(db.EmergencyContacts, "EmergencyContactID", "FirstName", demographic.EmergencyContactID);
             ViewBag.EthnicityID = new SelectList(db.Ethnicities, "EthnicityID", "EthnicityName", demographic.EthnicityID);
             ViewBag.OccupationID = new SelectList(db.Occupations, "OccupationID", "PositionTitle", demographic.OccupationID);
-            ViewBag.PatientID = new SelectList(db.Patients, "PatientID", "FirstName", demographic.PatientID);
+            ViewBag.PatientID = new SelectList(db.Patients, "PatientID", "FullName", demographic.PatientID);
             ViewBag.RaceID = new SelectList(db.Races, "RaceID", "RaceName", demographic.RaceID);
             ViewBag.SmokingStatusID = new SelectList(db.SmokingStandings, "SmokingStatusID", "SmokingStatusType", demographic.SmokingStatusID);
             return View(demographic);
@@ -96,7 +131,7 @@ namespace HEAPIFY_540_Software.Controllers
             ViewBag.EmergencyContactID = new SelectList(db.EmergencyContacts, "EmergencyContactID", "FirstName", demographic.EmergencyContactID);
             ViewBag.EthnicityID = new SelectList(db.Ethnicities, "EthnicityID", "EthnicityName", demographic.EthnicityID);
             ViewBag.OccupationID = new SelectList(db.Occupations, "OccupationID", "PositionTitle", demographic.OccupationID);
-            ViewBag.PatientID = new SelectList(db.Patients, "PatientID", "FirstName", demographic.PatientID);
+            ViewBag.PatientID = new SelectList(db.Patients, "PatientID", "FullName", demographic.PatientID);
             ViewBag.RaceID = new SelectList(db.Races, "RaceID", "RaceName", demographic.RaceID);
             ViewBag.SmokingStatusID = new SelectList(db.SmokingStandings, "SmokingStatusID", "SmokingStatusType", demographic.SmokingStatusID);
             return View(demographic);
@@ -121,7 +156,7 @@ namespace HEAPIFY_540_Software.Controllers
             ViewBag.EmergencyContactID = new SelectList(db.EmergencyContacts, "EmergencyContactID", "FirstName", demographic.EmergencyContactID);
             ViewBag.EthnicityID = new SelectList(db.Ethnicities, "EthnicityID", "EthnicityName", demographic.EthnicityID);
             ViewBag.OccupationID = new SelectList(db.Occupations, "OccupationID", "PositionTitle", demographic.OccupationID);
-            ViewBag.PatientID = new SelectList(db.Patients, "PatientID", "FirstName", demographic.PatientID);
+            ViewBag.PatientID = new SelectList(db.Patients, "PatientID", "FullName", demographic.PatientID);
             ViewBag.RaceID = new SelectList(db.Races, "RaceID", "RaceName", demographic.RaceID);
             ViewBag.SmokingStatusID = new SelectList(db.SmokingStandings, "SmokingStatusID", "SmokingStatusType", demographic.SmokingStatusID);
             return View(demographic);

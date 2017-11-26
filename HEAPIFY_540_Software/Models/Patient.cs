@@ -36,6 +36,10 @@ namespace HEAPIFY_540_Software.Models
         public string FirstName { get; set; }
         public string MiddleName { get; set; }
         public string LastName { get; set; }
+        public string FullName
+        {
+            get { return FirstName + " " + MiddleName + " " + LastName; }
+        }
         public int AddressID { get; set; }
         public Nullable<int> PhoneNumberID { get; set; }
         public Nullable<int> MaritalStatusID { get; set; }
@@ -43,6 +47,8 @@ namespace HEAPIFY_540_Software.Models
         public string PatientSSN { get; set; }
         public string Email { get; set; }
         public System.DateTime DateOfBirth { get; set; }
+
+       
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<AddLabReport> AddLabReports { get; set; }

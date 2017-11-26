@@ -1,4 +1,5 @@
-﻿@model HEAPIFY_540_Software.Models.Demographic
+﻿@using HEAPIFY_540_Software.Helper
+@model HEAPIFY_540_Software.Models.Demographic
 
 @{
     ViewBag.Title = "Create";
@@ -9,362 +10,97 @@
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
+  
+        <div class="form-horizontal">
+            <h4>Demographic</h4>
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-group">
+                @Html.LabelFor(model => model.PatientID, "Patient", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.DropDownList("PatientID", null, htmlAttributes: new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.PatientID, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.OccupationID, "Occupation", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.DropDownList("OccupationID", null, htmlAttributes: new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.OccupationID, "", new { @class = "text-danger" })
+
+                    @Html.ActionLink("Add Occupation", "Create", "Occupations")
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.EthnicityID, "Ethnicity", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.DropDownList("EthnicityID", null, htmlAttributes: new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.EthnicityID, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.RaceID, "Race", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.DropDownList("RaceID", null, htmlAttributes: new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.RaceID, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            @*<div class="form-group">
+                @Html.LabelFor(model => model.EmergencyContactID, "Emergency ContactID", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.DropDownList("EmergencyContactID", null, htmlAttributes: new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.EmergencyContactID, "", new { @class = "text-danger" })
+
+                    @Html.ActionLink("Add Emergency Contact", "Create", "EmergencyContacts")
+
+                </div>
+            </div>*@
+            <div class="form-group">
+                @Html.LabelFor(model => model.SmokingStatusID, "Smoking Status", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.DropDownList("SmokingStatusID", null, htmlAttributes: new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.SmokingStatusID, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.AlcoholStatusID, "Alcohol Status", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.DropDownList("AlcoholStatusID", null, htmlAttributes: new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.AlcoholStatusID, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.ActiveSStatusID, "Sexually Active", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.DropDownList("ActiveSStatusID", null, htmlAttributes: new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.ActiveSStatusID, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.DrugAbuseID, "Drug Abuse Status", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.DropDownList("DrugAbuseID", null, htmlAttributes: new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.DrugAbuseID, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Create" class="btn btn-default" />
+                </div>
+            </div>
+        </div>
+       
 }
 
 
-<link rel="stylesheet"
-      href="@Url.Content("~/Content/Styles/bootstrap.min.css")"></link>
-<link rel="stylesheet"
-      href="@Url.Content("~/Content/Styles/bootstrap-responsive.min.css")"></link>
-
-<script src="@Url.Content("~/Content/Scripts/jquery-1.8.3.min.js")"
-        type="text/javascript"></script>
-<script src="@Url.Content("~/Content/Scripts/bootstrap.min.js")"
-        type="text/javascript"></script>
-
-<a type="button"
-   class="btn"
-   href="#article-editor"
-   data-toggle="modal">Click me</a>
-
-<div class="modal fade" id="article-editor" ">
-    <div class="modal-header">
-        <a class="close" data-dismiss="modal">&times;</a>
-        <h3>Title of the form</h3>
-    </div>
-    <div class="modal-body">
-        <p>Body of the form</p>
-        <div class="row-fluid">
-            <div class="controls span6">
-                <label class="control-label" for="Title">Title and summary</label>
-                <input type="text"
-                       class="input-xlarge" id="Title" " id=" Title""
-                       placeholder="Title of the article" />
-                <textarea class="input-xlarge" id="Summary" "
-                      id=" Summary"" rows="5" cols="0"
-                          placeholder="Summary"></textarea>
-            </div>
-            <div class="controls span6">
-                <label class="control-label" for="Title">Date of publication</label>
-                <input type="month" class="input-xlarge" id="PubMonth" " id=" PubMonth"" />
-                <label class="control-label" for="Magazine">Publication</label>
-                <input type="text" class="input-xlarge" id="Magazine" " id=" Magazine""
-                       placeholder="Magazine" />
-                <input type="text" class="input-xlarge" id="Url" " id=" Url""
-                       placeholder="Url" />
-            </div>
+        <div>
+            @Html.ActionLink("Back to List", "Index")
         </div>
-    </div>
-    <div class="modal-footer">
-        <a href="#" class="btn" data-dismiss="modal">Close</a>
-        <a href="#" class="btn btn-primary">Save Changes</a>
-    </div>
-</div>
-
-
-    
-
-    <div class="form-horizontal">
-        <h4>Demographic</h4>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group">
-            @Html.LabelFor(model => model.PatientID, "PatientID", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("PatientID", null, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.PatientID, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.OccupationID, "OccupationID", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("OccupationID", null, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.OccupationID, "", new { @class = "text-danger" })
-
-                @Html.ActionLink("Add Occupation", "Create", "Occupations")
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.EthnicityID, "Ethnicity", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("EthnicityID", null, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.EthnicityID, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.RaceID, "Race", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("RaceID", null, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.RaceID, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.EmergencyContactID, "Emergency ContactID", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("EmergencyContactID", null, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.EmergencyContactID, "", new { @class = "text-danger" })
-
-                @Html.ActionLink("Add Emergency Contact", "Create", "EmergencyContacts")
-            </div>
-        </div>
-
-
-        
-
-       
-
-        
-
-        @*@*Create A Popup Modal With Registration Form For Add Or Edit Student Record
-
-    <div class="modal fade" id="MyModal">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <a href="#" class="close" data-dismiss="modal">&times;</a>
-                    <h4 id="ModalTitle"></h4>
-                </div>
-                <div class="modal-body">
-                    <form id="form">
-                        <fieldset id="SubmitForm">
-                            @Html.HiddenFor(m => m.EmergencyContactID, new { @id = "ECID" })
-                            <div class="form-group">
-                                @Html.TextBoxFor(m => m.EmergencyContact.FirstName, new { @id = "FName", @class = "form-control", @placeholder = "First Name" })
-                            </div>
-                            <div class="form-group">
-                                @Html.TextBoxFor(m => m.EmergencyContact.MiddleName, new { @id = "MName", @class = "form-control", @placeholder = "Middle Name" })
-                            </div>
-                            <div class="form-group">
-                                @Html.TextBoxFor(m => m.EmergencyContact.LastName, new { @id = "LName", @class = "form-control", @placeholder = "Last Name" })
-                            </div>
-                            <div class="form-group">
-                                @Html.TextBoxFor(m => m.EmergencyContact.PhoneNumber.PhoneNumber1, new { @id = "Phone", @class = "form-control", @placeholder = "Phone Number" })
-                            </div>
-                            <div class="form-group">
-                                <a href="#" class="btn btn-block btn-danger" id="SaveStudentRecord">Save</a>
-                            </div>
-
-                        </fieldset>
-                    </form>
-                </div>
-            </div>
-        </div>*@
-        </div>
-
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.SmokingStatusID, "Smoking Status", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("SmokingStatusID", null, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.SmokingStatusID, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.AlcoholStatusID, "Alcohol Status", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("AlcoholStatusID", null, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.AlcoholStatusID, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.ActiveSStatusID, "Sexually Active", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("ActiveSStatusID", null, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.ActiveSStatusID, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.DrugAbuseID, "Drug Abuse Status", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("DrugAbuseID", null, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.DrugAbuseID, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
-            </div>
-        </div>
-    </div>
-
-
-        @*<script src="~/Scripts/jquery-1.10.2.min.js"></script>
-        <script src="~/Scripts/bootstrap.min.js"></script>
-        <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
-
-        <div class="container" style="margin-top:3%">
-            <a href="#" class="btn btn-info" onclick="AddNewStudent(0)">Add New Student</a> <br /><br />
-
-            <table class="table table-striped">
-                <thead>
-                    <tr>
-                        <th>Student ID</th>
-                        <th>Student Name</th>
-                        <th>Email</th>
-                        <th>Department</th>
-                        <th>Action(Edit)</th>
-                        <th>Action(Delete)</th>
-
-                    </tr>
-                </thead>
-                <tbody id="SetStudentList">
-                    <tr id="LoadingStatus" style="color:red"></tr>
-                </tbody>
-            </table>
-
-            @*Create A Popup Modal With Registration Form For Add Or Edit Student Record
-
-            <div class="modal fade" id="MyModal">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <a href="#" class="close" data-dismiss="modal">&times;</a>
-                            <h4 id="ModalTitle"></h4>
-                        </div>
-                        <div class="modal-body">
-                            <form id="form">
-                                <fieldset id="SubmitForm">
-                                    @Html.HiddenFor(m => m.EmergencyContact.EmergencyContactID, new { @id = "ECID" })
-                                    <div class="form-group">
-                                        @Html.TextBoxFor(m => m.EmergencyContact.FirstName, new { @id = "First Name", @class = "form-control", @placeholder = "First Name" })
-                                    </div>
-                                    <div class="form-group">
-                                        @Html.TextBoxFor(m => m.EmergencyContact.LastName, new { @id = "Last Name", @class = "form-control", @placeholder = "Last Name" })
-                                    </div>
-                                    <div class="form-group">
-                                        @Html.TextBoxFor(m => m.EmergencyContact.PhoneNumber.PhoneNumber1, new { @id = "Phone", @class = "form-control", @placeholder = "Phone" })
-                                    </div>
-                                    @*<div class="form-group">
-                                        @Html.DropDownListFor(m => m.EmergencyContact.PhoneNumber.PhoneNumber1, ViewBag.ListOfDepartment as SelectList, "--Select Dept--", new { @id = "DropDwn", @class = "form-control" })
-                                    </div>
-                                    <div class="form-group">
-                                        <a href="#" class="btn btn-block btn-danger" id="SaveStudentRecord">Save</a>
-                                    </div>
-
-                                </fieldset>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            @*Create A PopUp Modal For DeleteConfirmation
-
-            <div class="modal fade" id="DeleteConfirmation">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <a href="#" class="close" data-dismiss="modal">&times;</a>
-                            <h4>Delete Student Record</h4>
-                        </div>
-                        <div class="modal-body">
-                            <h4>Are You Sure? You Want To Delete This Record.</h4>
-                        </div>
-                        <div class="modal-footer">
-                            <a href="#" class="btn btn-primary" data-dismiss="modal" id="r">Cancle</a>
-                            <a href="#" class="btn btn-danger" onclick="ConfirmDelete()">Confirm</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <script>
-            $("#LoadingStatus").html("Loading....");
-            $.get("/Home/GetStudentList", null, DataBind);
-            function DataBind(StudentList) {
-                var SetData = $("#SetStudentList");
-                for (var i = 0; i < StudentList.length; i++) {
-                    var Data = "<tr class='row_" + StudentList[i].StudentId + "'>" +
-                        "<td>" + StudentList[i].StudentId + "</td>" +
-                        "<td>" + StudentList[i].StudentName + "</td>" +
-                        "<td>" + StudentList[i].Email + "</td>" +
-                        "<td>" + StudentList[i].DepartmentName + "</td>" +
-                        "<td>" + "<a href='#' class='btn btn-warning' onclick='EditStudentRecord(" + StudentList[i].StudentId + ")' ><span class='glyphicon glyphicon-edit'></span></a>" + "</td>" +
-                        "<td>" + "<a href='#' class='btn btn-danger' onclick='DeleteStudentRecord(" + StudentList[i].StudentId + ")'><span class='glyphicon glyphicon-trash'></span></a>" + "</td>" +
-                        "</tr>";
-                    SetData.append(Data);
-                    $("#LoadingStatus").html(" ");
-
-                }
-            }
-
-            //Show The Popup Modal For Add New Student
-
-            function AddNewStudent(StudentId) {
-                $("#form")[0].reset();
-                $("#ECID").val(0);
-                //$("#DropDwn option:selected").text("--Select Dept--");
-                $("#ModalTitle").html("Add New Student");
-                $("#MyModal").modal();
-
-            }
-
-            //Show The Popup Modal For Edit Student Record
-
-            function EditStudentRecord(EmergencyContactID) {
-                var url = "/EmergencyContacts/GetStudentById?EmergencyContactID=" + EmergencyContactID;
-                $("#ModalTitle").html("Update Student Record");
-                $("#MyModal").modal();
-                $.ajax({
-                    type: "GET",
-                    url: url,
-                    success: function (data) {
-                        var obj = JSON.parse(data);
-                        $("#ECID").val(obj.EmergencyContactID);
-                        $("#First Name").val(obj.FirstName);
-                        $("#Last Name").val(obj.LastName);
-                        $("#Phone").val(obj.PhoneNumber);
-                        //$("#DropDwn option:selected").text(obj.tblDepartment.DepartmentName);
-                        //$("#DropDwn option:selected").val(obj.DepartmentId);
-
-                    }
-                })
-            }
-
-            $("#SaveStudentRecord").click(function () {
-                var data = $("#SubmitForm").serialize();
-                $.ajax({
-                    type: "Post",
-                    url: "/EmergencyContacts/SaveDataInDatabase",
-                    data: data,
-                    success: function (result) {
-                        alert("Success!..");
-                        window.location.href = "/Demographics/Create";
-                        $("#MyModal").modal("hide");
-
-                    }
-                })
-            })
-
-            //Show The Popup Modal For DeleteComfirmation
-            var DeleteStudentRecord = function (StudentId) {
-                $("#StuId").val(StudentId);
-                $("#DeleteConfirmation").modal("show");
-            }
-            var ConfirmDelete = function () {
-                var StuId = $("#StuId").val();
-                $.ajax({
-                    type: "POST",
-                    url: "/Home/DeleteStudentRecord?StudentId=" + StuId,
-                    success: function (result) {
-                        $("#DeleteConfirmation").modal("hide");
-                        $(".row_" + StuId).remove();
-                    }
-                })
-            }
-        </script>
-        }*@
-
-
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>

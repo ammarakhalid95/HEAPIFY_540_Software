@@ -240,6 +240,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helper\MyHelper.cs" />
     <Compile Include="Models\AccountsAdmin.cs">
       <DependentUpon>HEAPModel.tt</DependentUpon>
     </Compile>
@@ -304,6 +305,7 @@
     <Compile Include="Models\EmergencyContact.cs">
       <DependentUpon>HEAPModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\EmergencyContactViewController.cs" />
     <Compile Include="Models\Employee.cs">
       <DependentUpon>HEAPModel.tt</DependentUpon>
     </Compile>
@@ -434,6 +436,7 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modalform.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
@@ -681,7 +684,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\EmergencyContactView\" />
-    <Folder Include="Views\EmergencyContact\" />
+    <Folder Include="Views\MyHelper\" />
     <Folder Include="Views\Test\" />
     <Folder Include="Views\Users\" />
   </ItemGroup>

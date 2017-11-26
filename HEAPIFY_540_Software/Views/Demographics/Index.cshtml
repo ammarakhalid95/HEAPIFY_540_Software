@@ -9,9 +9,11 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
+
+
 <table class="table">
     <tr>
-        <th>
+        @*<th>
             @Html.DisplayNameFor(model => model.ActiveSStanding.ActiveSSType)
         </th>
         <th>
@@ -20,32 +22,35 @@
         <th>
             @Html.DisplayNameFor(model => model.DrugAbuse.DrugAbuseType)
         </th>
-        <th>
+        @*<th>
             @Html.DisplayNameFor(model => model.EmergencyContact.FirstName)
-        </th>
-        <th>
+        </th>*@
+        @*<th>
             @Html.DisplayNameFor(model => model.Ethnicity.EthnicityName)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Occupation.PositionTitle)
-        </th>
+        </th>*@
         <th>
-            @Html.DisplayNameFor(model => model.Patient.FirstName)
+            @*@Html.DisplayNameFor(model => model.Patient.FirstName)*@
+            Patient
         </th>
-        <th>
+        @*<th>
             @Html.DisplayNameFor(model => model.Race.RaceName)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.SmokingStanding.SmokingStatusType)
-        </th>
+        </th>*@
         <th></th>
     </tr>
 
 
 
+
+
 @foreach (var item in Model) {
     <tr>
-        <td>
+        @*<td>
             @Html.DisplayFor(modelItem => item.ActiveSStanding.ActiveSSType)
         </td>
         <td>
@@ -53,25 +58,25 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.DrugAbuse.DrugAbuseType)
-        </td>
-        <td>
+        </td>*@
+        @*<td>
             @Html.DisplayFor(modelItem => item.EmergencyContact.FirstName)
-        </td>
-        <td>
+        </td>*@
+        @*<td>
             @Html.DisplayFor(modelItem => item.Ethnicity.EthnicityName)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Occupation.PositionTitle)
-        </td>
+        </td>*@
         <td>
-            @Html.DisplayFor(modelItem => item.Patient.FirstName)
+            @Html.DisplayFor(modelItem => item.Patient.FullName)
         </td>
-        <td>
+        @*<td>
             @Html.DisplayFor(modelItem => item.Race.RaceName)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.SmokingStanding.SmokingStatusType)
-        </td>
+        </td>*@
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.DemographicID }) |
             @Html.ActionLink("Details", "Details", new { id=item.DemographicID }) |
