@@ -27,6 +27,9 @@ namespace HEAPIFY_540_Software
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
 
+            //bundles.Add(new ScriptBundle("~/bundles/modalform").Include(
+            //            "~/Scripts/modalform.js"));
+
             bundles.Add(new ScriptBundle("~/bundles/modalform").Include("~/Scripts/modalform.js"));
         }
     }

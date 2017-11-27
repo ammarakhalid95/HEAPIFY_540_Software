@@ -18,6 +18,8 @@ namespace HEAPIFY_540_Software.Controllers
         public ActionResult Index()
         {
             return View(db.Addresses.ToList());
+
+
         }
 
         // GET: Addresses/Details/5
@@ -32,13 +34,15 @@ namespace HEAPIFY_540_Software.Controllers
             {
                 return HttpNotFound();
             }
-            return View(address);
+            //return View(address);
+            return PartialView("_Details", address);
         }
 
         // GET: Addresses/Create
         public ActionResult Create()
         {
-            return View();
+            //return View();
+            return PartialView("_Create");
         }
 
         // POST: Addresses/Create
@@ -52,10 +56,11 @@ namespace HEAPIFY_540_Software.Controllers
             {
                 db.Addresses.Add(address);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                //return RedirectToAction("Index");
+                return Json(new { success = true });
             }
 
-            return View(address);
+            return PartialView("_Create", address);
         }
 
         // GET: Addresses/Edit/5
@@ -70,7 +75,8 @@ namespace HEAPIFY_540_Software.Controllers
             {
                 return HttpNotFound();
             }
-            return View(address);
+            //return View(address);
+            return PartialView("_Edit", address);
         }
 
         // POST: Addresses/Edit/5
@@ -84,9 +90,13 @@ namespace HEAPIFY_540_Software.Controllers
             {
                 db.Entry(address).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                //return RedirectToAction("Index");
+                //return Json(new { success = true });
+                string url = Url.Action("Index", "Addresses", new { id = address.AddressID });
+                return Json(new { success = true, url = url });
             }
-            return View(address);
+            //return View(address);
+            return PartialView("_Edit", address);
         }
 
         // GET: Addresses/Delete/5
@@ -101,7 +111,8 @@ namespace HEAPIFY_540_Software.Controllers
             {
                 return HttpNotFound();
             }
-            return View(address);
+            //return View(address);
+            return PartialView("_Delete", address);
         }
 
         // POST: Addresses/Delete/5
@@ -112,7 +123,8 @@ namespace HEAPIFY_540_Software.Controllers
             Address address = db.Addresses.Find(id);
             db.Addresses.Remove(address);
             db.SaveChanges();
-            return RedirectToAction("Index");
+            //return RedirectToAction("Index");
+            return Json(new { success = true });
         }
 
         protected override void Dispose(bool disposing)

@@ -439,7 +439,9 @@
     <Content Include="Scripts\modalform.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.matchmedia.addListener.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\_reference.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -508,11 +510,6 @@
     <Content Include="Views\AddLabReports\Details.cshtml" />
     <Content Include="Views\AddLabReports\Edit.cshtml" />
     <Content Include="Views\AddLabReports\Index.cshtml" />
-    <Content Include="Views\Addresses\Create.cshtml" />
-    <Content Include="Views\Addresses\Delete.cshtml" />
-    <Content Include="Views\Addresses\Details.cshtml" />
-    <Content Include="Views\Addresses\Edit.cshtml" />
-    <Content Include="Views\Addresses\Index.cshtml" />
     <Content Include="Views\AdjustmentCodes\Create.cshtml" />
     <Content Include="Views\AdjustmentCodes\Delete.cshtml" />
     <Content Include="Views\AdjustmentCodes\Details.cshtml" />
@@ -680,6 +677,11 @@
     <Content Include="Views\Vitals\Index.cshtml" />
     <Content Include="Views\Shared\SideMenu.cshtml" />
     <Content Include="Views\EmergencyContacts\ModalPopUp.cshtml" />
+    <Content Include="Views\Addresses\_Create.cshtml" />
+    <Content Include="Views\Addresses\_Delete.cshtml" />
+    <Content Include="Views\Addresses\_Details.cshtml" />
+    <Content Include="Views\Addresses\_Edit.cshtml" />
+    <Content Include="Views\Addresses\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
