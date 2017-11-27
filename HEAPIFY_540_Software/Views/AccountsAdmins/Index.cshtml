@@ -11,12 +11,12 @@
 </p>
 <table class="table">
     <tr>
-        <th>
+        @*<th>
             @Html.DisplayNameFor(model => model.Date)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.History)
-        </th>
+        </th>*@
         <th>
             @Html.DisplayNameFor(model => model.AccountType.AccountTypeName)
         </th>
@@ -31,14 +31,15 @@
 
 @foreach (var item in Model) {
     <tr>
-        <td>
+        @*<td>
             @Html.DisplayFor(modelItem => item.Date)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.History)
-        </td>
+        </td>*@
         <td>
             @Html.DisplayFor(modelItem => item.AccountType.AccountTypeName)
+            @*@Html.DisplayFor(modelItem => item.AccountType.AccountTypeName)*@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Employee.FirstName)
