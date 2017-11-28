@@ -13,7 +13,8 @@
 <table class="table">
     <tr>
         <th>
-            <input id="Checkbox1" type="checkbox" /> @Html.DisplayNameFor(model => model.ProblemsName)
+             
+            @Html.DisplayNameFor(model => model.ProblemsName)
 
         </th>
         <th></th>
@@ -22,6 +23,7 @@
 @foreach (var item in Model) {
     <tr>
         <td>
+            
             @Html.DisplayFor(modelItem => item.ProblemsName)
             
         </td>

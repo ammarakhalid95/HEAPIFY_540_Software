@@ -11,7 +11,8 @@
     <hr />
     <dl class="dl-vertical">
         <dt>
-            @Html.DisplayNameFor(model => model.FirstName)
+            First Name
+            @*@Html.DisplayNameFor(model => model.FirstName)*@
         </dt>
 
         <dd>
@@ -19,7 +20,8 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.MiddleName)
+            Middle Name
+            @*@Html.DisplayNameFor(model => model.MiddleName)*@
         </dt>
 
         <dd>
@@ -27,7 +29,8 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.LastName)
+            Last Name
+            @*@Html.DisplayNameFor(model => model.LastName)*@
         </dt>
 
         <dd>
@@ -51,23 +54,28 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.DateOfBirth)
+            Date of Birth (MM/DD/YYYY)
+            @*@Html.DisplayNameFor(model => model.DateOfBirth)*@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.DateOfBirth)
+            @Html.DisplayFor(model => model.DateOfBirthDateOnly)
+            @*@Html.DisplayFor(model => model.DateOfBirth)*@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Address.StreetName)
+            Address
+            @*@Html.DisplayNameFor(model => model.Address.StreetName)*@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Address.StreetName)
+            @Html.DisplayFor(model => model.Address.FullAddress)
+            @*@Html.DisplayFor(model => model.Address.StreetName)*@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Insurance.InsuranceName)
+            Insurance
+            @*@Html.DisplayNameFor(model => model.Insurance.InsuranceName)*@
         </dt>
 
         <dd>
@@ -83,7 +91,8 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.PhoneNumber.PhoneNumber1)
+            Phone Number
+            @*@Html.DisplayNameFor(model => model.PhoneNumber.PhoneNumber1)*@
         </dt>
 
         <dd>

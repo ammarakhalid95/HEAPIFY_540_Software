@@ -17,8 +17,15 @@ namespace HEAPIFY_540_Software.Models
         public int PatientProblemID { get; set; }
         public int PatientID { get; set; }
         public int ProblemID { get; set; }
+        public bool isSelected { get; set; }
     
         public virtual Patient Patient { get; set; }
         public virtual Problem Problem { get; set; }
+    }
+
+    public class ProblemsModel
+    {
+        public List<Problem> P { get; set;}
+
     }
 }
