@@ -18,6 +18,7 @@ namespace HEAPIFY_540_Software.Controllers
         // GET: Billings
         public ActionResult Index()
         {
+          
             var billings = db.Billings.Include(b => b.AdjustmentCode).Include(b => b.CurrentProceduralTerminology).Include(b => b.Insurance).Include(b => b.Patient).Include(b => b.PaymentMode);
             return View(billings.ToList());
         }

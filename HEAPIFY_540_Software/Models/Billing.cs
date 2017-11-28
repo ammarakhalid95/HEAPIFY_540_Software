@@ -25,6 +25,7 @@ namespace HEAPIFY_540_Software.Models
         public string Notes { get; set; }
         public int PatientID { get; set; }
         public int InsuranceID { get; set; }
+
     
         public virtual AdjustmentCode AdjustmentCode { get; set; }
         public virtual CurrentProceduralTerminology CurrentProceduralTerminology { get; set; }
