@@ -18,6 +18,7 @@ namespace HEAPIFY_540_Software.Models
         public int ProblemID { get; set; }
         public int RelationshipID { get; set; }
         public int PatientID { get; set; }
+        public bool isSelected { get; set; }
     
         public virtual Patient Patient { get; set; }
         public virtual Problem Problem { get; set; }

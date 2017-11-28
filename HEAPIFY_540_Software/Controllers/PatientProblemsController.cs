@@ -10,7 +10,8 @@ using HEAPIFY_540_Software.Models;
 
 namespace HEAPIFY_540_Software.Controllers
 {
-    [Authorize(Roles = "Medical Staff")]
+    [Authorize]
+    //[Authorize(Roles = "Medical Staff")]
     public class PatientProblemsController : Controller
     {
         private HEAPIFY_540_SoftwareContext db = new HEAPIFY_540_SoftwareContext();
@@ -18,8 +19,16 @@ namespace HEAPIFY_540_Software.Controllers
         // GET: PatientProblems
         public ActionResult Index()
         {
-            var patientProblems = db.PatientProblems.Include(p => p.Patient).Include(p => p.Problem);
-            return View(patientProblems.ToList());
+            ProblemsModel pp = new ProblemsModel();
+
+            using (HEAPIFY_540_SoftwareContext hsc = new HEAPIFY_540_SoftwareContext())
+            {
+                pp.P = hsc.Problems.ToList<Problem>();
+            }
+            return View(pp);
+
+            //    var patientProblems = db.PatientProblems.Include(p => p.Patient).Include(p => p.Problem);
+            //return View(patientProblems.ToList());
         }
 
         // GET: PatientProblems/Details/5
