@@ -43,7 +43,35 @@ namespace HEAPIFY_540_Software.Models
         public string PatientSSN { get; set; }
         public string Email { get; set; }
         public System.DateTime DateOfBirth { get; set; }
-    
+
+ 
+        // Added 11/28/2017 -- PLB
+        public string FullName
+        {
+            get
+            {
+                if (MiddleName == String.Empty)
+                {
+                    return FirstName + " " + LastName;
+                }
+
+                else
+                {
+                    return FirstName + " " + MiddleName + " " + LastName;
+                }
+            }
+        }
+
+        // Added 11/28/2017 -- PLB
+        // Wanted to display only the date
+        public string DateOfBirthDateOnly
+        {
+            get
+            {
+                return DateOfBirth.ToShortDateString();
+            }
+        }
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<AddLabReport> AddLabReports { get; set; }
         public virtual Address Address { get; set; }

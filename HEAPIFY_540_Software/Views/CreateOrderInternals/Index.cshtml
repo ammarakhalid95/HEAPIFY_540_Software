@@ -27,13 +27,16 @@
             @Html.DisplayNameFor(model => model.Stat)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Employee.FirstName)
+            Who Ordered the test?
+            @*@Html.DisplayNameFor(model => model.Employee.FirstName)*@
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Patient.FirstName)
+            Patient
+            @*@Html.DisplayNameFor(model => model.Patient.FirstName)*@
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Employee1.FirstName)
+            Who is releasing test results?
+            @*@Html.DisplayNameFor(model => model.Employee1.FirstName)*@
         </th>
         <th></th>
     </tr>
@@ -56,13 +59,13 @@
             @Html.DisplayFor(modelItem => item.Stat)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Employee.FirstName)
+            @Html.DisplayFor(modelItem => item.Employee.FullName)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Patient.FirstName)
+            @Html.DisplayFor(modelItem => item.Patient.FullName)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Employee1.FirstName)
+            @Html.DisplayFor(modelItem => item.Employee1.FullName)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.OrderID }) |
