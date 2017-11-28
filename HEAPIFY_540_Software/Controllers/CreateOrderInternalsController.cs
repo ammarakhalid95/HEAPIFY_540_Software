@@ -10,7 +10,8 @@ using HEAPIFY_540_Software.Models;
 
 namespace HEAPIFY_540_Software.Controllers
 {
-    [Authorize(Roles = "Medical Staff")]
+    [Authorize]
+    //[Authorize(Roles = "Medical Staff")]
     public class CreateOrderInternalsController : Controller
     {
         private HEAPIFY_540_SoftwareContext db = new HEAPIFY_540_SoftwareContext();
