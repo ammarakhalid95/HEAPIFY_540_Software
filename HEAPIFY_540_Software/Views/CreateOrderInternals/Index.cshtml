@@ -59,13 +59,13 @@
             @Html.DisplayFor(modelItem => item.Stat)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Employee.FirstName)
+            @Html.DisplayFor(modelItem => item.Employee.FullName)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Patient.FirstName)
+            @Html.DisplayFor(modelItem => item.Patient.FullName)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Employee1.FirstName)
+            @Html.DisplayFor(modelItem => item.Employee1.FullName)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.OrderID }) |

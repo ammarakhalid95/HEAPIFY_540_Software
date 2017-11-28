@@ -52,6 +52,16 @@ namespace HEAPIFY_540_Software.Models
             }
         }
 
+        // Added 11/28/2017 -- PLB
+        // Wanted to display only the date
+        public string EmployeeDateOfBirthDateOnly
+        {
+            get
+            {
+                return EmployeeDateOfBirth.ToShortDateString();
+            }
+        }
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<AccountsAdmin> AccountsAdmins { get; set; }
         public virtual Address Address { get; set; }
