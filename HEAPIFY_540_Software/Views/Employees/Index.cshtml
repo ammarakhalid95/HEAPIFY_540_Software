@@ -12,13 +12,16 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.FirstName)
+            @*@Html.DisplayNameFor(model => model.FirstName)*@
+            First Name
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.MiddleName)
+            @*@Html.DisplayNameFor(model => model.MiddleName)*@
+            Middle Name
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.LastName)
+            @*@Html.DisplayNameFor(model => model.LastName)*@
+            Last Name
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Position)
@@ -26,7 +29,7 @@
         <th>
             @Html.DisplayNameFor(model => model.Department)
         </th>
-        <th>
+       @* <th>
             @Html.DisplayNameFor(model => model.EmployeeSSN)
         </th>
         <th>
@@ -41,7 +44,7 @@
         <th>
             @Html.DisplayNameFor(model => model.PhoneNumber.PhoneNumber1)
         </th>
-        <th></th>
+        <th></th>*@
     </tr>
 
 @foreach (var item in Model) {
@@ -61,7 +64,7 @@
         <td>
             @Html.DisplayFor(modelItem => item.Department)
         </td>
-        <td>
+        @*<td>
             @Html.DisplayFor(modelItem => item.EmployeeSSN)
         </td>
         <td>
@@ -75,9 +78,9 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.PhoneNumber.PhoneNumber1)
-        </td>
+        </td>*@
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.EmployeeID }) |
+            @*@Html.ActionLink("Edit", "Edit", new { id=item.EmployeeID }) |*@
             @Html.ActionLink("Details", "Details", new { id=item.EmployeeID }) |
             @Html.ActionLink("Delete", "Delete", new { id=item.EmployeeID })
         </td>
