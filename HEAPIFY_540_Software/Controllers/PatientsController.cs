@@ -23,6 +23,26 @@ namespace HEAPIFY_540_Software.Controllers
             return View(patients.ToList());
         }
 
+        
+        public ActionResult SecondaryMenu()
+        {
+            return View("SideMenu");
+        }
+
+        public ActionResult FaceSheet(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Patient patient = db.Patients.Find(id);
+            if (patient == null)
+            {
+                return HttpNotFound();
+            }
+            return View(patient);
+
+        }
         // GET: Patients/Details/5
         public ActionResult Details(int? id)
         {
