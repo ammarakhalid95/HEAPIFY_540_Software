@@ -27,6 +27,15 @@ namespace HEAPIFY_540_Software.Models
         public string County { get; set; }
         public int ZipCode { get; set; }
     
+        // Added 11/30/2017 -- PLB
+        public string FullAddress
+        {
+            get
+            {
+                return StreetName + ", " + City + ", " + County + " " + ZipCode;
+            }
+        }
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Employee> Employees { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

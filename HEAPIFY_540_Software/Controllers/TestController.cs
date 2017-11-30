@@ -11,7 +11,7 @@ namespace HEAPIFY_Manager_540.Controllers
         // GET: Test
         public ActionResult Index()
         {
-            return PartialView("SideMenu");
+            return View("SideMenu");
         }
         public ActionResult SideMenu()
         {
