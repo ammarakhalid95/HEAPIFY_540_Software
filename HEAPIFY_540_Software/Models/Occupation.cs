@@ -24,6 +24,22 @@ namespace HEAPIFY_540_Software.Models
         public string PositionTitle { get; set; }
         public string EmployerName { get; set; }
     
+        public string FullEmployment
+        {
+            get
+            {
+                if (PositionTitle == String.Empty)
+                {
+                    return "Unemployed or Retired";
+                }
+
+                else
+                {
+                    return PositionTitle + " - " + EmployerName;
+                }
+            }
+        }
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Demographic> Demographics { get; set; }
     }
