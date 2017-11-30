@@ -35,33 +35,6 @@ namespace HEAPIFY_540_Software.Models
         public string PersonalEmail { get; set; }
         public System.DateTime EmployeeDateOfBirth { get; set; }
     
-        // Added 11/28/2017 -- PLB
-        public string FullName
-        {
-            get
-            {
-                if (MiddleName == String.Empty)
-                {
-                    return FirstName + " " + LastName;
-                }
-
-                else
-                {
-                    return FirstName + " " + MiddleName + " " + LastName;
-                }
-            }
-        }
-
-        // Added 11/28/2017 -- PLB
-        // Wanted to display only the date
-        public string EmployeeDateOfBirthDateOnly
-        {
-            get
-            {
-                return EmployeeDateOfBirth.ToShortDateString();
-            }
-        }
-
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<AccountsAdmin> AccountsAdmins { get; set; }
         public virtual Address Address { get; set; }

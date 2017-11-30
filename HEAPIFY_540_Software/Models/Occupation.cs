@@ -24,25 +24,6 @@ namespace HEAPIFY_540_Software.Models
         public string PositionTitle { get; set; }
         public string EmployerName { get; set; }
     
-        // Added 11/28/2017 -- PLB
-        // If PotionTitle is null, displays "Unemployed or Retired",
-        // Else the String will display the Position & Company name.
-        public string FullOccupationAndCompany
-        {
-            get
-            {
-                if (PositionTitle == null)
-                {
-                    return "Unemployed or Retired";
-                }
-
-                else
-                {
-                    return PositionTitle + " - " + EmployerName;
-                }
-            }
-        }
-
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Demographic> Demographics { get; set; }
     }

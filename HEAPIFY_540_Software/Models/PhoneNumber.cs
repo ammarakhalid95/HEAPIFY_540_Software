@@ -26,15 +26,6 @@ namespace HEAPIFY_540_Software.Models
         public string PhoneNumber1 { get; set; }
         public int PhoneTypeID { get; set; }
     
-        //// Added 11/28/2017 -- PLB
-        //public string FullPhoneNumber
-        //{
-        //    get
-        //    {
-        //        return PhoneNumber1 + " " + PhoneType.PhoneTypeName;
-        //    }
-        //}
-
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<EmergencyContact> EmergencyContacts { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
