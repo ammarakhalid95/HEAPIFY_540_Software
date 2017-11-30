@@ -10,7 +10,8 @@ using HEAPIFY_540_Software.Models;
 
 namespace HEAPIFY_540_Software.Controllers
 {
-    [Authorize(Roles = "Patient Billing Representative")]
+    [Authorize]
+    //[Authorize(Roles = "Patient Billing Representative")]
     public class BillingsController : Controller
     {
         private HEAPIFY_540_SoftwareContext db = new HEAPIFY_540_SoftwareContext();
@@ -18,6 +19,7 @@ namespace HEAPIFY_540_Software.Controllers
         // GET: Billings
         public ActionResult Index()
         {
+          
             var billings = db.Billings.Include(b => b.AdjustmentCode).Include(b => b.CurrentProceduralTerminology).Include(b => b.Insurance).Include(b => b.Patient).Include(b => b.PaymentMode);
             return View(billings.ToList());
         }

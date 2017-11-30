@@ -7,10 +7,81 @@
 <h2>Details</h2>
 
 <div>
-    <h4>CreateOrderInternal</h4>
+    <h4>Internal Laboratory Report</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
+            Comments
+            @*@Html.DisplayNameFor(model => model.Notes)*@
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Notes)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Diagnoses)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Diagnoses)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Lab)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Lab)
+        </dd>
+
+        <dt>
+            Test Type
+            @*@Html.DisplayNameFor(model => model.Type)*@
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Type)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Stat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Stat)
+        </dd>
+
+        <dt>
+            Test Ordered By?
+            @*@Html.DisplayNameFor(model => model.Employee.FirstName)*@
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Employee.FullName)
+            @*@Html.DisplayFor(model => model.Employee.FirstName)*@
+        </dd>
+
+        <dt>
+            Patient
+            @*@Html.DisplayNameFor(model => model.Patient.FirstName)*@
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Patient.FullName)
+            @*@Html.DisplayFor(model => model.Patient.FirstName)*@
+        </dd>
+
+        <dt>
+            Test Performed By?
+            @*@Html.DisplayNameFor(model => model.Employee1.FirstName)*@
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Employee1.FullName)
+            @*@Html.DisplayFor(model => model.Employee1.FirstName)*@
+        </dd>
+        @*<dt>
             @Html.DisplayNameFor(model => model.Notes)
         </dt>
 
@@ -72,7 +143,7 @@
 
         <dd>
             @Html.DisplayFor(model => model.Employee1.FirstName)
-        </dd>
+        </dd>*@
 
     </dl>
 </div>

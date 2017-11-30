@@ -7,11 +7,12 @@
 <h2>Details</h2>
 
 <div>
-    <h4>Vital</h4>
+    <h4>Vitals</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.DateAndTime)
+            Date & Time
+            @*@Html.DisplayNameFor(model => model.DateAndTime)*@
         </dt>
 
         <dd>
@@ -19,7 +20,8 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.BloodPressure)
+            Blood Pressure (mmHg)
+            @*@Html.DisplayNameFor(model => model.BloodPressure)*@
         </dt>
 
         <dd>
@@ -27,7 +29,8 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Heart_Rate)
+            Heart Rate (bpm)
+            @*@Html.DisplayNameFor(model => model.Heart_Rate)*@
         </dt>
 
         <dd>
@@ -35,7 +38,8 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Respiratory_Rate)
+            Respiratory Rate (rpm)
+            @*@Html.DisplayNameFor(model => model.Respiratory_Rate)*@
         </dt>
 
         <dd>
@@ -43,7 +47,8 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Height_Length)
+            Height (Inches)
+            @*@Html.DisplayNameFor(model => model.Height_Length)*@
         </dt>
 
         <dd>
@@ -51,7 +56,8 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Weight)
+            Weight (Pounds)
+            @*@Html.DisplayNameFor(model => model.Weight)*@
         </dt>
 
         <dd>
@@ -59,7 +65,8 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Temperature)
+            Temperature (Fahrenheit)
+            @*@Html.DisplayNameFor(model => model.Temperature)*@
         </dt>
 
         <dd>
@@ -75,11 +82,13 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Patient.FirstName)
+            Patient
+            @*@Html.DisplayNameFor(model => model.Patient.FirstName)*@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Patient.FirstName)
+            @Html.DisplayFor(model => model.Patient.FullName)
+            @*@Html.DisplayFor(model => model.Patient.FirstName)*@
         </dd>
 
     </dl>

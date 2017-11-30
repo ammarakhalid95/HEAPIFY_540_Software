@@ -11,16 +11,16 @@
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>Vital</h4>
+        <h4>Vitals</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group">
+        @*<div class="form-group">
             @Html.LabelFor(model => model.VitalID, "Vital ID", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.VitalID, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.VitalID, "", new { @class = "text-danger" })
             </div>
-        </div>
+        </div>*@
 
         <div class="form-group">
             @Html.LabelFor(model => model.DateAndTime, "Date & Time", htmlAttributes: new { @class = "control-label col-md-2" })

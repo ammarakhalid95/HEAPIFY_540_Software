@@ -8,11 +8,12 @@
 
 <h3>Are you sure you want to delete this?</h3>
 <div>
-    <h4>CreateOrderInternal</h4>
+    <h4>Internal Laboratory Order</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.Notes)
+            Comments
+            @*@Html.DisplayNameFor(model => model.Notes)*@
         </dt>
 
         <dd>
@@ -36,7 +37,8 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Type)
+            Test Type
+            @*@Html.DisplayNameFor(model => model.Type)*@
         </dt>
 
         <dd>
@@ -52,27 +54,33 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Employee.FirstName)
+            Test Ordered By?
+            @*@Html.DisplayNameFor(model => model.Employee.FirstName)*@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Employee.FirstName)
+            @Html.DisplayFor(model => model.Employee.FullName)
+            @*@Html.DisplayFor(model => model.Employee.FirstName)*@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Patient.FirstName)
+            Patient
+            @*@Html.DisplayNameFor(model => model.Patient.FirstName)*@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Patient.FirstName)
+            @Html.DisplayFor(model => model.Patient.FullName)
+            @*@Html.DisplayFor(model => model.Patient.FirstName)*@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Employee1.FirstName)
+            Test Performed By?
+            @*@Html.DisplayNameFor(model => model.Employee1.FirstName)*@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Employee1.FirstName)
+            @Html.DisplayFor(model => model.Employee1.FullName)
+            @*@Html.DisplayFor(model => model.Employee1.FirstName)*@
         </dd>
 
     </dl>

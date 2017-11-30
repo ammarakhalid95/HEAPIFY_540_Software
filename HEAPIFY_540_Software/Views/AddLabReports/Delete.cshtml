@@ -8,11 +8,12 @@
 
 <h3>Are you sure you want to delete this?</h3>
 <div>
-    <h4>AddLabReport</h4>
+    <h4>Add a Lab Report</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.WhereOrder)
+            Who Ordered Test?
+            @*@Html.DisplayNameFor(model => model.WhereOrder)*@
         </dt>
 
         <dd>
@@ -20,7 +21,8 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.ResultDate)
+            Result Date
+            @*@Html.DisplayNameFor(model => model.ResultDate)*@
         </dt>
 
         <dd>
@@ -28,7 +30,8 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Type)
+            Test Type
+            @*@Html.DisplayNameFor(model => model.Type)*@
         </dt>
 
         <dd>
@@ -44,7 +47,8 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Lab)
+            Outside Lab (Use Y or N)?
+            @*@Html.DisplayNameFor(model => model.Lab)*@
         </dt>
 
         <dd>
@@ -52,11 +56,13 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Patient.FirstName)
+            Patient
+            @*@Html.DisplayNameFor(model => model.Patient.FirstName)*@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Patient.FirstName)
+            @Html.DisplayFor(model => model.Patient.FullName)
+            @*@Html.DisplayFor(model => model.Patient.FirstName)*@
         </dd>
 
     </dl>
