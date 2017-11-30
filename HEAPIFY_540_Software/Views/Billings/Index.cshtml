@@ -15,7 +15,8 @@
             Patient
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Payment)
+            @*@Html.DisplayNameFor(model => model.Payment)*@
+            Total Payment
         </th>
 
         @*<th>
@@ -58,7 +59,8 @@
             @Html.DisplayFor(modelItem => item.Patient.FullName)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Payment)
+            @*@Html.DisplayFor(modelItem => item.Payment)*@
+            @Html.DisplayFor(modelItem => item.TotalPayment)
         </td>
 
         @* Orignal code below 11/29/2017 -- PLB *@

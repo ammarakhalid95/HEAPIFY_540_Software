@@ -28,24 +28,7 @@ namespace HEAPIFY_540_Software.Models
         public Nullable<int> PhoneNumberID { get; set; }
         public string Email { get; set; }
         public int RelationshipID { get; set; }
-
-        // Added 11/28/2017 -- PLB
-        public string FullName
-        {
-            get
-            {
-                if (MiddleName == String.Empty)
-                {
-                    return FirstName + " " + LastName;
-                }
-
-                else
-                {
-                    return FirstName + " " + MiddleName + " " + LastName;
-                }
-            }
-        }
-
+    
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Demographic> Demographics { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

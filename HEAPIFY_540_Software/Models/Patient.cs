@@ -44,8 +44,15 @@ namespace HEAPIFY_540_Software.Models
         public string Email { get; set; }
         public System.DateTime DateOfBirth { get; set; }
 
- 
-        // Added 11/28/2017 -- PLB
+        public string DateOfBirthOnly
+        {
+            get
+            {
+                return DateOfBirth.ToShortDateString(); 
+            }
+        }
+
+
         public string FullName
         {
             get
@@ -59,16 +66,6 @@ namespace HEAPIFY_540_Software.Models
                 {
                     return FirstName + " " + MiddleName + " " + LastName;
                 }
-            }
-        }
-
-        // Added 11/28/2017 -- PLB
-        // Wanted to display only the date
-        public string DateOfBirthDateOnly
-        {
-            get
-            {
-                return DateOfBirth.ToShortDateString();
             }
         }
 

@@ -24,19 +24,9 @@ namespace HEAPIFY_540_Software.Models
         public int AddressID { get; set; }
         public string StreetName { get; set; }
         public string City { get; set; }
-        public string County { get; set; } // Meant to be State
+        public string County { get; set; }
         public int ZipCode { get; set; }
     
-        //  Added 11/28/2017 -- PLB
-        public string FullAddress
-        {
-            get
-            {   
-                // Note: the County variable is suppose to be State.
-                return StreetName + ", " + City + ", " + County + " " + ZipCode;
-            }
-        }
-
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Employee> Employees { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

@@ -16,7 +16,7 @@ namespace HEAPIFY_540_Software.Models
     {
         public int BillingID { get; set; }
         public Nullable<int> CurrentProceduralTerminologyID { get; set; }
-        public Nullable<int> Quantity { get; set; }
+        public int Quantity { get; set; }
         public double Payment { get; set; }
         public Nullable<int> AdjustmentCodeID { get; set; }
         public int PaymentModeID { get; set; }
@@ -25,12 +25,19 @@ namespace HEAPIFY_540_Software.Models
         public string Notes { get; set; }
         public int PatientID { get; set; }
         public int InsuranceID { get; set; }
-
     
         public virtual AdjustmentCode AdjustmentCode { get; set; }
         public virtual CurrentProceduralTerminology CurrentProceduralTerminology { get; set; }
         public virtual Insurance Insurance { get; set; }
         public virtual Patient Patient { get; set; }
         public virtual PaymentMode PaymentMode { get; set; }
+
+        public double TotalPayment
+        {
+            get
+            {
+                return (double) Quantity * Payment;
+            }
+        }
     }
 }

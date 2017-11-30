@@ -34,8 +34,8 @@ namespace HEAPIFY_540_Software.Models
         public string EmployeeSSN { get; set; }
         public string PersonalEmail { get; set; }
         public System.DateTime EmployeeDateOfBirth { get; set; }
-    
-        // Added 11/28/2017 -- PLB
+
+        // Added 11/30/2017 -- PLB
         public string FullName
         {
             get
@@ -49,16 +49,6 @@ namespace HEAPIFY_540_Software.Models
                 {
                     return FirstName + " " + MiddleName + " " + LastName;
                 }
-            }
-        }
-
-        // Added 11/28/2017 -- PLB
-        // Wanted to display only the date
-        public string EmployeeDateOfBirthDateOnly
-        {
-            get
-            {
-                return EmployeeDateOfBirth.ToShortDateString();
             }
         }
 

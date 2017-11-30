@@ -153,12 +153,12 @@ warning 6002: The table/view 'HEAP_540.dbo.__MigrationHistory' does not have a p
           </Key>
           <Property Name="BillingID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="CurrentProceduralTerminologyID" Type="int" />
-          <Property Name="Quantity" Type="int" />
+          <Property Name="Quantity" Type="int" Nullable="false" />
           <Property Name="Payment" Type="float" Nullable="false" />
           <Property Name="AdjustmentCodeID" Type="int" />
           <Property Name="PaymentModeID" Type="int" Nullable="false" />
           <Property Name="DatePaid" Type="datetime" Nullable="false" />
-          <Property Name="PaidBy" Type="char" MaxLength="20" Nullable="false" />
+          <Property Name="PaidBy" Type="varchar(max)" Nullable="false" />
           <Property Name="Notes" Type="varchar(max)" />
           <Property Name="PatientID" Type="int" Nullable="false" />
           <Property Name="InsuranceID" Type="int" Nullable="false" />
@@ -1578,12 +1578,12 @@ warning 6002: The table/view 'HEAP_540.dbo.__MigrationHistory' does not have a p
           </Key>
           <Property Name="BillingID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="CurrentProceduralTerminologyID" Type="Int32" />
-          <Property Name="Quantity" Type="Int32" />
+          <Property Name="Quantity" Type="Int32" Nullable="false" />
           <Property Name="Payment" Type="Double" Nullable="false" />
           <Property Name="AdjustmentCodeID" Type="Int32" />
           <Property Name="PaymentModeID" Type="Int32" Nullable="false" />
           <Property Name="DatePaid" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="PaidBy" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="PaidBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Notes" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="PatientID" Type="Int32" Nullable="false" />
           <Property Name="InsuranceID" Type="Int32" Nullable="false" />
