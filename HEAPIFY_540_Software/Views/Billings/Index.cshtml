@@ -12,6 +12,13 @@
 <table class="table">
     <tr>
         <th>
+            Patient
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Payment)
+        </th>
+
+        @*<th>
             @Html.DisplayNameFor(model => model.Quantity)
         </th>
         <th>
@@ -41,12 +48,21 @@
         <th>
             @Html.DisplayNameFor(model => model.PaymentMode.PaymentModeType)
         </th>
-        <th></th>
+        <th></th>*@
     </tr>
 
 @foreach (var item in Model) {
     <tr>
+        @* New code below 11/29/2017 -- PLB *@
         <td>
+            @Html.DisplayFor(modelItem => item.Patient.FullName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Payment)
+        </td>
+
+        @* Orignal code below 11/29/2017 -- PLB *@
+        @*<td>
             @Html.DisplayFor(modelItem => item.Quantity)
         </td>
         <td>
@@ -75,7 +91,7 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.PaymentMode.PaymentModeType)
-        </td>
+        </td>*@
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.BillingID }) |
             @Html.ActionLink("Details", "Details", new { id=item.BillingID }) |

@@ -28,7 +28,8 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.DatePaid)
+            Date Paid
+            @*@Html.DisplayNameFor(model => model.DatePaid)*@
         </dt>
 
         <dd>
@@ -36,7 +37,8 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.PaidBy)
+            Paid By
+            @*@Html.DisplayNameFor(model => model.PaidBy)*@
         </dt>
 
         <dd>
@@ -44,7 +46,8 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Notes)
+            Comments
+            @*@Html.DisplayNameFor(model => model.Notes)*@
         </dt>
 
         <dd>
@@ -52,7 +55,8 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.AdjustmentCode.AdjustmentDescription)
+            Adjustment Code
+            @*@Html.DisplayNameFor(model => model.AdjustmentCode.AdjustmentDescription)*@
         </dt>
 
         <dd>
@@ -60,7 +64,8 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.CurrentProceduralTerminology.CPTActualNumber)
+            CPT Code
+            @*@Html.DisplayNameFor(model => model.CurrentProceduralTerminology.CPTActualNumber)*@
         </dt>
 
         <dd>
@@ -68,7 +73,8 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Insurance.InsuranceName)
+            Insurance
+            @*@Html.DisplayNameFor(model => model.Insurance.InsuranceName)*@
         </dt>
 
         <dd>
@@ -76,15 +82,18 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Patient.FirstName)
+            Patient
+            @*@Html.DisplayNameFor(model => model.Patient.FirstName)*@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Patient.FirstName)
+            @Html.DisplayFor(model => model.Patient.FullName)
+            @*@Html.DisplayFor(model => model.Patient.FirstName)*@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.PaymentMode.PaymentModeType)
+            Payment Type
+            @*@Html.DisplayNameFor(model => model.PaymentMode.PaymentModeType)*@
         </dt>
 
         <dd>
