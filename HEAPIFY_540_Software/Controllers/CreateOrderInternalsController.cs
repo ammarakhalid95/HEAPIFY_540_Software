@@ -41,9 +41,9 @@ namespace HEAPIFY_540_Software.Controllers
         // GET: CreateOrderInternals/Create
         public ActionResult Create()
         {
-            ViewBag.OrderingProvider = new SelectList(db.Employees, "EmployeeID", "FirstName");
-            ViewBag.PatientID = new SelectList(db.Patients, "PatientID", "FirstName");
-            ViewBag.ResponsibleOrder = new SelectList(db.Employees, "EmployeeID", "FirstName");
+            ViewBag.OrderingProvider = new SelectList(db.Employees, "EmployeeID", "FullName");
+            ViewBag.PatientID = new SelectList(db.Patients, "PatientID", "FullName");
+            ViewBag.ResponsibleOrder = new SelectList(db.Employees, "EmployeeID", "FullName");
             return View();
         }
 
@@ -61,9 +61,9 @@ namespace HEAPIFY_540_Software.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.OrderingProvider = new SelectList(db.Employees, "EmployeeID", "FirstName", createOrderInternal.OrderingProvider);
-            ViewBag.PatientID = new SelectList(db.Patients, "PatientID", "FirstName", createOrderInternal.PatientID);
-            ViewBag.ResponsibleOrder = new SelectList(db.Employees, "EmployeeID", "FirstName", createOrderInternal.ResponsibleOrder);
+            ViewBag.OrderingProvider = new SelectList(db.Employees, "EmployeeID", "FullName", createOrderInternal.OrderingProvider);
+            ViewBag.PatientID = new SelectList(db.Patients, "PatientID", "FullName", createOrderInternal.PatientID);
+            ViewBag.ResponsibleOrder = new SelectList(db.Employees, "EmployeeID", "FullName", createOrderInternal.ResponsibleOrder);
             return View(createOrderInternal);
         }
 
@@ -79,9 +79,9 @@ namespace HEAPIFY_540_Software.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.OrderingProvider = new SelectList(db.Employees, "EmployeeID", "FirstName", createOrderInternal.OrderingProvider);
-            ViewBag.PatientID = new SelectList(db.Patients, "PatientID", "FirstName", createOrderInternal.PatientID);
-            ViewBag.ResponsibleOrder = new SelectList(db.Employees, "EmployeeID", "FirstName", createOrderInternal.ResponsibleOrder);
+            ViewBag.OrderingProvider = new SelectList(db.Employees, "EmployeeID", "FullName", createOrderInternal.OrderingProvider);
+            ViewBag.PatientID = new SelectList(db.Patients, "PatientID", "FullName", createOrderInternal.PatientID);
+            ViewBag.ResponsibleOrder = new SelectList(db.Employees, "EmployeeID", "FullName", createOrderInternal.ResponsibleOrder);
             return View(createOrderInternal);
         }
 
@@ -98,9 +98,9 @@ namespace HEAPIFY_540_Software.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.OrderingProvider = new SelectList(db.Employees, "EmployeeID", "FirstName", createOrderInternal.OrderingProvider);
-            ViewBag.PatientID = new SelectList(db.Patients, "PatientID", "FirstName", createOrderInternal.PatientID);
-            ViewBag.ResponsibleOrder = new SelectList(db.Employees, "EmployeeID", "FirstName", createOrderInternal.ResponsibleOrder);
+            ViewBag.OrderingProvider = new SelectList(db.Employees, "EmployeeID", "FullName", createOrderInternal.OrderingProvider);
+            ViewBag.PatientID = new SelectList(db.Patients, "PatientID", "FullName", createOrderInternal.PatientID);
+            ViewBag.ResponsibleOrder = new SelectList(db.Employees, "EmployeeID", "FullName", createOrderInternal.ResponsibleOrder);
             return View(createOrderInternal);
         }
 

@@ -9,7 +9,7 @@ using System.Web.Mvc;
 
 namespace HEAPIFY_540_Software.Controllers
 {
-    [Authorize(Roles = "IT Administrator")]
+    //[Authorize(Roles = "IT Administrator")]
     public class UsersController : Controller
     {
         public Boolean IsAdminUser()

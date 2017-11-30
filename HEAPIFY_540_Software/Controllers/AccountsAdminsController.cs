@@ -41,7 +41,7 @@ namespace HEAPIFY_540_Software.Controllers
         public ActionResult Create()
         {
             ViewBag.AccountTypeID = new SelectList(db.AccountTypes, "AccountTypeID", "AccountTypeName");
-            ViewBag.EmployeeID = new SelectList(db.Employees, "EmployeeID", "FirstName");
+            ViewBag.EmployeeID = new SelectList(db.Employees, "EmployeeID", "FullName");
             ViewBag.ModifyID = new SelectList(db.Modifies, "ModifyID", "ModifyType");
             return View();
         }
@@ -61,7 +61,7 @@ namespace HEAPIFY_540_Software.Controllers
             }
 
             ViewBag.AccountTypeID = new SelectList(db.AccountTypes, "AccountTypeID", "AccountTypeName", accountsAdmin.AccountTypeID);
-            ViewBag.EmployeeID = new SelectList(db.Employees, "EmployeeID", "FirstName", accountsAdmin.EmployeeID);
+            ViewBag.EmployeeID = new SelectList(db.Employees, "EmployeeID", "FullName", accountsAdmin.EmployeeID);
             ViewBag.ModifyID = new SelectList(db.Modifies, "ModifyID", "ModifyType", accountsAdmin.ModifyID);
             return View(accountsAdmin);
         }
@@ -79,7 +79,7 @@ namespace HEAPIFY_540_Software.Controllers
                 return HttpNotFound();
             }
             ViewBag.AccountTypeID = new SelectList(db.AccountTypes, "AccountTypeID", "AccountTypeName", accountsAdmin.AccountTypeID);
-            ViewBag.EmployeeID = new SelectList(db.Employees, "EmployeeID", "FirstName", accountsAdmin.EmployeeID);
+            ViewBag.EmployeeID = new SelectList(db.Employees, "EmployeeID", "FullName", accountsAdmin.EmployeeID);
             ViewBag.ModifyID = new SelectList(db.Modifies, "ModifyID", "ModifyType", accountsAdmin.ModifyID);
             return View(accountsAdmin);
         }
@@ -98,7 +98,7 @@ namespace HEAPIFY_540_Software.Controllers
                 return RedirectToAction("Index");
             }
             ViewBag.AccountTypeID = new SelectList(db.AccountTypes, "AccountTypeID", "AccountTypeName", accountsAdmin.AccountTypeID);
-            ViewBag.EmployeeID = new SelectList(db.Employees, "EmployeeID", "FirstName", accountsAdmin.EmployeeID);
+            ViewBag.EmployeeID = new SelectList(db.Employees, "EmployeeID", "FullName", accountsAdmin.EmployeeID);
             ViewBag.ModifyID = new SelectList(db.Modifies, "ModifyID", "ModifyType", accountsAdmin.ModifyID);
             return View(accountsAdmin);
         }

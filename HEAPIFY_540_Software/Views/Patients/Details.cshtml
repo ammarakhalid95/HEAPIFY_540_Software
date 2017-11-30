@@ -101,6 +101,54 @@
 
 
     </dl>
+
+    <h4>Patient's Personal Problems </h4>
+    <table class="table">
+        <tr>
+            <th>
+                Problems
+            </th>
+          
+        </tr>
+
+        @foreach (var item in Model.PatientProblems)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Problem.ProblemsName)
+                </td>
+                
+
+            </tr>
+        }
+   </table>
+        <h4>Patient's Family History </h4>
+        <table class="table">
+            <tr>
+                <th>
+                    Relationship to Patient
+                </th>
+                <th>
+                    Problem
+                </th>
+
+            </tr>
+
+            @foreach (var item in Model.FamilyHistoryMedicals)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Relationship.RelationshipType)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Problem.ProblemsName)
+                    </td>
+
+
+                </tr>
+            }
+    </table>
+
 </div>
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.PatientID }) |

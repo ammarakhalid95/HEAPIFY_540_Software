@@ -41,7 +41,7 @@ namespace HEAPIFY_540_Software.Controllers
         // GET: AddLabReports/Create
         public ActionResult Create()
         {
-            ViewBag.PatientID = new SelectList(db.Patients, "PatientID", "FirstName");
+            ViewBag.PatientID = new SelectList(db.Patients, "PatientID", "FullName");
             return View();
         }
 
@@ -59,7 +59,7 @@ namespace HEAPIFY_540_Software.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.PatientID = new SelectList(db.Patients, "PatientID", "FirstName", addLabReport.PatientID);
+            ViewBag.PatientID = new SelectList(db.Patients, "PatientID", "FullName", addLabReport.PatientID);
             return View(addLabReport);
         }
 
@@ -75,7 +75,7 @@ namespace HEAPIFY_540_Software.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.PatientID = new SelectList(db.Patients, "PatientID", "FirstName", addLabReport.PatientID);
+            ViewBag.PatientID = new SelectList(db.Patients, "PatientID", "FullName", addLabReport.PatientID);
             return View(addLabReport);
         }
 
@@ -92,7 +92,7 @@ namespace HEAPIFY_540_Software.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.PatientID = new SelectList(db.Patients, "PatientID", "FirstName", addLabReport.PatientID);
+            ViewBag.PatientID = new SelectList(db.Patients, "PatientID", "FullName", addLabReport.PatientID);
             return View(addLabReport);
         }
 

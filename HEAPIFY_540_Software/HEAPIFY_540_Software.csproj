@@ -682,13 +682,13 @@
     <Content Include="Views\Addresses\_Details.cshtml" />
     <Content Include="Views\Addresses\_Edit.cshtml" />
     <Content Include="Views\Addresses\Index.cshtml" />
+    <Content Include="Views\Users\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\EmergencyContactView\" />
     <Folder Include="Views\MyHelper\" />
     <Folder Include="Views\Test\" />
-    <Folder Include="Views\Users\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

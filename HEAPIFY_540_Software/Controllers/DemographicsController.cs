@@ -78,7 +78,7 @@ namespace HEAPIFY_540_Software.Controllers
             ViewBag.ActiveSStatusID = new SelectList(db.ActiveSStandings, "ActiveSStatusID", "ActiveSSType");
             ViewBag.AlcoholStatusID = new SelectList(db.AlchoholStandings, "AlcoholStatusID", "AlcoholStatusType");
             ViewBag.DrugAbuseID = new SelectList(db.DrugAbuses, "DrugAbuseID", "DrugAbuseType");
-            ViewBag.EmergencyContactID = new SelectList(db.EmergencyContacts, "EmergencyContactID", "FirstName");
+            ViewBag.EmergencyContactID = new SelectList(db.EmergencyContacts, "EmergencyContactID", "FullName");
             ViewBag.EthnicityID = new SelectList(db.Ethnicities, "EthnicityID", "EthnicityName");
             ViewBag.OccupationID = new SelectList(db.Occupations, "OccupationID", "PositionTitle");
             ViewBag.PatientID = new SelectList(db.Patients, "PatientID", "FullName");
@@ -105,7 +105,7 @@ namespace HEAPIFY_540_Software.Controllers
             ViewBag.ActiveSStatusID = new SelectList(db.ActiveSStandings, "ActiveSStatusID", "ActiveSSType", demographic.ActiveSStatusID);
             ViewBag.AlcoholStatusID = new SelectList(db.AlchoholStandings, "AlcoholStatusID", "AlcoholStatusType", demographic.AlcoholStatusID);
             ViewBag.DrugAbuseID = new SelectList(db.DrugAbuses, "DrugAbuseID", "DrugAbuseType", demographic.DrugAbuseID);
-            ViewBag.EmergencyContactID = new SelectList(db.EmergencyContacts, "EmergencyContactID", "FirstName", demographic.EmergencyContactID);
+            ViewBag.EmergencyContactID = new SelectList(db.EmergencyContacts, "EmergencyContactID", "FullName", demographic.EmergencyContactID);
             ViewBag.EthnicityID = new SelectList(db.Ethnicities, "EthnicityID", "EthnicityName", demographic.EthnicityID);
             ViewBag.OccupationID = new SelectList(db.Occupations, "OccupationID", "PositionTitle", demographic.OccupationID);
             ViewBag.PatientID = new SelectList(db.Patients, "PatientID", "FullName", demographic.PatientID);
@@ -129,7 +129,7 @@ namespace HEAPIFY_540_Software.Controllers
             ViewBag.ActiveSStatusID = new SelectList(db.ActiveSStandings, "ActiveSStatusID", "ActiveSSType", demographic.ActiveSStatusID);
             ViewBag.AlcoholStatusID = new SelectList(db.AlchoholStandings, "AlcoholStatusID", "AlcoholStatusType", demographic.AlcoholStatusID);
             ViewBag.DrugAbuseID = new SelectList(db.DrugAbuses, "DrugAbuseID", "DrugAbuseType", demographic.DrugAbuseID);
-            ViewBag.EmergencyContactID = new SelectList(db.EmergencyContacts, "EmergencyContactID", "FirstName", demographic.EmergencyContactID);
+            ViewBag.EmergencyContactID = new SelectList(db.EmergencyContacts, "EmergencyContactID", "FullName", demographic.EmergencyContactID);
             ViewBag.EthnicityID = new SelectList(db.Ethnicities, "EthnicityID", "EthnicityName", demographic.EthnicityID);
             ViewBag.OccupationID = new SelectList(db.Occupations, "OccupationID", "PositionTitle", demographic.OccupationID);
             ViewBag.PatientID = new SelectList(db.Patients, "PatientID", "FullName", demographic.PatientID);
@@ -154,7 +154,7 @@ namespace HEAPIFY_540_Software.Controllers
             ViewBag.ActiveSStatusID = new SelectList(db.ActiveSStandings, "ActiveSStatusID", "ActiveSSType", demographic.ActiveSStatusID);
             ViewBag.AlcoholStatusID = new SelectList(db.AlchoholStandings, "AlcoholStatusID", "AlcoholStatusType", demographic.AlcoholStatusID);
             ViewBag.DrugAbuseID = new SelectList(db.DrugAbuses, "DrugAbuseID", "DrugAbuseType", demographic.DrugAbuseID);
-            ViewBag.EmergencyContactID = new SelectList(db.EmergencyContacts, "EmergencyContactID", "FirstName", demographic.EmergencyContactID);
+            ViewBag.EmergencyContactID = new SelectList(db.EmergencyContacts, "EmergencyContactID", "FullName", demographic.EmergencyContactID);
             ViewBag.EthnicityID = new SelectList(db.Ethnicities, "EthnicityID", "EthnicityName", demographic.EthnicityID);
             ViewBag.OccupationID = new SelectList(db.Occupations, "OccupationID", "PositionTitle", demographic.OccupationID);
             ViewBag.PatientID = new SelectList(db.Patients, "PatientID", "FullName", demographic.PatientID);

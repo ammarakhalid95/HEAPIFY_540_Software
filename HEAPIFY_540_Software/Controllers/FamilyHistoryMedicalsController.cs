@@ -10,7 +10,8 @@ using HEAPIFY_540_Software.Models;
 
 namespace HEAPIFY_540_Software.Controllers
 {
-    [Authorize(Roles = "Medical Staff")]
+    [Authorize]
+    //[Authorize(Roles = "Medical Staff")]
     public class FamilyHistoryMedicalsController : Controller
     {
         private HEAPIFY_540_SoftwareContext db = new HEAPIFY_540_SoftwareContext();
@@ -40,7 +41,7 @@ namespace HEAPIFY_540_Software.Controllers
         // GET: FamilyHistoryMedicals/Create
         public ActionResult Create()
         {
-            ViewBag.PatientID = new SelectList(db.Patients, "PatientID", "FirstName");
+            ViewBag.PatientID = new SelectList(db.Patients, "PatientID", "FullName");
             ViewBag.ProblemID = new SelectList(db.Problems, "ProblemID", "ProblemsName");
             ViewBag.RelationshipID = new SelectList(db.Relationships, "RelationshipID", "RelationshipType");
             return View();
@@ -60,7 +61,7 @@ namespace HEAPIFY_540_Software.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.PatientID = new SelectList(db.Patients, "PatientID", "FirstName", familyHistoryMedical.PatientID);
+            ViewBag.PatientID = new SelectList(db.Patients, "PatientID", "FullName", familyHistoryMedical.PatientID);
             ViewBag.ProblemID = new SelectList(db.Problems, "ProblemID", "ProblemsName", familyHistoryMedical.ProblemID);
             ViewBag.RelationshipID = new SelectList(db.Relationships, "RelationshipID", "RelationshipType", familyHistoryMedical.RelationshipID);
             return View(familyHistoryMedical);
@@ -78,7 +79,7 @@ namespace HEAPIFY_540_Software.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.PatientID = new SelectList(db.Patients, "PatientID", "FirstName", familyHistoryMedical.PatientID);
+            ViewBag.PatientID = new SelectList(db.Patients, "PatientID", "FullName", familyHistoryMedical.PatientID);
             ViewBag.ProblemID = new SelectList(db.Problems, "ProblemID", "ProblemsName", familyHistoryMedical.ProblemID);
             ViewBag.RelationshipID = new SelectList(db.Relationships, "RelationshipID", "RelationshipType", familyHistoryMedical.RelationshipID);
             return View(familyHistoryMedical);
@@ -97,7 +98,7 @@ namespace HEAPIFY_540_Software.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.PatientID = new SelectList(db.Patients, "PatientID", "FirstName", familyHistoryMedical.PatientID);
+            ViewBag.PatientID = new SelectList(db.Patients, "PatientID", "FullName", familyHistoryMedical.PatientID);
             ViewBag.ProblemID = new SelectList(db.Problems, "ProblemID", "ProblemsName", familyHistoryMedical.ProblemID);
             ViewBag.RelationshipID = new SelectList(db.Relationships, "RelationshipID", "RelationshipType", familyHistoryMedical.RelationshipID);
             return View(familyHistoryMedical);

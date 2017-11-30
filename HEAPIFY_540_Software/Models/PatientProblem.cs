@@ -23,9 +23,9 @@ namespace HEAPIFY_540_Software.Models
         public virtual Problem Problem { get; set; }
     }
 
-    public class ProblemsModel
-    {
-        public List<Problem> P { get; set;}
+    //public class ProblemsModel
+    //{
+    //    public List<Problem> P { get; set;}
 
-    }
+    //}
 }
