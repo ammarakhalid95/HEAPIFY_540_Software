@@ -12,6 +12,9 @@
 <table class="table">
     <tr>
         <th>
+            Patient
+        </th>
+        @*<th>
             @Html.DisplayNameFor(model => model.Notes)
         </th>
         <th>
@@ -28,22 +31,22 @@
         </th>
         <th>
             Test Ordered By?
-            @*@Html.DisplayNameFor(model => model.Employee.FirstName)*@
+            @Html.DisplayNameFor(model => model.Employee.FirstName)
         </th>
         <th>
             Patient
-            @*@Html.DisplayNameFor(model => model.Patient.FirstName)*@
+            @Html.DisplayNameFor(model => model.Patient.FirstName)
         </th>
         <th>
             Test Performed By?
-            @*@Html.DisplayNameFor(model => model.Employee1.FirstName)*@
-        </th>
+            @Html.DisplayNameFor(model => model.Employee1.FirstName)
+        </th>*@
         <th></th>
     </tr>
 
 @foreach (var item in Model) {
     <tr>
-        <td>
+        @*<td>
             @Html.DisplayFor(modelItem => item.Notes)
         </td>
         <td>
@@ -60,13 +63,13 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Employee.FullName)
-        </td>
+        </td>*@
         <td>
             @Html.DisplayFor(modelItem => item.Patient.FullName)
         </td>
-        <td>
+        @*<td>
             @Html.DisplayFor(modelItem => item.Employee1.FullName)
-        </td>
+        </td>*@
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.OrderID }) |
             @Html.ActionLink("Details", "Details", new { id=item.OrderID }) |
