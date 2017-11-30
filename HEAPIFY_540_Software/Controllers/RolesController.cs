@@ -46,7 +46,7 @@ namespace HEAPIFY_540_Software.Controllers
                 var user = User.Identity;
                 var UserManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(context));
                 var s = UserManager.GetRoles(user.GetUserId());
-                if (s[0].ToString() == "IT Administrator")
+                if (s[0].ToString() == "IT Administrator" || s[0].ToString() == "Administrator")
                 {
                     return true;
                 }

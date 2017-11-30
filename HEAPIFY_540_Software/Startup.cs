@@ -50,7 +50,15 @@ namespace HEAPIFY_540_Software
                 }
             }
 
-               
+            // Added 11/30/2017 -- PLB
+            if (!roleManager.RoleExists("Administrator"))
+            {
+                var role = new Microsoft.AspNet.Identity.EntityFramework.IdentityRole();
+                role.Name = "Administrator";
+                roleManager.Create(role);
+
+            }
+
             if (!roleManager.RoleExists("Medical Receptionist"))
             {
                 var role = new Microsoft.AspNet.Identity.EntityFramework.IdentityRole();
