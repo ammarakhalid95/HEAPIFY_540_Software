@@ -34,7 +34,33 @@ namespace HEAPIFY_540_Software.Models
         public string EmployeeSSN { get; set; }
         public string PersonalEmail { get; set; }
         public System.DateTime EmployeeDateOfBirth { get; set; }
-    
+
+        // Addded 11/30/2017 -- PLB
+        public string EmployeeDateOfBirthOnly
+        {
+            get
+            {
+                return EmployeeDateOfBirth.ToShortDateString();
+            }
+        }
+
+        // Added 11/30/2017 -- PLB
+        public string FullName
+        {
+            get
+            {
+                if (MiddleName == String.Empty)
+                {
+                    return FirstName + " " + LastName;
+                }
+
+                else
+                {
+                    return FirstName + " " + MiddleName + " " + LastName;
+                }
+            }
+        }
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<AccountsAdmin> AccountsAdmins { get; set; }
         public virtual Address Address { get; set; }
