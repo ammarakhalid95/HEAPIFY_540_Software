@@ -11,7 +11,8 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.FirstName)
+            @*@Html.DisplayNameFor(model => model.FirstName)*@
+            First Name
         </dt>
 
         <dd>
@@ -19,7 +20,8 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.MiddleName)
+            @*@Html.DisplayNameFor(model => model.MiddleName)*@
+            Middle Name
         </dt>
 
         <dd>
@@ -27,13 +29,31 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.LastName)
+            @*@Html.DisplayNameFor(model => model.LastName)*@
+            Last Name
         </dt>
 
         <dd>
             @Html.DisplayFor(model => model.LastName)
         </dd>
 
+        <dt>
+            @*@Html.DisplayNameFor(model => model.Address.StreetName)*@
+            Address
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Address.StreetName)
+        </dd>
+
+        <dt>
+            @*@Html.DisplayNameFor(model => model.PhoneNumber.PhoneNumber1)*@
+            Phone Number
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PhoneNumber.PhoneNumber1)
+        </dd>
         <dt>
             @Html.DisplayNameFor(model => model.Position)
         </dt>
@@ -51,7 +71,8 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.EmployeeSSN)
+            @*@Html.DisplayNameFor(model => model.EmployeeSSN)*@
+            SSN
         </dt>
 
         <dd>
@@ -59,7 +80,8 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.PersonalEmail)
+            @*@Html.DisplayNameFor(model => model.PersonalEmail)*@
+            Personal Email
         </dt>
 
         <dd>
@@ -67,32 +89,18 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.EmployeeDateOfBirth)
+            @*@Html.DisplayNameFor(model => model.EmployeeDateOfBirth)*@
+            Date of Birth
         </dt>
 
         <dd>
             @Html.DisplayFor(model => model.EmployeeDateOfBirth)
         </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Address.StreetName)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Address.StreetName)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.PhoneNumber.PhoneNumber1)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.PhoneNumber.PhoneNumber1)
-        </dd>
 
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.EmployeeID }) |
+    @*@Html.ActionLink("Edit", "Edit", new { id = Model.EmployeeID }) |*@
     @Html.ActionLink("Back to List", "Index")
 </p>
