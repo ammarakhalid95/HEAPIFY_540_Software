@@ -685,6 +685,7 @@
     <Content Include="Views\Users\Index.cshtml" />
     <Content Include="Views\Patients\SecondaryMenu.cshtml" />
     <Content Include="Views\Patients\FaceSheet.cshtml" />
+    <Content Include="Views\Employees\ViewEmployeeInfo.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

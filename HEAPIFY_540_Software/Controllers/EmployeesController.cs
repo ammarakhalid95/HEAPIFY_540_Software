@@ -23,6 +23,14 @@ namespace HEAPIFY_540_Software.Controllers
             return View(employees.ToList());
         }
 
+
+
+        //view employee info. 11/30/17 @6:36 -el
+        public ActionResult ViewEmployeeInfo()
+        {
+            var employees = db.Employees.Include(e => e.Address).Include(e => e.PhoneNumber);
+            return View(employees.ToList());
+        }
         // GET: Employees/Details/5
         public ActionResult Details(int? id)
         {
