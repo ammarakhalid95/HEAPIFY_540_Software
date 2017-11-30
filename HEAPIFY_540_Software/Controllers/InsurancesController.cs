@@ -10,7 +10,8 @@ using HEAPIFY_540_Software.Models;
 
 namespace HEAPIFY_540_Software.Controllers
 {
-    [Authorize(Roles = "Patient Billing Representative, Medical Receptionist")]
+    [Authorize]
+    //[Authorize(Roles = "Patient Billing Representative, Medical Receptionist")]
     public class InsurancesController : Controller
     {
         private HEAPIFY_540_SoftwareContext db = new HEAPIFY_540_SoftwareContext();
@@ -53,7 +54,8 @@ namespace HEAPIFY_540_Software.Controllers
             {
                 db.Insurances.Add(insurance);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                //return RedirectToAction("Index");
+                return Json(new { success = true });
             }
 
             return View(insurance);
