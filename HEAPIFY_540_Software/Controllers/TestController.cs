@@ -17,6 +17,10 @@ namespace HEAPIFY_Manager_540.Controllers
         {
             return PartialView("SideMenu");
         }
+        public ActionResult MedicalMenu()
+        {
+            return PartialView("SideMenu");
+        }
     }
 }
 
