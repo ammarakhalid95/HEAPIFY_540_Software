@@ -43,32 +43,7 @@ namespace HEAPIFY_540_Software.Models
         public string PatientSSN { get; set; }
         public string Email { get; set; }
         public System.DateTime DateOfBirth { get; set; }
-
-        public string DateOfBirthOnly
-        {
-            get
-            {
-                return DateOfBirth.ToShortDateString(); 
-            }
-        }
-
-
-        public string FullName
-        {
-            get
-            {
-                if (MiddleName == String.Empty)
-                {
-                    return FirstName + " " + LastName;
-                }
-
-                else
-                {
-                    return FirstName + " " + MiddleName + " " + LastName;
-                }
-            }
-        }
-
+    
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<AddLabReport> AddLabReports { get; set; }
         public virtual Address Address { get; set; }
