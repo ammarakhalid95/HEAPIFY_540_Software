@@ -12,14 +12,16 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.FirstName)
+            Employee
+            @*@Html.DisplayNameFor(model => model.FirstName)*@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.FirstName)
+            @Html.DisplayFor(model => model.FullName)
+            @*@Html.DisplayFor(model => model.FirstName)*@
         </dd>
 
-        <dt>
+        @*<dt>
             @Html.DisplayNameFor(model => model.MiddleName)
         </dt>
 
@@ -33,7 +35,7 @@
 
         <dd>
             @Html.DisplayFor(model => model.LastName)
-        </dd>
+        </dd>*@
 
         <dt>
             @Html.DisplayNameFor(model => model.Position)
@@ -52,7 +54,8 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.EmployeeSSN)
+            Employee SSN
+            @*@Html.DisplayNameFor(model => model.EmployeeSSN)*@
         </dt>
 
         <dd>
@@ -60,7 +63,8 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.PersonalEmail)
+            Email
+            @*@Html.DisplayNameFor(model => model.PersonalEmail)*@
         </dt>
 
         <dd>
@@ -68,23 +72,28 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.EmployeeDateOfBirth)
+            Date of Birth
+            @*@Html.DisplayNameFor(model => model.EmployeeDateOfBirth)*@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.EmployeeDateOfBirth)
+            @Html.DisplayFor(model => model.EmployeeDateOfBirthDateOnly)
+            @*@Html.DisplayFor(model => model.EmployeeDateOfBirth)*@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Address.StreetName)
+            Address
+            @*@Html.DisplayNameFor(model => model.Address.StreetName)*@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Address.StreetName)
+            @Html.DisplayFor(model => model.Address.FullAddress)
+            @*@Html.DisplayFor(model => model.Address.StreetName)*@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.PhoneNumber.PhoneNumber1)
+
+            @*@Html.DisplayNameFor(model => model.PhoneNumber.PhoneNumber1)*@
         </dt>
 
         <dd>
