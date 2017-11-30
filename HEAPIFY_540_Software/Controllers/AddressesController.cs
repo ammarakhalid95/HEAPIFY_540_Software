@@ -90,10 +90,10 @@ namespace HEAPIFY_540_Software.Controllers
             {
                 db.Entry(address).State = EntityState.Modified;
                 db.SaveChanges();
-                //return RedirectToAction("Index");
+                return RedirectToAction("Index");
                 //return Json(new { success = true });
-                string url = Url.Action("Index", "Addresses", new { id = address.AddressID });
-                return Json(new { success = true, url = url });
+                //string url = Url.Action("Index", "Addresses", new { id = address.AddressID });
+                //return Json(new { success = true, url = url });
             }
             //return View(address);
             return PartialView("_Edit", address);

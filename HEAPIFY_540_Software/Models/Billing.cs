@@ -31,5 +31,13 @@ namespace HEAPIFY_540_Software.Models
         public virtual Insurance Insurance { get; set; }
         public virtual Patient Patient { get; set; }
         public virtual PaymentMode PaymentMode { get; set; }
+
+        public double TotalPayment
+        {
+            get
+            {
+                return Quantity * Payment;
+            }
+        }
     }
 }
