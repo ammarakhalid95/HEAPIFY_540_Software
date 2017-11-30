@@ -72,6 +72,16 @@ namespace HEAPIFY_540_Software.Controllers
             return View(billing);
         }
 
+        [HttpPost]
+        public ActionResult TotalPay(double a, double b)
+        {
+            double total = 0;
+            total = a * b;
+
+            return Content("Total payment: " + total);
+
+        }
+
         // GET: Billings/Edit/5
         public ActionResult Edit(int? id)
         {
