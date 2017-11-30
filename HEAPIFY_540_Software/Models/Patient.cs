@@ -43,7 +43,32 @@ namespace HEAPIFY_540_Software.Models
         public string PatientSSN { get; set; }
         public string Email { get; set; }
         public System.DateTime DateOfBirth { get; set; }
-    
+
+        public string FullName
+        {
+            get
+            {
+                if (MiddleName == String.Empty)
+                {
+                    return FirstName + " " + LastName;
+                }
+
+                else
+                {
+                    return FirstName + " " + MiddleName + " " + LastName;
+                }
+            }
+        }
+        public string DateOfBirthDateOnly
+        {
+            get
+            {
+                return DateOfBirth.ToShortDateString();
+            }
+        }
+
+
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<AddLabReport> AddLabReports { get; set; }
         public virtual Address Address { get; set; }
@@ -74,5 +99,8 @@ namespace HEAPIFY_540_Software.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PatientInsurance> PatientInsurances { get; set; }
         public virtual PhoneNumber PhoneNumber { get; set; }
+   
     }
+
+   
 }
