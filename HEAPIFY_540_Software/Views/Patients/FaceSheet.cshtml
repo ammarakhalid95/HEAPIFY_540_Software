@@ -4,22 +4,22 @@
     ViewBag.Title = "FaceSheet";
 }
 
-<h2>FaceSheet</h2>
+<h2>Patient's Face Sheet</h2>
 
-<div>
-    <h4>Patient</h4>
+
+    
     <hr />
-    <dl class="dl-horizontal">
+    @*<dl class="dl-horizontal">*@
         <dt>
-           Patient
+       Patient  
         </dt>
 
         <dd>
             @Html.DisplayFor(model => model.FullName)
         </dd>
 
-        </dl>
-
+        @*</dl>*@
+<div>
     <h4>Patient's Personal Problems </h4>
     <table class="table">
         <tr>
@@ -63,6 +63,69 @@
                 </td>
 
 
+            </tr>
+        }
+    </table>
+    <h4>Patient's Medications </h4>
+    <table class="table">
+        <tr>
+            <th>
+                Drug
+            </th>
+        </tr>
+
+        @foreach (var item in Model.PatientDrugs)
+            {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Drug.DrugName)
+                </td>
+            </tr>
+        }
+    </table>
+    <h4> Immunizations </h4>
+    <table class="table">
+        <tr>
+            <th>
+                Immunization
+            </th>
+            <th>
+                Date Given
+            </th>
+        </tr>
+
+        @foreach (var item in Model.PatientImmunizations)
+            {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Immunization.Vaccine)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DateGiven)
+                </td>
+            </tr>
+        }
+    </table>
+    <h4> Allergies </h4>
+    <table class="table">
+        <tr>
+            <th>
+                Allergy
+            </th>
+            <th>
+                Allergy Type
+            </th>
+        </tr>
+
+        @foreach (var item in Model.PatientAllergies)
+            {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AllergiesName.AllergyName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AllergiesName.AllergyType.AllergyTypeName)
+                </td>
             </tr>
         }
     </table>
