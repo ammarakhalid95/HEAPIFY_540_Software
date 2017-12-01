@@ -12,19 +12,21 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.EmergencyContact.FirstName)
+            Emergency Contact
+            @*@Html.DisplayNameFor(model => model.EmergencyContact.FullName)*@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.EmergencyContact.FirstName)
+            @Html.DisplayFor(model => model.EmergencyContact.FullName)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Patient.FirstName)
+            Patient
+            @*@Html.DisplayNameFor(model => model.Patient.FirstName)*@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Patient.FirstName)
+            @Html.DisplayFor(model => model.Patient.FullName)
         </dd>
 
     </dl>

@@ -11,7 +11,8 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.Drug.DrugName)
+            Drug
+            @*@Html.DisplayNameFor(model => model.Drug.DrugName)*@
         </dt>
 
         <dd>
@@ -19,11 +20,13 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Patient.FirstName)
+            Patient
+            @*@Html.DisplayNameFor(model => model.Patient.FirstName)*@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Patient.FirstName)
+            @Html.DisplayFor(model => model.Patient.FullName)
+            @*@Html.DisplayFor(model => model.Patient.FirstName)*@
         </dd>
 
     </dl>
