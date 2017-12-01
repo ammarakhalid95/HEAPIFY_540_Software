@@ -7,7 +7,6 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using HEAPIFY_540_Software.Models;
-using Newtonsoft.Json;
 
 namespace HEAPIFY_540_Software.Controllers
 {
@@ -17,12 +16,9 @@ namespace HEAPIFY_540_Software.Controllers
         private HEAPIFY_540_SoftwareContext db = new HEAPIFY_540_SoftwareContext();
 
         // GET: EmergencyContacts
-        public ActionResult Index()//Added parameter id 5:15 PM - 11/24/2017
+        public ActionResult Index()
         {
-          
             var emergencyContacts = db.EmergencyContacts.Include(e => e.PhoneNumber).Include(e => e.Relationship);
-
-
             return View(emergencyContacts.ToList());
         }
 
@@ -48,8 +44,6 @@ namespace HEAPIFY_540_Software.Controllers
             ViewBag.RelationshipID = new SelectList(db.Relationships, "RelationshipID", "RelationshipType");
             return View();
         }
-        //Created by me
-
 
         // POST: EmergencyContacts/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
@@ -63,16 +57,11 @@ namespace HEAPIFY_540_Software.Controllers
                 db.EmergencyContacts.Add(emergencyContact);
                 db.SaveChanges();
                 return RedirectToAction("Index");
-
-
-
-
             }
 
             ViewBag.PhoneNumberID = new SelectList(db.PhoneNumbers, "PhoneNumberID", "PhoneNumber1", emergencyContact.PhoneNumberID);
             ViewBag.RelationshipID = new SelectList(db.Relationships, "RelationshipID", "RelationshipType", emergencyContact.RelationshipID);
             return View(emergencyContact);
-
         }
 
         // GET: EmergencyContacts/Edit/5
@@ -104,14 +93,9 @@ namespace HEAPIFY_540_Software.Controllers
                 db.Entry(emergencyContact).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
-
-
             }
             ViewBag.PhoneNumberID = new SelectList(db.PhoneNumbers, "PhoneNumberID", "PhoneNumber1", emergencyContact.PhoneNumberID);
             ViewBag.RelationshipID = new SelectList(db.Relationships, "RelationshipID", "RelationshipType", emergencyContact.RelationshipID);
-
-
-            
             return View(emergencyContact);
         }
 
@@ -128,7 +112,6 @@ namespace HEAPIFY_540_Software.Controllers
                 return HttpNotFound();
             }
             return View(emergencyContact);
-
         }
 
         // POST: EmergencyContacts/Delete/5
@@ -140,8 +123,6 @@ namespace HEAPIFY_540_Software.Controllers
             db.EmergencyContacts.Remove(emergencyContact);
             db.SaveChanges();
             return RedirectToAction("Index");
-
-
         }
 
         protected override void Dispose(bool disposing)
@@ -151,11 +132,6 @@ namespace HEAPIFY_540_Software.Controllers
                 db.Dispose();
             }
             base.Dispose(disposing);
-        }
-
-        public ActionResult ModalPopUp()
-        {
-            return View();
         }
     }
 }
