@@ -9,7 +9,7 @@ using System.Web.Mvc;
 
 namespace HEAPIFY_540_Software.Controllers
 {
-    //[Authorize]
+    [Authorize]
     //[Authorize(Roles = "IT Administrator")]
     public class RolesController : Controller
     {
