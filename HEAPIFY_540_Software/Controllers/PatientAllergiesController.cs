@@ -42,7 +42,7 @@ namespace HEAPIFY_540_Software.Controllers
         public ActionResult Create()
         {
             ViewBag.AllergiesID = new SelectList(db.AllergiesNames, "AllergiesID", "AllergyName");
-            ViewBag.PatientID = new SelectList(db.Patients, "PatientID", "FirstName");
+            ViewBag.PatientID = new SelectList(db.Patients, "PatientID", "FullName");
             return View();
         }
 
@@ -61,7 +61,7 @@ namespace HEAPIFY_540_Software.Controllers
             }
 
             ViewBag.AllergiesID = new SelectList(db.AllergiesNames, "AllergiesID", "AllergyName", patientAllergy.AllergiesID);
-            ViewBag.PatientID = new SelectList(db.Patients, "PatientID", "FirstName", patientAllergy.PatientID);
+            ViewBag.PatientID = new SelectList(db.Patients, "PatientID", "FullName", patientAllergy.PatientID);
             return View(patientAllergy);
         }
 
@@ -78,7 +78,7 @@ namespace HEAPIFY_540_Software.Controllers
                 return HttpNotFound();
             }
             ViewBag.AllergiesID = new SelectList(db.AllergiesNames, "AllergiesID", "AllergyName", patientAllergy.AllergiesID);
-            ViewBag.PatientID = new SelectList(db.Patients, "PatientID", "FirstName", patientAllergy.PatientID);
+            ViewBag.PatientID = new SelectList(db.Patients, "PatientID", "FullName", patientAllergy.PatientID);
             return View(patientAllergy);
         }
 
@@ -96,7 +96,7 @@ namespace HEAPIFY_540_Software.Controllers
                 return RedirectToAction("Index");
             }
             ViewBag.AllergiesID = new SelectList(db.AllergiesNames, "AllergiesID", "AllergyName", patientAllergy.AllergiesID);
-            ViewBag.PatientID = new SelectList(db.Patients, "PatientID", "FirstName", patientAllergy.PatientID);
+            ViewBag.PatientID = new SelectList(db.Patients, "PatientID", "FullName", patientAllergy.PatientID);
             return View(patientAllergy);
         }
 
