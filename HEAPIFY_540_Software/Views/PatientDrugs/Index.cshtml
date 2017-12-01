@@ -12,10 +12,12 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Drug.DrugName)
+            Drug
+            @*@Html.DisplayNameFor(model => model.Drug.DrugName)*@
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Patient.FirstName)
+            Patient
+            @*@Html.DisplayNameFor(model => model.Patient.FirstName)*@
         </th>
         <th></th>
     </tr>
@@ -26,7 +28,8 @@
             @Html.DisplayFor(modelItem => item.Drug.DrugName)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Patient.FirstName)
+            @Html.DisplayFor(modelItem => item.Patient.FullName)
+            @*@Html.DisplayFor(modelItem => item.Patient.FirstName)*@
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.PatientDrugID }) |
