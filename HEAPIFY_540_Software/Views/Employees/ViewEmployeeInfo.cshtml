@@ -1,0 +1,88 @@
+﻿@model IEnumerable<HEAPIFY_540_Software.Models.Employee>
+@{
+    ViewBag.Title = "ViewEmployeeInfo";
+}
+
+
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<h2>View Employee Information</h2>
+
+<h4>Please abide by policies and do not view any other Employee information but your own.</h4>
+<table class="table">
+    <tr>
+        <th>
+            @*@Html.DisplayNameFor(model => model.FirstName)*@
+            Employee
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.Position)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Department)
+        </th>
+        @* <th>
+                @Html.DisplayNameFor(model => model.EmployeeSSN)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PersonalEmail)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EmployeeDateOfBirth)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Address.StreetName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PhoneNumber.PhoneNumber1)
+            </th>
+            <th></th>*@
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FullName)
+            </td>
+            @*<td>
+                    @Html.DisplayFor(modelItem => item.MiddleName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LastName)
+                </td>*@
+            <td>
+                @Html.DisplayFor(modelItem => item.Position)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Department)
+            </td>
+            @*<td>
+                    @Html.DisplayFor(modelItem => item.EmployeeSSN)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PersonalEmail)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EmployeeDateOfBirth)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Address.StreetName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PhoneNumber.PhoneNumber1)
+                </td>*@
+            <td>
+                @*@Html.ActionLink("Edit", "Edit", new { id=item.EmployeeID }) |*@
+                @Html.ActionLink("Details", "Details", new { id = item.EmployeeID }) 
+
+            </td>
+        </tr>
+    }
+
+</table>

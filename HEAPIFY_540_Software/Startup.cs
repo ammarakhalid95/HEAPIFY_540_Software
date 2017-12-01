@@ -28,8 +28,6 @@ namespace HEAPIFY_540_Software
                
             if (!roleManager.RoleExists("IT Administrator"))
             {
-
-                  
                 var role = new Microsoft.AspNet.Identity.EntityFramework.IdentityRole();
                 role.Name = "IT Administrator";
                 roleManager.Create(role);

@@ -10,8 +10,8 @@ using HEAPIFY_540_Software.Models;
 
 namespace HEAPIFY_540_Software.Controllers
 {
-    //[Authorize(Roles = "Medical Receptionist")]
     [Authorize]
+    //[Authorize(Roles = "Medical Receptionist")]
     public class PatientEmergencyContactsController : Controller
     {
         private HEAPIFY_540_SoftwareContext db = new HEAPIFY_540_SoftwareContext();

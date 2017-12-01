@@ -550,6 +550,11 @@
     <Content Include="Views\DrugAbuses\Details.cshtml" />
     <Content Include="Views\DrugAbuses\Edit.cshtml" />
     <Content Include="Views\DrugAbuses\Index.cshtml" />
+    <Content Include="Views\EmergencyContacts\Create.cshtml" />
+    <Content Include="Views\EmergencyContacts\Delete.cshtml" />
+    <Content Include="Views\EmergencyContacts\Details.cshtml" />
+    <Content Include="Views\EmergencyContacts\Edit.cshtml" />
+    <Content Include="Views\EmergencyContacts\Index.cshtml" />
     <Content Include="Views\Employees\Create.cshtml" />
     <Content Include="Views\Employees\Delete.cshtml" />
     <Content Include="Views\Employees\Details.cshtml" />
@@ -671,6 +676,7 @@
     <Content Include="Views\Vitals\Edit.cshtml" />
     <Content Include="Views\Vitals\Index.cshtml" />
     <Content Include="Views\Shared\SideMenu.cshtml" />
+    <Content Include="Views\EmergencyContacts\ModalPopUp.cshtml" />
     <Content Include="Views\Addresses\_Create.cshtml" />
     <Content Include="Views\Addresses\_Delete.cshtml" />
     <Content Include="Views\Addresses\_Details.cshtml" />
@@ -679,14 +685,11 @@
     <Content Include="Views\Users\Index.cshtml" />
     <Content Include="Views\Patients\SecondaryMenu.cshtml" />
     <Content Include="Views\Patients\FaceSheet.cshtml" />
-    <Content Include="Views\EmergencyContacts\Create.cshtml" />
-    <Content Include="Views\EmergencyContacts\Delete.cshtml" />
-    <Content Include="Views\EmergencyContacts\Details.cshtml" />
-    <Content Include="Views\EmergencyContacts\Edit.cshtml" />
-    <Content Include="Views\EmergencyContacts\Index.cshtml" />
+    <Content Include="Views\Employees\ViewEmployeeInfo.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\EmergencyContactView\" />
     <Folder Include="Views\MyHelper\" />
     <Folder Include="Views\Test\" />
   </ItemGroup>
