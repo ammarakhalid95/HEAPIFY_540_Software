@@ -7,24 +7,37 @@
 <h2>Details</h2>
 
 <div>
-    <h4>PatientInsurance</h4>
+    <h4>Patient Insurance</h4>
     <hr />
     <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Insurance.InsuranceName)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Insurance.InsuranceName)
-        </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Patient.FirstName)
+            Patient
         </dt>
 
         <dd>
             @Html.DisplayFor(model => model.Patient.FirstName)
         </dd>
+        <dt>
+            Insurance 
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Insurance.InsuranceName)
+        </dd>
+        <dt>
+            Insurance
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Insurance.InsuranceName)
+        </dd>
+        <dt>
+            Insurance
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Insurance.InsuranceName)
+        </dd>
+
+       
 
     </dl>
 </div>
