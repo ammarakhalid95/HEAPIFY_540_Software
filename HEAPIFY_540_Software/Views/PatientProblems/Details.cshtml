@@ -7,22 +7,25 @@
 <h2>Details</h2>
 
 <div>
-    <h4>PatientProblem</h4>
+    <h4>Patient Problem</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.Patient.FirstName)
+            Patient
+            @*@Html.DisplayNameFor(model => model.Patient.FirstName)*@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Patient.FirstName)
+            @Html.DisplayFor(model => model.Patient.FullName)
+            @*@Html.DisplayFor(model => model.Patient.FirstName)*@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Problem.ProblemsName)
+            @*@Html.DisplayNameFor(model => model.Problem.ProblemsName)*@
         </dt>
 
         <dd>
+            Problem
             @Html.DisplayFor(model => model.Problem.ProblemsName)
         </dd>
 
