@@ -41,8 +41,8 @@ namespace HEAPIFY_540_Software.Controllers
         // GET: PatientEmergencyContacts/Create
         public ActionResult Create()
         {
-            ViewBag.EmergencyContactID = new SelectList(db.EmergencyContacts, "EmergencyContactID", "FirstName");
-            ViewBag.PatientID = new SelectList(db.Patients, "PatientID", "FirstName");
+            ViewBag.EmergencyContactID = new SelectList(db.EmergencyContacts, "EmergencyContactID", "FullName");
+            ViewBag.PatientID = new SelectList(db.Patients, "PatientID", "FullName");
             return View();
         }
 
@@ -60,8 +60,8 @@ namespace HEAPIFY_540_Software.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.EmergencyContactID = new SelectList(db.EmergencyContacts, "EmergencyContactID", "FirstName", patientEmergencyContact.EmergencyContactID);
-            ViewBag.PatientID = new SelectList(db.Patients, "PatientID", "FirstName", patientEmergencyContact.PatientID);
+            ViewBag.EmergencyContactID = new SelectList(db.EmergencyContacts, "EmergencyContactID", "FullName", patientEmergencyContact.EmergencyContactID);
+            ViewBag.PatientID = new SelectList(db.Patients, "PatientID", "FullName", patientEmergencyContact.PatientID);
             return View(patientEmergencyContact);
         }
 
@@ -77,8 +77,8 @@ namespace HEAPIFY_540_Software.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.EmergencyContactID = new SelectList(db.EmergencyContacts, "EmergencyContactID", "FirstName", patientEmergencyContact.EmergencyContactID);
-            ViewBag.PatientID = new SelectList(db.Patients, "PatientID", "FirstName", patientEmergencyContact.PatientID);
+            ViewBag.EmergencyContactID = new SelectList(db.EmergencyContacts, "EmergencyContactID", "FullName", patientEmergencyContact.EmergencyContactID);
+            ViewBag.PatientID = new SelectList(db.Patients, "PatientID", "FullName", patientEmergencyContact.PatientID);
             return View(patientEmergencyContact);
         }
 
@@ -95,8 +95,8 @@ namespace HEAPIFY_540_Software.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.EmergencyContactID = new SelectList(db.EmergencyContacts, "EmergencyContactID", "FirstName", patientEmergencyContact.EmergencyContactID);
-            ViewBag.PatientID = new SelectList(db.Patients, "PatientID", "FirstName", patientEmergencyContact.PatientID);
+            ViewBag.EmergencyContactID = new SelectList(db.EmergencyContacts, "EmergencyContactID", "FullName", patientEmergencyContact.EmergencyContactID);
+            ViewBag.PatientID = new SelectList(db.Patients, "PatientID", "FullName", patientEmergencyContact.PatientID);
             return View(patientEmergencyContact);
         }
 

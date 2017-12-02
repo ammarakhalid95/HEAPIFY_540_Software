@@ -58,6 +58,8 @@
                 <div class="col-md-10">
                     @Html.DropDownList("AddressID", null, htmlAttributes: new { @class = "form-control" })
                     @Html.ValidationMessageFor(model => model.AddressID, "", new { @class = "text-danger" })
+
+                    @Html.ActionLink("Add Address", "Create", "Addresses")
                 </div>
             </div>
 
@@ -66,6 +68,8 @@
                 <div class="col-md-10">
                     @Html.DropDownList("PhoneNumberID", null, htmlAttributes: new { @class = "form-control" })
                     @Html.ValidationMessageFor(model => model.PhoneNumberID, "", new { @class = "text-danger" })
+
+                    @Html.ActionLink("Add Phone Number", "Create", "PhoneNumbers")
                 </div>
             </div>
 
