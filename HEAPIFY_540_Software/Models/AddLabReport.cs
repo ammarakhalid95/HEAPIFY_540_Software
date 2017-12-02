@@ -22,6 +22,14 @@ namespace HEAPIFY_540_Software.Models
         public string Diagnoses { get; set; }
         public string Lab { get; set; }
     
+        public string ResultDateDateOnly
+        {
+            get
+            {
+                return ResultDate.ToShortDateString();
+            }
+        }
+
         public virtual Patient Patient { get; set; }
     }
 }

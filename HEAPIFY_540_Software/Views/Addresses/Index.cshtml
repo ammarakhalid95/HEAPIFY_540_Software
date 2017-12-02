@@ -12,16 +12,16 @@
 <table class="table">
     <tr>
         <th>
-            Street Name
+           Street Name
         </th>
         <th>
             City
         </th>
         <th>
-            State
+           State (Abbreviated)
         </th>
         <th>
-           Zip Code
+          Zip Code  
         </th>
         <th></th>
     </tr>
@@ -35,19 +35,17 @@
             @Html.DisplayFor(modelItem => item.City)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.County) //state
+            @Html.DisplayFor(modelItem => item.County)   @*Really meant to be state*@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.ZipCode)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id = item.AddressID }) |
-            @Html.ActionLink("Details", "Details", new { id = item.AddressID }) |
-            @Html.ActionLink("Delete", "Delete", new { id = item.AddressID })
+            @Html.ActionLink("Edit", "Edit", new { id=item.AddressID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.AddressID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.AddressID })
         </td>
     </tr>
 }
 
-</table
-@Html.ActionLink("Go Back to Patient", "Create", "Patients") |
-@Html.ActionLink("Go Back to Employee", "Create", "Employees")
+</table>

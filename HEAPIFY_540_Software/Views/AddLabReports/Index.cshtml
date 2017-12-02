@@ -12,13 +12,15 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Patient.FullName)
+            Patient
+            @*@Html.DisplayNameFor(model => model.Patient.FullName)*@
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Type)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.ResultDate)
+            Result Date
+            @*@Html.DisplayNameFor(model => model.ResultDate)*@
         </th>
 
         @*
@@ -51,7 +53,7 @@
             @Html.DisplayFor(modelItem => item.Type)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.ResultDate)
+            @Html.DisplayFor(modelItem => item.ResultDateDateOnly)
         </td>
         @*
         <td>

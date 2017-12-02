@@ -11,17 +11,18 @@
     <hr />
     <dl class="dl-vertical">
         <dt>
-            First Name
+            Patient
             @*@Html.DisplayNameFor(model => model.FirstName)*@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.FirstName)
+            @Html.DisplayFor(model => model.FullName)
+            @*@Html.DisplayFor(model => model.FirstName)*@
         </dd>
 
-        <dt>
+        @*<dt>
             Middle Name
-            @*@Html.DisplayNameFor(model => model.MiddleName)*@
+            @Html.DisplayNameFor(model => model.MiddleName)
         </dt>
 
         <dd>
@@ -35,10 +36,11 @@
 
         <dd>
             @Html.DisplayFor(model => model.LastName)
-        </dd>
+        </dd>*@
 
         <dt>
-            @Html.DisplayNameFor(model => model.PatientSSN)
+            Patient SSN
+            @*@Html.DisplayNameFor(model => model.PatientSSN)*@
         </dt>
 
         <dd>
@@ -83,7 +85,8 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.MaritalStanding.MaritalStatusType)
+            Marital Status
+            @*@Html.DisplayNameFor(model => model.MaritalStanding.MaritalStatusType)*@
         </dt>
 
         <dd>

@@ -6,6 +6,7 @@ using System.Web.Mvc;
 
 namespace HEAPIFY_Manager_540.Controllers
 {
+    [Authorize]
     public class TestController : Controller
     {
         // GET: Test

@@ -49,7 +49,7 @@ namespace HEAPIFY_540_Software.Controllers
         // GET: Employees/Create
         public ActionResult Create()
         {
-            ViewBag.AddressID = new SelectList(db.Addresses, "AddressID", "StreetName");
+            ViewBag.AddressID = new SelectList(db.Addresses, "AddressID", "FullAddress");
             ViewBag.PhoneNumberID = new SelectList(db.PhoneNumbers, "PhoneNumberID", "PhoneNumber1");
             return View();
         }
@@ -68,7 +68,7 @@ namespace HEAPIFY_540_Software.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.AddressID = new SelectList(db.Addresses, "AddressID", "StreetName", employee.AddressID);
+            ViewBag.AddressID = new SelectList(db.Addresses, "AddressID", "FullAddress", employee.AddressID);
             ViewBag.PhoneNumberID = new SelectList(db.PhoneNumbers, "PhoneNumberID", "PhoneNumber1", employee.PhoneNumberID);
             return View(employee);
         }
@@ -85,7 +85,7 @@ namespace HEAPIFY_540_Software.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.AddressID = new SelectList(db.Addresses, "AddressID", "StreetName", employee.AddressID);
+            ViewBag.AddressID = new SelectList(db.Addresses, "AddressID", "FullAddress", employee.AddressID);
             ViewBag.PhoneNumberID = new SelectList(db.PhoneNumbers, "PhoneNumberID", "PhoneNumber1", employee.PhoneNumberID);
             return View(employee);
         }
@@ -103,7 +103,7 @@ namespace HEAPIFY_540_Software.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.AddressID = new SelectList(db.Addresses, "AddressID", "StreetName", employee.AddressID);
+            ViewBag.AddressID = new SelectList(db.Addresses, "AddressID", "FullAddress", employee.AddressID);
             ViewBag.PhoneNumberID = new SelectList(db.PhoneNumbers, "PhoneNumberID", "PhoneNumber1", employee.PhoneNumberID);
             return View(employee);
         }

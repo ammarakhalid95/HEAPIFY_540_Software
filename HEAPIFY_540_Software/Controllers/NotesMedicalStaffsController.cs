@@ -10,6 +10,7 @@ using HEAPIFY_540_Software.Models;
 
 namespace HEAPIFY_540_Software.Controllers
 {
+    [Authorize]
     //[Authorize(Roles = "Medical Staff")]
     public class NotesMedicalStaffsController : Controller
     {

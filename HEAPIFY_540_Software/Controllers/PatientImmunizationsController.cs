@@ -10,7 +10,8 @@ using HEAPIFY_540_Software.Models;
 
 namespace HEAPIFY_540_Software.Controllers
 {
-    [Authorize(Roles = "Medical Staff")]
+    [Authorize]
+    //[Authorize(Roles = "Medical Staff")]
     public class PatientImmunizationsController : Controller
     {
         private HEAPIFY_540_SoftwareContext db = new HEAPIFY_540_SoftwareContext();
@@ -41,7 +42,7 @@ namespace HEAPIFY_540_Software.Controllers
         public ActionResult Create()
         {
             ViewBag.ImmunizationID = new SelectList(db.Immunizations, "ImmunizationID", "Vaccine");
-            ViewBag.PatientID = new SelectList(db.Patients, "PatientID", "FirstName");
+            ViewBag.PatientID = new SelectList(db.Patients, "PatientID", "FullName");
             return View();
         }
 
@@ -60,7 +61,7 @@ namespace HEAPIFY_540_Software.Controllers
             }
 
             ViewBag.ImmunizationID = new SelectList(db.Immunizations, "ImmunizationID", "Vaccine", patientImmunization.ImmunizationID);
-            ViewBag.PatientID = new SelectList(db.Patients, "PatientID", "FirstName", patientImmunization.PatientID);
+            ViewBag.PatientID = new SelectList(db.Patients, "PatientID", "FullName", patientImmunization.PatientID);
             return View(patientImmunization);
         }
 
@@ -77,7 +78,7 @@ namespace HEAPIFY_540_Software.Controllers
                 return HttpNotFound();
             }
             ViewBag.ImmunizationID = new SelectList(db.Immunizations, "ImmunizationID", "Vaccine", patientImmunization.ImmunizationID);
-            ViewBag.PatientID = new SelectList(db.Patients, "PatientID", "FirstName", patientImmunization.PatientID);
+            ViewBag.PatientID = new SelectList(db.Patients, "PatientID", "FullName", patientImmunization.PatientID);
             return View(patientImmunization);
         }
 
@@ -95,7 +96,7 @@ namespace HEAPIFY_540_Software.Controllers
                 return RedirectToAction("Index");
             }
             ViewBag.ImmunizationID = new SelectList(db.Immunizations, "ImmunizationID", "Vaccine", patientImmunization.ImmunizationID);
-            ViewBag.PatientID = new SelectList(db.Patients, "PatientID", "FirstName", patientImmunization.PatientID);
+            ViewBag.PatientID = new SelectList(db.Patients, "PatientID", "FullName", patientImmunization.PatientID);
             return View(patientImmunization);
         }
 

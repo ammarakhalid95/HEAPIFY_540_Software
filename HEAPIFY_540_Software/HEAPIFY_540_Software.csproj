@@ -676,7 +676,6 @@
     <Content Include="Views\Vitals\Edit.cshtml" />
     <Content Include="Views\Vitals\Index.cshtml" />
     <Content Include="Views\Shared\SideMenu.cshtml" />
-    <Content Include="Views\EmergencyContacts\ModalPopUp.cshtml" />
     <Content Include="Views\Users\Index.cshtml" />
     <Content Include="Views\Patients\SecondaryMenu.cshtml" />
     <Content Include="Views\Patients\FaceSheet.cshtml" />
