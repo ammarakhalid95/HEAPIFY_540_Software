@@ -102,7 +102,7 @@
                     @Html.DisplayFor(modelItem => item.Immunization.Vaccine)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.DateGiven)
+                    @Html.DisplayFor(modelItem => item.ImmunuzationDateOnly)
                 </td>
             </tr>
         }
@@ -347,7 +347,7 @@
             {
             <tr>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Occupation.PositionTitle)
+                    @Html.DisplayFor(modelItem => item.Occupation.FullEmployment)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Race.RaceName)

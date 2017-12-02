@@ -80,7 +80,7 @@ namespace HEAPIFY_540_Software.Controllers
             ViewBag.DrugAbuseID = new SelectList(db.DrugAbuses, "DrugAbuseID", "DrugAbuseType");
             ViewBag.EmergencyContactID = new SelectList(db.EmergencyContacts, "EmergencyContactID", "FullName");
             ViewBag.EthnicityID = new SelectList(db.Ethnicities, "EthnicityID", "EthnicityName");
-            ViewBag.OccupationID = new SelectList(db.Occupations, "OccupationID", "PositionTitle");
+            ViewBag.OccupationID = new SelectList(db.Occupations, "OccupationID", "FullEmployment");
             ViewBag.PatientID = new SelectList(db.Patients, "PatientID", "FullName");
             ViewBag.RaceID = new SelectList(db.Races, "RaceID", "RaceName");
             //ViewBag.EmergencyContact.RelationshipID = new SelectList(db.Relationships, "RelationshipID", "RelationshipType");
