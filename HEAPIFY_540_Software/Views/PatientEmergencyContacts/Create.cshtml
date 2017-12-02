@@ -36,6 +36,8 @@
                 <div class="col-md-10">
                     @Html.DropDownList("EmergencyContactID", null, htmlAttributes: new { @class = "form-control" })
                     @Html.ValidationMessageFor(model => model.EmergencyContactID, "", new { @class = "text-danger" })
+
+                    @Html.ActionLink("Add Emergency Contact", "Create", "EmergencyContacts")
                 </div>
             </div>
 
