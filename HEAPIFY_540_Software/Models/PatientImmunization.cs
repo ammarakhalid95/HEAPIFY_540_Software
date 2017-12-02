@@ -18,8 +18,18 @@ namespace HEAPIFY_540_Software.Models
         public int PatientID { get; set; }
         public int ImmunizationID { get; set; }
         public System.DateTime DateGiven { get; set; }
+
+
     
         public virtual Immunization Immunization { get; set; }
         public virtual Patient Patient { get; set; }
+
+        public string ImmunuzationDateOnly
+        {
+            get
+            {
+                return DateGiven.ToShortDateString();
+            }
+        }
     }
 }
