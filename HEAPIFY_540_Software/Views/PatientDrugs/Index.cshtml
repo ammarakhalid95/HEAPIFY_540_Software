@@ -12,21 +12,22 @@
 <table class="table">
     <tr>
         <th>
-            Drug
-            @*@Html.DisplayNameFor(model => model.Drug.DrugName)*@
-        </th>
-        <th>
             Patient
             @*@Html.DisplayNameFor(model => model.Patient.FirstName)*@
         </th>
+        @*<th>
+            Drug
+            @Html.DisplayNameFor(model => model.Drug.DrugName)
+        @*</th>*@*
+       
         <th></th>
     </tr>
 
 @foreach (var item in Model) {
     <tr>
-        <td>
+        @*<td>
             @Html.DisplayFor(modelItem => item.Drug.DrugName)
-        </td>
+        </td>*@
         <td>
             @Html.DisplayFor(modelItem => item.Patient.FullName)
             @*@Html.DisplayFor(modelItem => item.Patient.FirstName)*@

@@ -6,11 +6,11 @@
 
 <h2>Create</h2>
 
-
-
     @using (Html.BeginForm())
     {
         @Html.AntiForgeryToken()
+
+        <h4> Please add address and phone number first prior to filling out this form. </h4>
 
         <div class="form-horizontal">
             <hr />

@@ -19,7 +19,15 @@
         <dd>
             @Html.DisplayFor(model => model.DateAndTime)
         </dd>
+        <dt>
+            Patient
+            @*@Html.DisplayNameFor(model => model.Patient.FirstName)*@
+        </dt>
 
+        <dd>
+            @Html.DisplayFor(model => model.Patient.FullName)
+            @*@Html.DisplayFor(model => model.Patient.FirstName)*@
+        </dd>
         <dt>
             Blood Pressure (mmHg)
             @*@Html.DisplayNameFor(model => model.BloodPressure)*@
@@ -82,15 +90,7 @@
             @Html.DisplayFor(model => model.Comments)
         </dd>
 
-        <dt>
-            Patient
-            @*@Html.DisplayNameFor(model => model.Patient.FirstName)*@
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Patient.FullName)
-            @*@Html.DisplayFor(model => model.Patient.FirstName)*@
-        </dd>
+       
 
     </dl>
 

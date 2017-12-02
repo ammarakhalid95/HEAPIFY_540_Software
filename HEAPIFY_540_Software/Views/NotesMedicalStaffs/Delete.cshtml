@@ -12,13 +12,19 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.Date_Time_Recorded)
+           Date & Time Recorded
         </dt>
 
         <dd>
             @Html.DisplayFor(model => model.Date_Time_Recorded)
         </dd>
+        <dt>
+          Patient
+        </dt>
 
+        <dd>
+            @Html.DisplayFor(model => model.Patient.FullName)
+        </dd>
         <dt>
             @Html.DisplayNameFor(model => model.Notes)
         </dt>
@@ -27,13 +33,7 @@
             @Html.DisplayFor(model => model.Notes)
         </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Patient.FullName)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Patient.FullName)
-        </dd>
+      
 
     </dl>
 

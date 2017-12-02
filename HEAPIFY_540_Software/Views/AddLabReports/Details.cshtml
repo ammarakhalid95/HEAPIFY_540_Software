@@ -11,6 +11,15 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
+            Patient
+            @*@Html.DisplayNameFor(model => model.Patient.FirstName)*@
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Patient.FullName)
+            @*@Html.DisplayFor(model => model.Patient.FirstName)*@
+        </dd>
+        <dt>
             Who Ordered Test?
             @*@Html.DisplayNameFor(model => model.WhereOrder)*@
         </dt>
@@ -46,7 +55,7 @@
         </dd>
 
         <dt>
-            Outside Lab (Use Y or N)?
+            Is this lab from an external provider? (Use Y or N)
             @*@Html.DisplayNameFor(model => model.Lab)*@
         </dt>
 
@@ -54,15 +63,7 @@
             @Html.DisplayFor(model => model.Lab)
         </dd>
 
-        <dt>
-            Patient
-            @*@Html.DisplayNameFor(model => model.Patient.FirstName)*@
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Patient.FullName)
-            @*@Html.DisplayFor(model => model.Patient.FirstName)*@
-        </dd>
+       
 
     </dl>
 </div>

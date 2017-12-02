@@ -6,26 +6,7 @@
 
 <h2>Edit</h2>
 
-<div id='myModal' class='modal fade in'>
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div id='myModalContent'>
 
-       
-
-        </div>
-            </div>
-        </div>
-    </div>
-
-
-<div class="panel panel-primary">
-    <div class="panel-heading">Patient</div>
-
-    <div class="panel-body ">
-        @Html.ActionLink("Edit Address", "Edit", "Addresses", null, new { data_modal = "", id = "btnCreate", @class = "btn btn-small btn-primary pull-right" })
-    </div>
-</div>
     @using (Html.BeginForm())
     {
         @Html.AntiForgeryToken()
@@ -126,28 +107,6 @@
         </div>
     }
 
-
-
-<div id='myModal' class='modal fade in'>
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div id='myModalContent'>
-                <div class="row">
-                    <div class="col-md-offset-2 col-md-10" id="replacetarget">
-                        @{ Html.RenderAction("Edit", "Addresses", new { id = Model.AddressID }); }
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-
-    @section Scripts {
-        @Scripts.Render("~/bundles/jqueryval")
-        @Scripts.Render("~/bundles/modalform")
-    }
 
     <div>
         @Html.ActionLink("Back to List", "Index")

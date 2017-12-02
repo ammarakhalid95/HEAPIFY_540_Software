@@ -11,6 +11,25 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
+            Patient
+            @*@Html.DisplayNameFor(model => model.Patient.FirstName)*@
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Patient.FullName)
+            @*@Html.DisplayFor(model => model.Patient.FirstName)*@
+        </dd>
+        
+
+        <dt>
+            CPT Code
+            @*@Html.DisplayNameFor(model => model.CurrentProceduralTerminology.CPTActualNumber)*@
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CurrentProceduralTerminology.CPTActualNumber)
+        </dd>
+        <dt>
             @Html.DisplayNameFor(model => model.Quantity)
         </dt>
 
@@ -25,7 +44,14 @@
         <dd>
             @Html.DisplayFor(model => model.Payment)
         </dd>
+        <dt>
+            Adjustment Code
+            @*@Html.DisplayNameFor(model => model.AdjustmentCode.AdjustmentDescription)*@
+        </dt>
 
+        <dd>
+            @Html.DisplayFor(model => model.AdjustmentCode.AdjustmentDescription)
+        </dd>
         <dt>
             Date Paid
             @*@Html.DisplayNameFor(model => model.DatePaid)*@
@@ -53,23 +79,7 @@
             @Html.DisplayFor(model => model.Notes)
         </dd>
 
-        <dt>
-            Adjustment Code
-            @*@Html.DisplayNameFor(model => model.AdjustmentCode.AdjustmentDescription)*@
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.AdjustmentCode.AdjustmentDescription)
-        </dd>
-
-        <dt>
-            CPT Code
-            @*@Html.DisplayNameFor(model => model.CurrentProceduralTerminology.CPTActualNumber)*@
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.CurrentProceduralTerminology.CPTActualNumber)
-        </dd>
 
         <dt>
             Insurance
@@ -80,15 +90,7 @@
             @Html.DisplayFor(model => model.Insurance.InsuranceName)
         </dd>
 
-        <dt>
-            Patient
-            @*@Html.DisplayNameFor(model => model.Patient.FirstName)*@
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Patient.FullName)
-            @*@Html.DisplayFor(model => model.Patient.FirstName)*@
-        </dd>
 
         <dt>
             Payment Type
