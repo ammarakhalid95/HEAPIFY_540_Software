@@ -378,7 +378,10 @@
                Emergency Contact
             </th>
             <th>
-                Phone Number
+                Phone Number 
+            </th>
+            <th>
+                Phone Type
             </th>
             <th>
                 Email (Optional)
@@ -396,6 +399,9 @@
                 </td>
                 <td>
                    @Html.DisplayFor(modelItem => item.EmergencyContact.PhoneNumber.PhoneNumber1)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EmergencyContact.PhoneNumber.PhoneType.PhoneTypeName)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.EmergencyContact.Email)
