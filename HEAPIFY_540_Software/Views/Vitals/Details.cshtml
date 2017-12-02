@@ -10,6 +10,16 @@
     <h4>Vitals</h4>
     <hr />
     <dl class="dl-horizontal">
+
+        <dt>
+            Patient
+            @*@Html.DisplayNameFor(model => model.Patient.FirstName)*@
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Patient.FullName)
+            @*@Html.DisplayFor(model => model.Patient.FirstName)*@
+        </dd>
         <dt>
             Date & Time
             @*@Html.DisplayNameFor(model => model.DateAndTime)*@
@@ -81,15 +91,7 @@
             @Html.DisplayFor(model => model.Comments)
         </dd>
 
-        <dt>
-            Patient
-            @*@Html.DisplayNameFor(model => model.Patient.FirstName)*@
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Patient.FullName)
-            @*@Html.DisplayFor(model => model.Patient.FirstName)*@
-        </dd>
+      
 
     </dl>
 </div>

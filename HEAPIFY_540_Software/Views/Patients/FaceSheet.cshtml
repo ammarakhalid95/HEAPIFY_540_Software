@@ -5,6 +5,7 @@
 }
 
 <h2>Patient's Face Sheet</h2>
+@Html.ActionLink("Back to Medical Records", "Index")
 
 
     
@@ -129,6 +130,325 @@
             </tr>
         }
     </table>
+    <h4> Vitals </h4>
+    <table class="table">
+        <tr>
+            <th>
+                Date and Time
+            </th>
+            <th>
+                Blood Pressure (mmHg)
+            </th>
+            <th>
+                Heart Rate (bpm)
+            </th>
+            <th>
+                Respiratory Rate (rpm)
+            </th>
+            <th>
+               Height (Inches)
+            </th>
+            <th>
+                Weight (Pounds)
+            </th>
+            <th>
+                Body Mass Index (BMI)
+            </th>
+            <th>
+               Temperature (Fahrenheit)
+            </th>
+            <th>
+                Comments
+            </th>
+        </tr>
+
+        @foreach (var item in Model.Vitals)
+            {
+            <tr>
+                <td>
+            @Html.DisplayFor(modelItem => item.DateAndTime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BloodPressure)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Heart_Rate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Respiratory_Rate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Height_Length)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Weight)
+        </td>
+         <td>
+            @Html.DisplayFor(modelItem => item.BMICalculation)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Temperature)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Comments)
+        </td>
+            </tr>
+        }
+    </table>
+
+    <h4> Notes </h4>
+    <table class="table">
+        <tr>
+            <th>
+                Date and Time
+            </th>
+            <th>
+               Notes
+            </th>
+        </tr>
+
+        @foreach (var item in Model.NotesMedicalStaffs)
+            {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Date_Time_Recorded)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Notes)
+                </td>
+            </tr>
+        }
+    </table>
+
+    <h4> External Lab/Studies </h4>
+    <table class="table">
+        <tr>
+           
+            <th>
+                Who Ordered This Test?
+            </th>
+            <th>
+                Result Date
+            </th>
+            <th>
+                Test Type (Lab or Study)
+            </th>
+            <th>
+                Diagnoses
+            </th>
+            <th>
+                Is this an outside lab?
+            </th>
+        </tr>
+
+        @foreach (var item in Model.AddLabReports)
+            {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.WhereOrder)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ResultDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Type)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Diagnoses)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Lab)
+                </td>
+            </tr>
+        }
+    </table>
+
+    <h4> Internal Lab/Studies </h4>
+    <table class="table">
+        <tr>
+
+            <th>
+                Test Ordered By
+            </th>
+            <th>
+                Test Type (Lab or Study)
+            </th>
+            <th>
+                Lab
+            </th>
+            <th>
+                Diagnoses
+            </th>
+            <th>
+                Comments
+            </th>
+            <th>
+                Test Performed By
+            </th>
+            <th>
+                Stat?
+            </th>
+        </tr>
+
+        @foreach (var item in Model.CreateOrderInternals)
+            {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Employee.FullName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Type)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Lab)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Diagnoses)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Notes)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Employee1.FullName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Stat)
+                </td>
+            </tr>
+        }
+    </table>
+    <h4> Demographics </h4>
+    <table class="table">
+        <tr>
+            <th>
+                Occupation
+            </th>
+            <th>
+                Race
+            </th>
+            <th>
+                Ethnicity
+            </th>
+            <th>
+                Smoking Status
+            </th>
+            <th>
+                Alcohol Status
+            </th>
+            <th>
+                Sexual Active Status
+            </th>
+            <th>
+                Drug Abuse Status
+            </th>
+        </tr>
+
+        @foreach (var item in Model.Demographics)
+            {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Occupation.PositionTitle)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Race.RaceName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Ethnicity.EthnicityName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SmokingStanding.SmokingStatusType)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AlchoholStanding.AlcoholStatusType)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ActiveSStanding.ActiveSSType)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DrugAbuse.DrugAbuseType)
+                </td>
+            </tr>
+        }
+    </table>
+
+    <h4> Emergency Contact </h4>
+    <table class="table">
+        <tr>
+            <th>
+               Emergency Contact
+            </th>
+            <th>
+                Phone Number
+            </th>
+            <th>
+                Email (Optional)
+            </th>
+            <th>
+                Relationship to Patient
+            </th>
+        </tr>
+
+        @foreach (var item in Model.PatientEmergencyContacts)
+            {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EmergencyContact.FullName)
+                </td>
+                <td>
+                   @Html.DisplayFor(modelItem => item.EmergencyContact.PhoneNumber.PhoneNumber1)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EmergencyContact.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EmergencyContact.Relationship.RelationshipType)
+                </td>
+            </tr>
+        }
+    </table>
+    <h4> Insurance </h4>
+    <table class="table">
+        <tr>
+            <th>
+                Insurance
+            </th>
+            <th>
+                Plan
+            </th>
+            <th>
+                Copay
+            </th>
+            <th>
+                 Deductibles
+            </th>
+            <th>
+                Primary Subscriber
+            </th>
+        </tr>
+
+        @foreach (var item in Model.PatientInsurances)
+            {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Insurance.InsuranceName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Insurance.InsurancePlan)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Insurance.CoPay)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Insurance.Deductibles)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Insurance.PrimarySubscriber)
+                </td>
+            </tr>
+        }
+    </table>
+
+
 
 </div>
 <p>

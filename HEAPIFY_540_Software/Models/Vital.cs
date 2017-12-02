@@ -24,7 +24,16 @@ namespace HEAPIFY_540_Software.Models
         public int Temperature { get; set; }
         public string Comments { get; set; }
         public int PatientID { get; set; }
+
+      
     
         public virtual Patient Patient { get; set; }
+        public double BMICalculation
+        {
+            get
+            {
+                return Math.Round((Height_Length * 703)/Weight, 2);
+            }
+        }
     }
 }
