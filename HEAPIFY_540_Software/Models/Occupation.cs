@@ -35,7 +35,7 @@ namespace HEAPIFY_540_Software.Models
 
                 else
                 {
-                    return PositionTitle + " - " + EmployerName;
+                    return PositionTitle + " (" + EmployerName + ")";
                 }
             }
         }
