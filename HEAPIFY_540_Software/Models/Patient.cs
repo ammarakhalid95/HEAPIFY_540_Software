@@ -67,6 +67,14 @@ namespace HEAPIFY_540_Software.Models
             }
         }
 
+        public int Age
+        {
+            get
+            {
+                return DateTime.Now.Year - DateOfBirth.Year;
+            }
+        }
+
 
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

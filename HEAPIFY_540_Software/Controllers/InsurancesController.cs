@@ -54,8 +54,8 @@ namespace HEAPIFY_540_Software.Controllers
             {
                 db.Insurances.Add(insurance);
                 db.SaveChanges();
-                //return RedirectToAction("Index");
-                return Json(new { success = true });
+                return RedirectToAction("Index");
+                //return Json(new { success = true });
             }
 
             return View(insurance);

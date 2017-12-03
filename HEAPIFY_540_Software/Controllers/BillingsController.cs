@@ -44,7 +44,7 @@ namespace HEAPIFY_540_Software.Controllers
         {
             ViewBag.AdjustmentCodeID = new SelectList(db.AdjustmentCodes, "AdjustmentCodeID", "AdjustmentDescription");
             ViewBag.CurrentProceduralTerminologyID = new SelectList(db.CurrentProceduralTerminologies, "CurrentProceduralTerminologyID", "CPTActualNumber");
-            ViewBag.InsuranceID = new SelectList(db.Insurances, "InsuranceID", "InsuranceName");
+            ViewBag.InsuranceID = new SelectList(db.Insurances, "InsuranceID", "InsuranceFull");
             ViewBag.PatientID = new SelectList(db.Patients, "PatientID", "FullName");
             ViewBag.PaymentModeID = new SelectList(db.PaymentModes, "PaymentModeID", "PaymentModeType");
             return View();
@@ -66,7 +66,7 @@ namespace HEAPIFY_540_Software.Controllers
 
             ViewBag.AdjustmentCodeID = new SelectList(db.AdjustmentCodes, "AdjustmentCodeID", "AdjustmentDescription", billing.AdjustmentCodeID);
             ViewBag.CurrentProceduralTerminologyID = new SelectList(db.CurrentProceduralTerminologies, "CurrentProceduralTerminologyID", "CPTActualNumber", billing.CurrentProceduralTerminologyID);
-            ViewBag.InsuranceID = new SelectList(db.Insurances, "InsuranceID", "InsuranceName", billing.InsuranceID);
+            ViewBag.InsuranceID = new SelectList(db.Insurances, "InsuranceID", "InsuranceFull", billing.InsuranceID);
             ViewBag.PatientID = new SelectList(db.Patients, "PatientID", "FullName", billing.PatientID);
             ViewBag.PaymentModeID = new SelectList(db.PaymentModes, "PaymentModeID", "PaymentModeType", billing.PaymentModeID);
             return View(billing);
@@ -96,7 +96,7 @@ namespace HEAPIFY_540_Software.Controllers
             }
             ViewBag.AdjustmentCodeID = new SelectList(db.AdjustmentCodes, "AdjustmentCodeID", "AdjustmentDescription", billing.AdjustmentCodeID);
             ViewBag.CurrentProceduralTerminologyID = new SelectList(db.CurrentProceduralTerminologies, "CurrentProceduralTerminologyID", "CPTActualNumber", billing.CurrentProceduralTerminologyID);
-            ViewBag.InsuranceID = new SelectList(db.Insurances, "InsuranceID", "InsuranceName", billing.InsuranceID);
+            ViewBag.InsuranceID = new SelectList(db.Insurances, "InsuranceID", "InsuranceFull", billing.InsuranceID);
             ViewBag.PatientID = new SelectList(db.Patients, "PatientID", "FullName", billing.PatientID);
             ViewBag.PaymentModeID = new SelectList(db.PaymentModes, "PaymentModeID", "PaymentModeType", billing.PaymentModeID);
             return View(billing);
@@ -117,7 +117,7 @@ namespace HEAPIFY_540_Software.Controllers
             }
             ViewBag.AdjustmentCodeID = new SelectList(db.AdjustmentCodes, "AdjustmentCodeID", "AdjustmentDescription", billing.AdjustmentCodeID);
             ViewBag.CurrentProceduralTerminologyID = new SelectList(db.CurrentProceduralTerminologies, "CurrentProceduralTerminologyID", "CPTActualNumber", billing.CurrentProceduralTerminologyID);
-            ViewBag.InsuranceID = new SelectList(db.Insurances, "InsuranceID", "InsuranceName", billing.InsuranceID);
+            ViewBag.InsuranceID = new SelectList(db.Insurances, "InsuranceID", "InsuranceFull", billing.InsuranceID);
             ViewBag.PatientID = new SelectList(db.Patients, "PatientID", "FullName", billing.PatientID);
             ViewBag.PaymentModeID = new SelectList(db.PaymentModes, "PaymentModeID", "PaymentModeType", billing.PaymentModeID);
             return View(billing);

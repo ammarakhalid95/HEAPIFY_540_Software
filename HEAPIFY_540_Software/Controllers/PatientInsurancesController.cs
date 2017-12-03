@@ -41,7 +41,7 @@ namespace HEAPIFY_540_Software.Controllers
         // GET: PatientInsurances/Create
         public ActionResult Create()
         {
-            ViewBag.InsuranceID = new SelectList(db.Insurances, "InsuranceID", "InsuranceName");
+            ViewBag.InsuranceID = new SelectList(db.Insurances, "InsuranceID", "InsuranceFull");
             ViewBag.PatientID = new SelectList(db.Patients, "PatientID", "FullName");
             return View();
         }
@@ -60,7 +60,7 @@ namespace HEAPIFY_540_Software.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.InsuranceID = new SelectList(db.Insurances, "InsuranceID", "InsuranceName", patientInsurance.InsuranceID);
+            ViewBag.InsuranceID = new SelectList(db.Insurances, "InsuranceID", "InsuranceFull", patientInsurance.InsuranceID);
             ViewBag.PatientID = new SelectList(db.Patients, "PatientID", "FullName", patientInsurance.PatientID);
             return View(patientInsurance);
         }
@@ -77,7 +77,7 @@ namespace HEAPIFY_540_Software.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.InsuranceID = new SelectList(db.Insurances, "InsuranceID", "InsuranceName", patientInsurance.InsuranceID);
+            ViewBag.InsuranceID = new SelectList(db.Insurances, "InsuranceID", "InsuranceFull", patientInsurance.InsuranceID);
             ViewBag.PatientID = new SelectList(db.Patients, "PatientID", "FulltName", patientInsurance.PatientID);
             return View(patientInsurance);
         }
@@ -95,7 +95,7 @@ namespace HEAPIFY_540_Software.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.InsuranceID = new SelectList(db.Insurances, "InsuranceID", "InsuranceName", patientInsurance.InsuranceID);
+            ViewBag.InsuranceID = new SelectList(db.Insurances, "InsuranceID", "InsuranceFull", patientInsurance.InsuranceID);
             ViewBag.PatientID = new SelectList(db.Patients, "PatientID", "FullName", patientInsurance.PatientID);
             return View(patientInsurance);
         }

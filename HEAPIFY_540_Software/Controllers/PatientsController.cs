@@ -23,7 +23,12 @@ namespace HEAPIFY_540_Software.Controllers
             return View(patients.ToList());
         }
 
-        
+        public ActionResult AdministrativeRecord()
+        {
+            var patients = db.Patients.Include(p => p.Address).Include(p => p.Insurance).Include(p => p.MaritalStanding).Include(p => p.PhoneNumber);
+            return View(patients.ToList());
+        }
+
         public ActionResult SecondaryMenu()
         {
             return View("SideMenu");
@@ -62,7 +67,7 @@ namespace HEAPIFY_540_Software.Controllers
         public ActionResult Create()
         {
             ViewBag.AddressID = new SelectList(db.Addresses, "AddressID", "FullAddress");
-            ViewBag.InsuranceID = new SelectList(db.Insurances, "InsuranceID", "InsuranceName");
+            ViewBag.InsuranceID = new SelectList(db.Insurances, "InsuranceID", "InsuranceFull");
             ViewBag.MaritalStatusID = new SelectList(db.MaritalStandings, "MaritalStatusID", "MaritalStatusType");
             ViewBag.PhoneNumberID = new SelectList(db.PhoneNumbers, "PhoneNumberID", "PhoneNumber1");
             return View();
@@ -83,7 +88,7 @@ namespace HEAPIFY_540_Software.Controllers
             }
 
             ViewBag.AddressID = new SelectList(db.Addresses, "AddressID", "FullAddress", patient.AddressID);
-            ViewBag.InsuranceID = new SelectList(db.Insurances, "InsuranceID", "InsuranceName", patient.InsuranceID);
+            ViewBag.InsuranceID = new SelectList(db.Insurances, "InsuranceID", "InsuranceFull", patient.InsuranceID);
             ViewBag.MaritalStatusID = new SelectList(db.MaritalStandings, "MaritalStatusID", "MaritalStatusType", patient.MaritalStatusID);
             ViewBag.PhoneNumberID = new SelectList(db.PhoneNumbers, "PhoneNumberID", "PhoneNumber1", patient.PhoneNumberID);
             return View(patient);
@@ -102,7 +107,7 @@ namespace HEAPIFY_540_Software.Controllers
                 return HttpNotFound();
             }
             ViewBag.AddressID = new SelectList(db.Addresses, "AddressID", "FullAddress", patient.AddressID);
-            ViewBag.InsuranceID = new SelectList(db.Insurances, "InsuranceID", "InsuranceName", patient.InsuranceID);
+            ViewBag.InsuranceID = new SelectList(db.Insurances, "InsuranceID", "InsuranceFull", patient.InsuranceID);
             ViewBag.MaritalStatusID = new SelectList(db.MaritalStandings, "MaritalStatusID", "MaritalStatusType", patient.MaritalStatusID);
             ViewBag.PhoneNumberID = new SelectList(db.PhoneNumbers, "PhoneNumberID", "PhoneNumber1", patient.PhoneNumberID);
             return View(patient);
@@ -122,7 +127,7 @@ namespace HEAPIFY_540_Software.Controllers
                 return RedirectToAction("Index");
             }
             ViewBag.AddressID = new SelectList(db.Addresses, "AddressID", "FullAddress", patient.AddressID);
-            ViewBag.InsuranceID = new SelectList(db.Insurances, "InsuranceID", "InsuranceName", patient.InsuranceID);
+            ViewBag.InsuranceID = new SelectList(db.Insurances, "InsuranceID", "InsuranceFull", patient.InsuranceID);
             ViewBag.MaritalStatusID = new SelectList(db.MaritalStandings, "MaritalStatusID", "MaritalStatusType", patient.MaritalStatusID);
             ViewBag.PhoneNumberID = new SelectList(db.PhoneNumbers, "PhoneNumberID", "PhoneNumber1", patient.PhoneNumberID);
             return View(patient);

@@ -12,6 +12,7 @@
 
     <div class="form-horizontal">
         <h4>Employee</h4>
+        <h6>Please enter in address and phone number prior to filling out this form</h6>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
@@ -79,7 +80,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.EmployeeSSN, "Employee SSN", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.EmployeeSSN, "Social Security Number (no dashes or spaces)", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.EmployeeSSN, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.EmployeeSSN, "", new { @class = "text-danger" })
