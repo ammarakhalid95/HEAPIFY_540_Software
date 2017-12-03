@@ -93,6 +93,7 @@
             <div class="col-md-10">
                 @Html.DropDownList("InsuranceID", null, htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.InsuranceID, "", new { @class = "text-danger" })
+                <h6>To edit insurance, click on this @Html.ActionLink("link", "Index", "Insurances") and find the insurance and edit as necessary</h6>
             </div>
         </div>
 

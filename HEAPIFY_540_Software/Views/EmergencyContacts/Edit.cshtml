@@ -45,6 +45,7 @@
             <div class="col-md-10">
                 @Html.DropDownList("PhoneNumberID", null, htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.PhoneNumberID, "", new { @class = "text-danger" })
+                <h6>To edit phone number, click on this @Html.ActionLink("link", "Index", "PhoneNumbers") and find the phone number and edit as necessary</h6>
             </div>
         </div>
 

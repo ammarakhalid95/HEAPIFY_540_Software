@@ -428,6 +428,7 @@
     <Content Include="Models\HEAPModel.edmx.diagram">
       <DependentUpon>HEAPModel.edmx</DependentUpon>
     </Content>
+    <None Include="Properties\PublishProfiles\heapifymanager - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
