@@ -7,9 +7,9 @@
 
 <h2>Index</h2>
 
-<p>
+@*<p>
     @Html.ActionLink("Create New", "Create")
-</p>
+</p>*@
 <table class="table">
     <tr>
         @*<th>
@@ -87,7 +87,7 @@
             @Html.DisplayFor(modelItem => item.PhoneNumber.PhoneNumber1)
         </td>*@
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.PatientID }) |
+            @*@Html.ActionLink("Edit", "Edit", new { id=item.PatientID }) |*@
             @Html.ActionLink("Details", "Details", new { id=item.PatientID }) |
             @Html.ActionLink("FaceSheet", "FaceSheet", new { id = item.PatientID })
            
@@ -105,4 +105,5 @@
 }
 
 </table>
+<h6>Go back to  @Html.ActionLink("medical records.", "SecondaryMenu", "Patients") </h6>
 

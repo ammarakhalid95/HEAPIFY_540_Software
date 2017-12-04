@@ -428,6 +428,7 @@
     <Content Include="Models\HEAPModel.edmx.diagram">
       <DependentUpon>HEAPModel.edmx</DependentUpon>
     </Content>
+    <None Include="Properties\PublishProfiles\heapifymanager - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -685,6 +686,7 @@
     <Content Include="Views\Addresses\Details.cshtml" />
     <Content Include="Views\Addresses\Edit.cshtml" />
     <Content Include="Views\Addresses\Index.cshtml" />
+    <Content Include="Views\Patients\AdministrativeRecord.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

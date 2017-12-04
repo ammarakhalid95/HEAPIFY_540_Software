@@ -28,7 +28,23 @@ namespace HEAPIFY_540_Software.Models
         public Nullable<double> CoPay { get; set; }
         public Nullable<double> Deductibles { get; set; }
         public string PrimarySubscriber { get; set; }
-    
+
+        public string InsuranceFull
+        {
+            get
+            {
+                if (PrimarySubscriber == String.Empty)
+                {
+                    return "No insurance";
+                }
+
+                else
+                {
+                    return InsuranceName + " - " + InsurancePlan + " " + " (" + PrimarySubscriber + ")";
+                }
+            }
+        }
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Billing> Billings { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
