@@ -29,6 +29,16 @@ namespace HEAPIFY_540_Software.Models
         public Nullable<double> Deductibles { get; set; }
         public string PrimarySubscriber { get; set; }
 
+        public int InsuranceIDIncrement
+        {
+            get
+            {
+                return InsuranceID + 1;
+
+            }
+            
+        }
+
         public string InsuranceFull
         {
             get

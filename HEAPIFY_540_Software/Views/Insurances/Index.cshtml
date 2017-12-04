@@ -12,6 +12,10 @@
 <table class="table">
     <tr>
         <th>
+            Insurance ID (Add the number on their card)
+            @*@Html.DisplayNameFor(model => model.InsuranceName)*@
+        </th>
+        <th>
             Insurance
             @*@Html.DisplayNameFor(model => model.InsuranceName)*@
         </th>
@@ -34,6 +38,9 @@
 
 @foreach (var item in Model) {
     <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.InsuranceID)
+        </td>
         <td>
             @Html.DisplayFor(modelItem => item.InsuranceName)
         </td>

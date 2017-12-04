@@ -17,7 +17,7 @@
         @Html.HiddenFor(model => model.VitalID)
 
         <div class="form-group">
-            @Html.LabelFor(model => model.DateAndTime, "Date & Time", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.DateAndTime, "Date & Time (MM/DD/YYYY & HH:MM)", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.DateAndTime, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.DateAndTime, "", new { @class = "text-danger" })

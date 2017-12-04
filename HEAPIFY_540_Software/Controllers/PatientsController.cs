@@ -84,7 +84,8 @@ namespace HEAPIFY_540_Software.Controllers
             {
                 db.Patients.Add(patient);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                //return RedirectToAction("Index");
+                return RedirectToAction("AdministrativeRecord"); 
             }
 
             ViewBag.AddressID = new SelectList(db.Addresses, "AddressID", "FullAddress", patient.AddressID);

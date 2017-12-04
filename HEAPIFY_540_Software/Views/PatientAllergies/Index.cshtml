@@ -27,7 +27,7 @@
             @Html.DisplayFor(modelItem => item.AllergiesName.AllergyName)
         </td>*@
         <td>
-            @Html.DisplayFor(modelItem => item.Patient.FirstName)
+            @Html.DisplayFor(modelItem => item.Patient.FullName)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.PatientAllergyID }) |
